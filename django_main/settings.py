@@ -24,7 +24,7 @@ with open("/etc/config/django_main/config.json") as config_file:
 SECRET_KEY = config['SECRET_KEY']#'django-insecure-^94*5)38$si$6()v4ow38*u43rr9u3ul-um)r)9e0-tmm=otb8'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = config['DEBUG']#True
 
 ALLOWED_HOSTS = ['www.raman-dev.com','localhost']
 

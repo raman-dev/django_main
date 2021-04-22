@@ -2,105 +2,468 @@
 <html>
 
 <head>
-	<!-- Required meta tags -->
-	<meta charset="utf-8">
-	<meta name="viewport" contdth=device-width, initial-scale=1">
-	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css" rel="stylesheet"
-		integrity="sha384-eOJMYsd53ii+scO/bJGFsiCZc+5NDVN2yr8+0RDqr0Ql0h+rP48ckxlpbzKgwra6" crossorigin="anonymous">
-	{% load static %}
-	<link href="{% static 'css/styles.css' %}" type="text/css" rel="stylesheet">
-	<title>
-		Hello World!
-	</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-eOJMYsd53ii+scO/bJGFsiCZc+5NDVN2yr8+0RDqr0Ql0h+rP48ckxlpbzKgwra6" crossorigin="anonymous">
+    {% load static %}
+    <link href="{% static 'css/styles.css' %}" type="text/css" rel="stylesheet">
+    <title>
+        Hello World!
+    </title>
 </head>
 
 <body>
-	<div class="border navbar-container" style="border-color: black; border-width:4px;">
-		<nav class="navbar navbar-expand-md navbar-light bg-light">
-			<div id="#mNavContainer" class="container-md">
-				<a class="mx-4 navbar-brand pt-0" style="transform: scale(1.25);">raman-dev</a>
-				<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarMain"
-					aria-controls="navbarMain" aria-expanded="false" aria-label="Toggle navigation">
-					<span class="navbar-toggler-icon"></span>
-				</button>
+    <div class="container-fluid bg-light">
+        <nav class="navbar navbar-expand-md navbar-light bg-light">
+            <div class="container-fluid">
+                <a class="border mr-4 px-2 navbar-brand pt-0"
+                    style="border-color: black;transform: scale(1.25);">raman-dev</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarMain"
+                    aria-controls="navbarMain" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
 
-				<div class="collapse navbar-collapse" id="navbarMain">
-					<ul class="navbar-nav">
-						<li class="nav-item">
-							<a id="snap-link"class="nav-link active">snapchat clone</a>
-						</li>
-						<li class="nav-item">
-							<a id="netflix-link" class="nav-link">netflix clone</a>
-						</li>
-						<li class="nav-item">
-							<a id="canny-link" class="nav-link">canny edge detector</a>
-						</li>
-					</ul>
-				</div>
-			</div>
-		</nav>
-	</div>
-	<div class="content-container" style="background-color: black;">
-		<!--
-			need three 
-		-->
-		<div id="snap-project" class="project-container" style="background-color: lightseagreen;">
-		</div>
-		
-		<div id="netflix-project" class="project-container" style="background-color: lightsalmon;">
-		</div>
+                <div class="collapse navbar-collapse" id="navbarMain">
+                    <ul class="navbar-nav">
+                        <li class="nav-item">
+                            <a id="snap-link" class="nav-link active">snapchat clone</a>
+                        </li>
+                        <li class="nav-item">
+                            <a id="netflix-link" class="nav-link">netflix clone</a>
+                        </li>
+                        <li class="nav-item">
+                            <a id="canny-link" class="nav-link">canny edge detector</a>
+                        </li>
+                    </ul>
+                </div>
 
-		<div id="canny-project" class="project-container" style="background-color: lightslategray;">
-		</div>
-	</div>
+            </div>
+        </nav>
+    </div>
+
+    <div class="container-fluid h-100">
+        <div class="content-row row">
+            <div class="container-fluid h-100">
+                <div id="contentCarousel" class="carousel slide h-100 w-100" data-bs-ride="carousel"
+                    data-bs-interval="false">
+                    <div class="carousel-indicators">
+                        <button type="button" data-bs-target="#contentCarousel" data-bs-slide-to="0" class="active"
+                            aria-label="Slide 1"></button>
+                        <button type="button" data-bs-target="#contentCarousel" data-bs-slide-to="1"
+                            aria-label="Slide 2" class="" aria-current="true"></button>
+                        <button type="button" data-bs-target="#contentCarousel" data-bs-slide-to="2"
+                            aria-label="Slide 3" class=""></button>
+                    </div>
+                    <div class="carousel-inner h-100">
+                        <div class="snap-item carousel-item active h-100">
+                            <div class="snap-project container-fluid h-100" style="background-color: lightseagreen;">
+                                <!--
+                                    project content here
+                                -->
+                                <div class="carousel-caption text-start">
+                                    <h1>Example headline.</h1>
+                                    <p>Some representative placeholder content for the first slide of the carousel.</p>
+                                    <p><a class="btn btn-lg btn-primary" href="#">Sign up today</a></p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="netflix-item carousel-item h-100">
+                            <div class="netflix-project container-fluid h-100" style="background-color: lightsalmon;">
+                                <div class="carousel-caption">
+                                    <h1>Another example headline.</h1>
+                                    <p>Some representative placeholder content for the second slide of the carousel.</p>
+                                    <p><a class="btn btn-lg btn-primary" href="#">Learn more</a></p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="canny-item carousel-item h-100">
+                            <div class="canny-project container-fluid h-100" style="background-color: lightslategray;">
+                                <div class="carousel-caption text-end">
+                                    <h1>One more for good measure.</h1>
+                                    <p>Some representative placeholder content for the third slide of this carousel.</p>
+                                    <p><a class="btn btn-lg btn-primary" href="#">Browse gallery</a></p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+        <div class="row my-4">
+            <h3 class="mx-auto display-6" style="width: fit-content;">
+                built with
+            </h3>
+        </div>
+        <!--
+            need to fade out last row and then fade back in
+        -->
+        <div class="row">
+            <div id="contentInfoCarousel" class="carousel slide carousel-fade" data-bs-ride="carousel" data-bs-interval="false">
+                <div class="carousel-inner">
+                    <div class="carousel-item active">
+                        <div class="container-fluid">
+                            <div class="row">
+                                <div class="col-lg-4">
+                                    <div class="d-flex flex-column align-items-center">
+                                        <div class="logo-container" style="width: 48px; height: 48px;">
+                                            <svg transform="translate(0 4) scale(1.2)" class="h-100 w-100"
+                                                xmlns="http://www.w3.org/2000/svg" enable-background="new 0 0 24 24"
+                                                height="24px" viewBox="0 0 24 24" width="24px" fill="#00DE7A">
+                                                <g>
+                                                    <path d="M0,0h24v24H0V0z" fill="none" />
+                                                </g>
+                                                <g>
+                                                    <g>
+                                                        <path
+                                                            d="M17.6,9.48l1.84-3.18c0.16-0.31,0.04-0.69-0.26-0.85c-0.29-0.15-0.65-0.06-0.83,0.22l-1.88,3.24 c-2.86-1.21-6.08-1.21-8.94,0L5.65,5.67c-0.19-0.29-0.58-0.38-0.87-0.2C4.5,5.65,4.41,6.01,4.56,6.3L6.4,9.48 C3.3,11.25,1.28,14.44,1,18h22C22.72,14.44,20.7,11.25,17.6,9.48z M7,15.25c-0.69,0-1.25-0.56-1.25-1.25 c0-0.69,0.56-1.25,1.25-1.25S8.25,13.31,8.25,14C8.25,14.69,7.69,15.25,7,15.25z M17,15.25c-0.69,0-1.25-0.56-1.25-1.25 c0-0.69,0.56-1.25,1.25-1.25s1.25,0.56,1.25,1.25C18.25,14.69,17.69,15.25,17,15.25z" />
+                                                    </g>
+                                                </g>
+                                            </svg>
+                                        </div>
+                                        <h2 class="display-5">Android</h2>
+                                    </div>
+
+                                    <p class="text-center">Some representative placeholder content for the three columns
+                                        of text below the
+                                        carousel. This is the
+                                        first column.</p>
+                                </div><!-- /.col-lg-4 -->
+                                <div class="col-lg-4">
+                                    <div class="d-flex flex-column align-items-center">
+                                        <div class="logo-container" style="width: fit-content;">
+                                            <svg id="aws_amplify_logo" width="48px" height="36px" viewBox="0 0 48 36"
+                                                version="1.1" xmlns="http://www.w3.org/2000/svg"
+                                                xmlns:xlink="http://www.w3.org/1999/xlink">
+                                                <defs>
+                                                    <linearGradient x1="74.916705%" y1="42.4643507%" x2="18.2326755%"
+                                                        y2="84.4872346%" id="linearGradient-3">
+                                                        <stop stop-color="#FFC300" offset="0%"></stop>
+                                                        <stop stop-color="#FF9000" offset="100%"></stop>
+                                                    </linearGradient>
+                                                </defs>
+                                                <g id="Page-1" stroke="none" stroke-width="1" fill="none"
+                                                    fill-rule="evenodd">
+                                                    <path
+                                                        d="M9.63080397,19.2225205 L13.6667362,12.1968493 L17.1318135,18.2330137 L10.3784637,29.9889863 L23.8802314,29.9889863 L27.3310065,36 L0,36 L9.63080397,19.2225205 Z M15.4877758,9.0196274 L18.8147629,3.22412055 L37.6436061,35.9999014 L30.9755763,35.9999014 L15.4877758,9.0196274 Z M20.6665276,0 L27.3256802,0 L48,36 L41.3324634,36 L20.6665276,0 Z"
+                                                        id="Fill-1" fill="url(#linearGradient-3)"></path>
+                                                    <polygon id="Fill-1" fill="#FFAF38"
+                                                        points="0 36 27.4285714 36 23.965478 29.8723404 10.4155122 29.8723404">
+                                                    </polygon>
+                                                </g>
+                                            </svg>
+                                        </div>
+                                        <h2 class="display-5">AWS Amplify</h2>
+                                    </div>
+
+                                    <p class="text-center">Another exciting bit of representative placeholder content.
+                                        This time, we've
+                                        moved on to the second
+                                        column.</p>
+                                </div><!-- /.col-lg-4 -->
+                                <div class="col-lg-4">
+                                    <div class="d-flex flex-column align-items-center">
+                                        <div class="logo-container" style="width:48px; height:48px;">
+                                            <svg version="1.1" id="GraphQL_Logo" xmlns="http://www.w3.org/2000/svg"
+                                                xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+                                                viewBox="0 0 400 400" enable-background="new 0 0 400 400"
+                                                xml:space="preserve">
+                                                <g>
+                                                    <g>
+                                                        <g>
+                                                            <rect x="122" y="-0.4"
+                                                                transform="matrix(-0.866 -0.5 0.5 -0.866 163.3196 363.3136)"
+                                                                fill="#E535AB" width="16.6" height="320.3" />
+                                                        </g>
+                                                    </g>
+                                                    <g>
+                                                        <g>
+                                                            <rect x="39.8" y="272.2" fill="#E535AB" width="320.3"
+                                                                height="16.6" />
+                                                        </g>
+                                                    </g>
+                                                    <g>
+                                                        <g>
+
+                                                            <rect x="37.9" y="312.2"
+                                                                transform="matrix(-0.866 -0.5 0.5 -0.866 83.0693 663.3409)"
+                                                                fill="#E535AB" width="185" height="16.6" />
+                                                        </g>
+                                                    </g>
+                                                    <g>
+                                                        <g>
+
+                                                            <rect x="177.1" y="71.1"
+                                                                transform="matrix(-0.866 -0.5 0.5 -0.866 463.3409 283.0693)"
+                                                                fill="#E535AB" width="185" height="16.6" />
+                                                        </g>
+                                                    </g>
+                                                    <g>
+                                                        <g>
+
+                                                            <rect x="122.1" y="-13"
+                                                                transform="matrix(-0.5 -0.866 0.866 -0.5 126.7903 232.1221)"
+                                                                fill="#E535AB" width="16.6" height="185" />
+                                                        </g>
+                                                    </g>
+                                                    <g>
+                                                        <g>
+
+                                                            <rect x="109.6" y="151.6"
+                                                                transform="matrix(-0.5 -0.866 0.866 -0.5 266.0828 473.3766)"
+                                                                fill="#E535AB" width="320.3" height="16.6" />
+                                                        </g>
+                                                    </g>
+                                                    <g>
+                                                        <g>
+                                                            <rect x="52.5" y="107.5" fill="#E535AB" width="16.6"
+                                                                height="185" />
+                                                        </g>
+                                                    </g>
+                                                    <g>
+                                                        <g>
+                                                            <rect x="330.9" y="107.5" fill="#E535AB" width="16.6"
+                                                                height="185" />
+                                                        </g>
+                                                    </g>
+                                                    <g>
+                                                        <g>
+
+                                                            <rect x="262.4" y="240.1"
+                                                                transform="matrix(-0.5 -0.866 0.866 -0.5 126.7953 714.2875)"
+                                                                fill="#E535AB" width="14.5" height="160.9" />
+                                                        </g>
+                                                    </g>
+                                                    <path fill="#E535AB" d="M369.5,297.9c-9.6,16.7-31,22.4-47.7,12.8c-16.7-9.6-22.4-31-12.8-47.7c9.6-16.7,31-22.4,47.7-12.8
+                                            C373.5,259.9,379.2,281.2,369.5,297.9" />
+                                                    <path fill="#E535AB" d="M90.9,137c-9.6,16.7-31,22.4-47.7,12.8c-16.7-9.6-22.4-31-12.8-47.7c9.6-16.7,31-22.4,47.7-12.8
+                                            C94.8,99,100.5,120.3,90.9,137" />
+                                                    <path fill="#E535AB" d="M30.5,297.9c-9.6-16.7-3.9-38,12.8-47.7c16.7-9.6,38-3.9,47.7,12.8c9.6,16.7,3.9,38-12.8,47.7
+                                            C61.4,320.3,40.1,314.6,30.5,297.9" />
+                                                    <path fill="#E535AB" d="M309.1,137c-9.6-16.7-3.9-38,12.8-47.7c16.7-9.6,38-3.9,47.7,12.8c9.6,16.7,3.9,38-12.8,47.7
+                                            C340.1,159.4,318.7,153.7,309.1,137" />
+                                                    <path fill="#E535AB" d="M200,395.8c-19.3,0-34.9-15.6-34.9-34.9c0-19.3,15.6-34.9,34.9-34.9c19.3,0,34.9,15.6,34.9,34.9
+                                            C234.9,380.1,219.3,395.8,200,395.8" />
+                                                    <path fill="#E535AB" d="M200,74c-19.3,0-34.9-15.6-34.9-34.9c0-19.3,15.6-34.9,34.9-34.9c19.3,0,34.9,15.6,34.9,34.9
+                                            C234.9,58.4,219.3,74,200,74" />
+                                                </g>
+                                            </svg>
+                                        </div>
+                                        <h2 class="mx-auto display-5">GraphQL</h2>
+                                    </div>
+
+                                    <p class="text-center">And lastly this, the third column of representative
+                                        placeholder content.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="carousel-item">
+                        <div class="container-fluid">
+                            <div class="row">
+                                <div class="col-lg-6">
+                                    <div class="d-flex flex-column align-items-center">
+                                        <div class="logo-container" style="width: 48px; height: 48px;">
+                                            <svg transform="translate(0 4) scale(1.2)" class="h-100 w-100"
+                                                xmlns="http://www.w3.org/2000/svg" enable-background="new 0 0 24 24"
+                                                height="24px" viewBox="0 0 24 24" width="24px" fill="#00DE7A">
+                                                <g>
+                                                    <path d="M0,0h24v24H0V0z" fill="none" />
+                                                </g>
+                                                <g>
+                                                    <g>
+                                                        <path
+                                                            d="M17.6,9.48l1.84-3.18c0.16-0.31,0.04-0.69-0.26-0.85c-0.29-0.15-0.65-0.06-0.83,0.22l-1.88,3.24 c-2.86-1.21-6.08-1.21-8.94,0L5.65,5.67c-0.19-0.29-0.58-0.38-0.87-0.2C4.5,5.65,4.41,6.01,4.56,6.3L6.4,9.48 C3.3,11.25,1.28,14.44,1,18h22C22.72,14.44,20.7,11.25,17.6,9.48z M7,15.25c-0.69,0-1.25-0.56-1.25-1.25 c0-0.69,0.56-1.25,1.25-1.25S8.25,13.31,8.25,14C8.25,14.69,7.69,15.25,7,15.25z M17,15.25c-0.69,0-1.25-0.56-1.25-1.25 c0-0.69,0.56-1.25,1.25-1.25s1.25,0.56,1.25,1.25C18.25,14.69,17.69,15.25,17,15.25z" />
+                                                    </g>
+                                                </g>
+                                            </svg>
+                                        </div>
+                                        <h2 class="display-5">Android</h2>
+                                    </div>
+
+                                    <p class="text-center">Some representative placeholder content for the three columns
+                                        of text below the
+                                        carousel. This is the
+                                        first column.</p>
+                                </div>
+                                <div class="col-lg-6">
+                                    <div class="d-flex flex-column align-items-center">
+                                        <div class="logo-container" style="width:48px; height:48px;">
+                                            <svg version="1.1" id="GraphQL_Logo" xmlns="http://www.w3.org/2000/svg"
+                                                xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+                                                viewBox="0 0 400 400" enable-background="new 0 0 400 400"
+                                                xml:space="preserve">
+                                                <g>
+                                                    <g>
+                                                        <g>
+                                                            <rect x="122" y="-0.4"
+                                                                transform="matrix(-0.866 -0.5 0.5 -0.866 163.3196 363.3136)"
+                                                                fill="#E535AB" width="16.6" height="320.3" />
+                                                        </g>
+                                                    </g>
+                                                    <g>
+                                                        <g>
+                                                            <rect x="39.8" y="272.2" fill="#E535AB" width="320.3"
+                                                                height="16.6" />
+                                                        </g>
+                                                    </g>
+                                                    <g>
+                                                        <g>
+
+                                                            <rect x="37.9" y="312.2"
+                                                                transform="matrix(-0.866 -0.5 0.5 -0.866 83.0693 663.3409)"
+                                                                fill="#E535AB" width="185" height="16.6" />
+                                                        </g>
+                                                    </g>
+                                                    <g>
+                                                        <g>
+
+                                                            <rect x="177.1" y="71.1"
+                                                                transform="matrix(-0.866 -0.5 0.5 -0.866 463.3409 283.0693)"
+                                                                fill="#E535AB" width="185" height="16.6" />
+                                                        </g>
+                                                    </g>
+                                                    <g>
+                                                        <g>
+
+                                                            <rect x="122.1" y="-13"
+                                                                transform="matrix(-0.5 -0.866 0.866 -0.5 126.7903 232.1221)"
+                                                                fill="#E535AB" width="16.6" height="185" />
+                                                        </g>
+                                                    </g>
+                                                    <g>
+                                                        <g>
+
+                                                            <rect x="109.6" y="151.6"
+                                                                transform="matrix(-0.5 -0.866 0.866 -0.5 266.0828 473.3766)"
+                                                                fill="#E535AB" width="320.3" height="16.6" />
+                                                        </g>
+                                                    </g>
+                                                    <g>
+                                                        <g>
+                                                            <rect x="52.5" y="107.5" fill="#E535AB" width="16.6"
+                                                                height="185" />
+                                                        </g>
+                                                    </g>
+                                                    <g>
+                                                        <g>
+                                                            <rect x="330.9" y="107.5" fill="#E535AB" width="16.6"
+                                                                height="185" />
+                                                        </g>
+                                                    </g>
+                                                    <g>
+                                                        <g>
+
+                                                            <rect x="262.4" y="240.1"
+                                                                transform="matrix(-0.5 -0.866 0.866 -0.5 126.7953 714.2875)"
+                                                                fill="#E535AB" width="14.5" height="160.9" />
+                                                        </g>
+                                                    </g>
+                                                    <path fill="#E535AB" d="M369.5,297.9c-9.6,16.7-31,22.4-47.7,12.8c-16.7-9.6-22.4-31-12.8-47.7c9.6-16.7,31-22.4,47.7-12.8
+                                            C373.5,259.9,379.2,281.2,369.5,297.9" />
+                                                    <path fill="#E535AB" d="M90.9,137c-9.6,16.7-31,22.4-47.7,12.8c-16.7-9.6-22.4-31-12.8-47.7c9.6-16.7,31-22.4,47.7-12.8
+                                            C94.8,99,100.5,120.3,90.9,137" />
+                                                    <path fill="#E535AB" d="M30.5,297.9c-9.6-16.7-3.9-38,12.8-47.7c16.7-9.6,38-3.9,47.7,12.8c9.6,16.7,3.9,38-12.8,47.7
+                                            C61.4,320.3,40.1,314.6,30.5,297.9" />
+                                                    <path fill="#E535AB" d="M309.1,137c-9.6-16.7-3.9-38,12.8-47.7c16.7-9.6,38-3.9,47.7,12.8c9.6,16.7,3.9,38-12.8,47.7
+                                            C340.1,159.4,318.7,153.7,309.1,137" />
+                                                    <path fill="#E535AB" d="M200,395.8c-19.3,0-34.9-15.6-34.9-34.9c0-19.3,15.6-34.9,34.9-34.9c19.3,0,34.9,15.6,34.9,34.9
+                                            C234.9,380.1,219.3,395.8,200,395.8" />
+                                                    <path fill="#E535AB" d="M200,74c-19.3,0-34.9-15.6-34.9-34.9c0-19.3,15.6-34.9,34.9-34.9c19.3,0,34.9,15.6,34.9,34.9
+                                            C234.9,58.4,219.3,74,200,74" />
+                                                </g>
+                                            </svg>
+                                        </div>
+                                        <h2 class="mx-auto display-5">GraphQL</h2>
+                                    </div>
+
+                                    <p class="text-center">And lastly this, the third column of representative
+                                        placeholder content.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="carousel-item">
+                        <div class="container-fluid">
+                            <div class="row">
+                                <div class="col-12">
+                                    <div class="d-flex flex-column align-items-center">
+                                        <div class="logo-container" style="width: 48px; height: 48px;">
+                                            <svg transform="translate(0 4) scale(1.2)" class="h-100 w-100"
+                                                xmlns="http://www.w3.org/2000/svg" enable-background="new 0 0 24 24"
+                                                height="24px" viewBox="0 0 24 24" width="24px" fill="#00DE7A">
+                                                <g>
+                                                    <path d="M0,0h24v24H0V0z" fill="none" />
+                                                </g>
+                                                <g>
+                                                    <g>
+                                                        <path
+                                                            d="M17.6,9.48l1.84-3.18c0.16-0.31,0.04-0.69-0.26-0.85c-0.29-0.15-0.65-0.06-0.83,0.22l-1.88,3.24 c-2.86-1.21-6.08-1.21-8.94,0L5.65,5.67c-0.19-0.29-0.58-0.38-0.87-0.2C4.5,5.65,4.41,6.01,4.56,6.3L6.4,9.48 C3.3,11.25,1.28,14.44,1,18h22C22.72,14.44,20.7,11.25,17.6,9.48z M7,15.25c-0.69,0-1.25-0.56-1.25-1.25 c0-0.69,0.56-1.25,1.25-1.25S8.25,13.31,8.25,14C8.25,14.69,7.69,15.25,7,15.25z M17,15.25c-0.69,0-1.25-0.56-1.25-1.25 c0-0.69,0.56-1.25,1.25-1.25s1.25,0.56,1.25,1.25C18.25,14.69,17.69,15.25,17,15.25z" />
+                                                    </g>
+                                                </g>
+                                            </svg>
+                                        </div>
+                                        <h2 class="display-5">Django</h2>
+                                    </div>
+
+                                    <p class="text-center">Some representative placeholder content for the three columns
+                                        of text below the
+                                        carousel. This is the
+                                        first column.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 
 
 
 
-	<script src="https://code.jquery.com/jquery-3.6.0.js"
-		integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
-	<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.1/dist/umd/popper.min.js"
-		integrity="sha384-SR1sx49pcuLnqZUnnPwx6FCym0wLsk5JZuNx2bPPENzswTNFaQU1RDvt3wT4gWFG"
-		crossorigin="anonymous"></script>
-	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.min.js"
-		integrity="sha384-j0CNLUeiqtyaRmlzUHCPZ+Gy5fQu0dQ6eZ/xAww941Ai1SxSY+0EQqNXNE6DZiVc"
-		crossorigin="anonymous"></script>
-	<script>
-		function scrollToProject(event,id,index){
-			$('a.active').removeClass('active');
-			$(event.currentTarget).addClass('active');
-			//$(id)[0].scrollIntoView({block : 'nearest'});
-			//scrollTop is the distance of the scrollbar from the top 
-			var scrollTop = $(id).scrollTop();//we want to scroll
-			//console.log(scrollTop);
-			//depending on my position scroll position * height
-			//need to get height every time to stay responsive
-			var height = $(id).outerHeight();
-			//so if this is netflix 
-			//animate this propertyy
-			var scrollDistance = index * height;
-			//$(id).parent().animate({scrollTop: scrollDistance},);
-			$(id).parent().scrollTop(index * height);
-			//collapse navbar if open
-			$('.navbar-collapse').collapse('hide');
-		}
+    <script src="https://code.jquery.com/jquery-3.6.0.js"
+        integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-JEW9xMcG8R+pH31jmWH6WWP0WintQrMb4s7ZOdauHnUtxwoG2vI5DkLtS3qm9Ekf"
+        crossorigin="anonymous"></script>
 
-		$(document).ready(()=>{
-			//
-			$('#snap-link').on('click',(event)=>{
-				//console.log('scroll snap-project into view');
-				scrollToProject(event,'#snap-project',0);
-			});
-			$('#netflix-link').on('click',(event)=>{
-				//console.log('scroll netflix-project into view');
-				scrollToProject(event,'#netflix-project',1);
-			});
-			$('#canny-link').on('click',(event)=>{
-				//console.log('scroll canny-project into view');
-				scrollToProject(event,'#canny-project',2);
-			});
-		});
-	</script>
+    <script>
+        function slideToProject(event, id, index) {
+            $('a.active').removeClass('active');
+            $(event.currentTarget).addClass('active');
+            //collapse navbar if open
+            $('.navbar-collapse').collapse('hide');
+            //cycle to the slide at index
+            //check if active item is me if so do nothing
+            var contentCarousel = bootstrap.Carousel.getInstance($('#contentCarousel')[0]);
+            contentCarousel.to('' + index);
+            //at the end of the transition we 
+            //need to fade out the bottom section and fade in a different one
+            var infoCarousel = bootstrap.Carousel.getInstance($('#contentInfoCarousel')[0]);
+            infoCarousel.to(''+index);
+        }
+
+        $(document).ready(() => {
+            //
+            $('#snap-link').on('click', (event) => {
+                //console.log('scroll snap-project into view');
+                slideToProject(event, '.snap-project', 0);
+            });
+            $('#netflix-link').on('click', (event) => {
+                //console.log('scroll netflix-project into view');
+                slideToProject(event, '.netflix-project', 1);
+            });
+            $('#canny-link').on('click', (event) => {
+                //console.log('scroll canny-project into view');
+                slideToProject(event, '.canny-project', 2);
+            });
+        });
+    </script>
 </body>
 
 </html>
