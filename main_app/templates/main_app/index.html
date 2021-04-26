@@ -16,84 +16,73 @@
 </head>
 
 <body>
-    <div class="container-fluid bg-light">
-        <nav class="navbar navbar-expand-md navbar-light bg-light">
-            <div class="container-fluid">
-                <a class="border mr-4 px-2 navbar-brand pt-0"
-                    style="border-color: black;transform: scale(1.25);">raman-dev</a>
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarMain"
-                    aria-controls="navbarMain" aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
+    <nav class="navbar navbar-expand-md fixed-top navbar-light bg-light">
+        <div class="nav-container container-fluid">
+            <a class="border mr-4 px-2 navbar-brand pt-0"
+                style="border-color: black;transform: scale(1.25);">raman-dev</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarMain"
+                aria-controls="navbarMain" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
 
-                <div class="collapse navbar-collapse" id="navbarMain">
-                    <ul class="navbar-nav">
-                        <li class="nav-item">
-                            <a id="snap-link" class="nav-link active">snapchat clone</a>
-                        </li>
-                        <li class="nav-item">
-                            <a id="netflix-link" class="nav-link">netflix clone</a>
-                        </li>
-                        <li class="nav-item">
-                            <a id="canny-link" class="nav-link">canny edge detector</a>
-                        </li>
-                    </ul>
-                </div>
-
+            <div class="collapse navbar-collapse" id="navbarMain">
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a id="snap-link" class="nav-link active">snapchat clone</a>
+                    </li>
+                    <li class="nav-item">
+                        <a id="netflix-link" class="nav-link">netflix clone</a>
+                    </li>
+                    <li class="nav-item">
+                        <a id="canny-link" class="nav-link">canny edge detector</a>
+                    </li>
+                </ul>
             </div>
-        </nav>
-    </div>
 
-    <div class="container-fluid h-100">
-        <div class="content-row row">
-            <div class="container-fluid h-100">
-                <div id="contentCarousel" class="carousel slide h-100 w-100" data-bs-ride="carousel"
-                    data-bs-interval="false">
-                    <div class="carousel-indicators">
-                        <button type="button" data-bs-target="#contentCarousel" data-bs-slide-to="0" class="active"
-                            aria-label="Slide 1"></button>
-                        <button type="button" data-bs-target="#contentCarousel" data-bs-slide-to="1"
-                            aria-label="Slide 2" class="" aria-current="true"></button>
-                        <button type="button" data-bs-target="#contentCarousel" data-bs-slide-to="2"
-                            aria-label="Slide 3" class=""></button>
-                    </div>
-                    <div class="carousel-inner h-100">
-                        <div class="snap-item carousel-item active h-100">
-                            <div class="snap-project container-fluid h-100" style="background-color: lightseagreen;">
-                                <!--
-                                    project content here
-                                -->
-                                <div class="carousel-caption text-start">
-                                    <h1>Example headline.</h1>
-                                    <p>Some representative placeholder content for the first slide of the carousel.</p>
-                                    <p><a class="btn btn-lg btn-primary" href="#">Sign up today</a></p>
-                                </div>
-                            </div>
-                        </div>
+        </div>
+    </nav>
 
-                        <div class="netflix-item carousel-item h-100">
-                            <div class="netflix-project container-fluid h-100" style="background-color: lightsalmon;">
-                                <div class="carousel-caption">
-                                    <h1>Another example headline.</h1>
-                                    <p>Some representative placeholder content for the second slide of the carousel.</p>
-                                    <p><a class="btn btn-lg btn-primary" href="#">Learn more</a></p>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="canny-item carousel-item h-100">
-                            <div class="canny-project container-fluid h-100" style="background-color: lightslategray;">
-                                <div class="carousel-caption text-end">
-                                    <h1>One more for good measure.</h1>
-                                    <p>Some representative placeholder content for the third slide of this carousel.</p>
-                                    <p><a class="btn btn-lg btn-primary" href="#">Browse gallery</a></p>
-                                </div>
-                            </div>
-                        </div>
+    <div class="main-container container-fluid h-100">
+        <div class="main-row d-flex flex-nowrap mx-auto">
+
+            <div data-index="0" data-top="True" class="project-container" style="z-index: 102;">
+                
+                <div class="snap-container">
+                    <div class="p-0 card material-shadow-2" data-index="0">
+                        <img class="rounded-2 img-fluid" src="{% static 'screenshots/snapchat_clone/camera.png' %}">
                     </div>
+                    <div class="p-0 card material-shadow-2" data-index="1">
+                        <img class="rounded-2 img-fluid" src="{% static 'screenshots/snapchat_clone/chat.png' %}">
+                    </div>
+                    <div class="p-0 card material-shadow-2" data-index="2">
+                        <img class="rounded-2 img-fluid" src="{% static 'screenshots/snapchat_clone/search.png' %}">
+                    </div>
+                    <div class="p-0 card material-shadow-2" data-index="3">
+                        <img class="rounded-2 img-fluid" src="{% static 'screenshots/snapchat_clone/signup.png' %}">
+                    </div>
+                    <div class="p-0 card material-shadow-2" data-index="4">
+                        <img class="rounded-2 img-fluid" src="{% static 'screenshots/snapchat_clone/login.png' %}">
+                    </div>
+                </div>
+                
+            </div>
+
+            <div data-index="1" data-top="False" class="project-container "
+                style="visibility: hidden; z-index: 100;">
+                <div class="netflix-container">
+                    netflix
+                </div>
+                
+            </div>
+            <div data-index="2" data-top="False" class="project-container"
+                style="visibility: hidden; z-index: 100;">
+                <div class="canny-container">
+                    canny
                 </div>
             </div>
 
         </div>
+        
         <div class="row my-4">
             <h3 class="mx-auto display-6" style="width: fit-content;">
                 built with
@@ -102,7 +91,7 @@
         <!--
             need to fade out last row and then fade back in
         -->
-        <div class="info-row row">
+        <div class="info-row row mx-auto">
             <div class="col-4" style="display: none;">
                 <div class="list-group" id="list-tab" role="tablist">
                     <a class="list-group-item list-group-item-action active" id="list-snap-list" data-index="0"
@@ -430,6 +419,7 @@
                 </div>
             </div>
         </div>
+
     </div>
 
     <script src="https://code.jquery.com/jquery-3.6.0.js"
@@ -439,26 +429,103 @@
         crossorigin="anonymous"></script>
 
     <script>
-        function slideToProject(event, id, index) {
+        const bottomZIndex = 100;
+        const midZIndex = 101;
+        const stackTopZIndex = 102;
+        var isTransitioning = false;
+        function slideToProject(event, id, linkIndex) {
+            //prevent another transition while transitioning
+            if (isTransitioning) {
+                return;
+            }
+            //check if currently active also current link
+            if ($('a.active').attr('id') == $(event.currentTarget).attr('id')) {
+                return;
+            }
+            isTransitioning = true;
             $('a.active').removeClass('active');
             $(event.currentTarget).addClass('active');
             //collapse navbar if open
             $('.navbar-collapse').collapse('hide');
-            //cycle to the slide at index
-            //check if active item is me if so do nothing
-            var contentCarousel = bootstrap.Carousel.getInstance($('#contentCarousel')[0]);
-            contentCarousel.to('' + index);
-            //at the end of the transition we 
-            //need to fade out the bottom section and fade in a different one
-            //get the corresponding list item how?
-            //
-            var listElement = $('a.list-group-item[data-index="' + index + '"]')[0];
-            //console.log(listElement);
+            var oldTopContainer = $('.project-container[data-top="True"]');
+            oldTopContainer.css({
+                'z-index': midZIndex
+            });
+            oldTopContainer.attr('data-top', "False");
+
+            var newTopContainer = $('.project-container[data-index="' + linkIndex + '"');
+            newTopContainer.attr('data-top', "True");
+            newTopContainer.css({
+                'transition-duration': '0.6s',
+                'z-index': stackTopZIndex,
+                'visibility': 'visible',
+                'left': '0px',
+            });
+            //i can set each project container to initially be -width
+            var listElement = $('a.list-group-item[data-index="' + linkIndex + '"]')[0];
             var tab = new bootstrap.Tab(listElement);
             tab.show();
         }
 
+        const cardCount = 5;
+        var visiblePercentFullWidth = 0.3;
+        var visiblePercentMed = 0.25;
+        var visiblePercentMobile = 0.20;
+
+        var fullWidthQueryString = "(min-width: 1723px)";
+        var mobileMediaQueryString = "(max-width: 1200px)";
+        var mediumWidthQueryString = "(min-width: 1200px) and (max-width: 1723px)";
+
+        function repositionCards(media_query) {
+            //reduce the visibility of cards at the botom of the stack
+            var visiblePercent = visiblePercentFullWidth;
+            if (media_query.media == mobileMediaQueryString) {
+                visiblePercent = visiblePercentMobile
+            } else if (media_query.media == mediumWidthQueryString) {
+                visiblePercent = visiblePercentMed;
+            } else {
+                visiblePercent = visiblePercentFullWidth;
+            }
+
+            if (media_query.matches) {
+                console.log("matches => " + media_query.media);
+                var visibleWidth = $('.card').outerWidth() * visiblePercent;
+                //we want 5% of a card that is beneath another in the stack
+                //so 
+                var initialLeft = 0;
+                var left_nl1 = 0;//left_n-1
+                //the left_n=15% * width + left_n-1
+                $('.card').each((index, element) => {
+                    var card = $(element);
+                    var left_pos = initialLeft;
+                    if (index != 0) {
+                        //let 0 be 
+                        left_pos = left_nl1 + visibleWidth;
+                        left_nl1 = left_pos;
+                    }
+                    card.css({
+                        left: left_pos + "px",
+                    });
+                });
+            }
+        }
+        var windowMobileMediaQuery = window.matchMedia(mobileMediaQueryString);
+        var windowFullWidthMediaQuery = window.matchMedia(fullWidthQueryString);
+        var windowMediumWidthMediaQuery = window.matchMedia(mediumWidthQueryString);
+
+        repositionCards(windowMobileMediaQuery);
+        repositionCards(windowFullWidthMediaQuery);
+        repositionCards(windowMediumWidthMediaQuery);
+
+        windowMobileMediaQuery.addEventListener('change', repositionCards);
+        windowFullWidthMediaQuery.addEventListener('change', repositionCards);
+        windowMediumWidthMediaQuery.addEventListener('change', repositionCards);
+
         $(document).ready(() => {
+            var navbar_height = $('nav').outerHeight();
+            $('body').css({
+                'padding-top': navbar_height + 4 + "px",
+            });
             //
             $('#snap-link').on('click', (event) => {
                 //console.log('scroll snap-project into view');
@@ -472,8 +539,103 @@
                 //console.log('scroll canny-project into view');
                 slideToProject(event, '.canny-project', 2);
             });
+            //make left position a function of the percentage of visibility
+            //of the cards not on the top of the stack
+            //
+            
+
+            $('.card').each((index, element) => {
+                var card = $(element);
+                card.mouseenter(card_enter);
+                card.mouseleave(card_leave);
+            });
+            // $('.content-row').mouseenter((event) => {
+            //     //get the top position of the card
+            //     //and the 
+            //     var currentCardTop = $('.card').position().top;
+            //     console.log('currentCardTop => ' + currentCardTop);
+
+            //     $(event.currentTarget).css({
+            //         'height': "80%"
+            //     });
+            //     $('.card').each((event) => {
+            //         $(event.currentTarget).css({
+            //             'top': currentCardTop + "px"
+            //         });
+            //     });
+            // });
+            // $('.content-row').mouseleave((event) => {
+            //     $(event.currentTarget).css({
+            //         'height': "62.5%"
+            //     });
+            // });
+            //move containers left that are not visible
+            $('.project-container[data-top="False"]').each((index, element) => {
+                var container = $(element);
+                container.css({
+                    'left': -container.outerWidth() + "px"
+                });
+            });
+            $('.project-container').on('transitionend', (event) => {
+                //all other containers that are not stack top need to be set to invisible
+                //all but current container needs ot now be invisble and have a lower stack indexs
+                //set all but stack top to invisible
+                ///ignore the transition trigger by changing the invisible container
+                if ($(event.currentTarget).attr('data-top') == "True") {
+                    //reactivate links
+                    // console.log($(event.currentTarget).attr('data-index'));
+                    // console.log('top transitionend');
+                    //when new top is done slideing over then set both cards to invisible
+                    //and left shifted so they are ready to be slid over
+                    $('.project-container[data-top="False"]').each((index, element) => {
+                        var width = $(element).outerWidth();
+                        $(element).css({
+                            'transition-duration': '0s',
+                            'visibility': 'hidden',
+                            'left': -width + "px",
+                            'z-index': 100,
+                        });
+                    });
+                    isTransitioning = false;
+                }
+            });
+
         });
+
+        function card_enter(event) {
+            //move elements to my right to the right
+            var card = $(event.currentTarget);
+            //get current card index
+            //all cards with a greater index should be shifted right
+            var cindex = parseInt(card.data('index'));
+            console.log('card_enter => ' + cindex);
+            //translate the whol
+            var delta_x = card.width() * 0.75;
+
+            $('.card').each((index, element) => {
+                var current_card = $(element);
+                var current_index = parseInt(current_card.data('index'));
+                if (current_index > cindex) {
+                    current_card.css({
+                        'transform': 'translateX(' + delta_x + 'px)',
+                    });
+                }
+            });
+        }
+        function card_leave(event) {
+            var card = $(event.currentTarget);
+            var index = parseInt(card.data('index'));
+            index += 1;
+            while (index < cardCount) {
+                //restore to original positions
+                $('.card[data-index="' + index + '"]').css({
+                    'transform': 'translateX(0px)'
+                });
+                index += 1;
+            }
+        }
     </script>
+
 </body>
 
 </html>
