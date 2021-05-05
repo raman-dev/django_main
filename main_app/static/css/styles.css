@@ -1,40 +1,101 @@
-html, body {
+html,
+body {
   height: 100%;
+  min-height: 100%;
 }
 
 body {
-  overflow: auto;
+  overflow: scroll;
+}
+
+.material-shadow-3 {
+  -webkit-box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
+          box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
+}
+
+.underline-effect {
+  height: 1px;
+  width: 0%;
+  margin-left: auto;
+  margin-right: auto;
+  -webkit-transition: width 0.3s ease-in-out;
+  transition: width 0.3s ease-in-out;
+  background-color: rgba(0, 0, 0, 0.9);
+}
+
+.info-row {
+  height: 20%;
+  width: 100%;
+  background-color: lightseagreen;
+}
+
+.info-row .info-content-container {
+  background-color: lightseagreen;
+}
+
+.main-container {
+  background-color: lightseagreen;
 }
 
 .main-row {
-  height: 62.5%;
+  height: 60%;
+  width: 100%;
   z-index: 110;
   -webkit-transition: height 0.4s;
   transition: height 0.4s;
   position: relative;
   overflow-x: hidden;
   overflow-y: hidden;
-  -webkit-box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
-          box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
 }
 
 .main-row .project-container {
   position: absolute;
   height: 100%;
   min-width: 100%;
-  -webkit-transition: left 0.6s ease-in-out;
-  transition: left 0.6s ease-in-out;
+  -webkit-transition: -webkit-transform 0.6s ease;
+  transition: -webkit-transform 0.6s ease;
+  transition: transform 0.6s ease;
+  transition: transform 0.6s ease, -webkit-transform 0.6s ease;
 }
 
 .main-row .project-container .snap-container {
-  height: 100%;
   background-color: lightseagreen;
+}
+
+.main-row .project-container .snap-container .snap-card-container {
   position: relative;
+  background-color: lightseagreen;
+}
+
+.main-row .project-container .snap-container .snap-title-container {
+  position: absolute;
+}
+
+.main-row .project-container .snap-container .snap-card {
+  position: absolute;
+  border: 1px solid lightslategray;
+}
+
+.main-row .project-container .snap-container h1 {
+  color: white;
 }
 
 .main-row .project-container .netflix-container {
   height: 100%;
+  min-width: 100%;
   background-color: lightsalmon;
+  position: relative;
+}
+
+.main-row .project-container .netflix-container .netflix-card {
+  position: absolute;
+  min-width: 40rem;
+  max-width: 50rem;
+  background-color: transparent;
+  -webkit-transition: opacity 0.6s ease, -webkit-transform 0.6s ease;
+  transition: opacity 0.6s ease, -webkit-transform 0.6s ease;
+  transition: transform 0.6s ease, opacity 0.6s ease;
+  transition: transform 0.6s ease, opacity 0.6s ease, -webkit-transform 0.6s ease;
 }
 
 .main-row .project-container .canny-container {
@@ -42,23 +103,8 @@ body {
   background-color: lightslategray;
 }
 
-.main-row:hover {
-  height: 80%;
-}
-
-.nav-link:hover {
+.nav-item:hover {
   cursor: pointer;
-}
-
-.card {
-  position: absolute;
-  border: 1px solid lightslategray;
-  -webkit-transition: -webkit-transform 0.4s;
-  transition: -webkit-transform 0.4s;
-  transition: transform 0.4s;
-  transition: transform 0.4s, -webkit-transform 0.4s;
-  top: 20%;
-  max-width: 21rem;
 }
 
 .material-shadow-1 {
@@ -68,53 +114,74 @@ body {
   transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
 }
 
-.material-shadow-1:hover {
-  -webkit-box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
-          box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
-}
-
 .material-shadow-2 {
   -webkit-box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
           box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
 }
 
-@media (max-width: 1200px) {
+@media (max-width: 768px) {
+  .snap-card {
+    max-width: 12rem;
+    top: 25%;
+  }
+  .camera-card {
+    visibility: hidden;
+  }
+  .search-card {
+    visibility: hidden;
+  }
+  .netflix-card {
+    min-width: 32rem;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 992px) {
+  .snap-card {
+    max-width: 13rem;
+    top: 22%;
+  }
+}
+
+@media (max-width: 992px) {
+  .snap-card-container {
+    height: 100%;
+  }
+}
+
+@media (min-width: 992px) {
   .nav-container {
     margin-left: 8px;
   }
-  .card {
-    max-width: 14rem;
-    top: 40%;
+  .snap-card {
+    max-width: 16rem;
+    top: 5%;
   }
-  .info-row {
-    width: 100%;
-  }
-  .main-row {
-    width: 100%;
-  }
-}
-
-@media (min-width: 1200px) and (max-width: 1723px) {
-  .nav-container {
-    margin-left: 10%;
-  }
-  .info-row {
-    width: 100%;
-  }
-  .main-row {
-    width: 100%;
+  .snap-title-container {
+    max-width: 30%;
+    max-height: 30%;
+    left: 65%;
+    top: 50%;
   }
 }
 
-@media (min-width: 1723px) {
+@media (min-width: 1200px) and (max-width: 1362px) {
+  .netflix-card {
+    max-width: 40rem;
+  }
+}
+
+@media (min-width: 1400px) {
+  .snap-title-container {
+    max-width: 30%;
+    max-height: 30%;
+    left: 60%;
+    top: 65%;
+  }
   .nav-container {
     margin-left: 10.5%;
   }
-  .info-row {
-    width: 80%;
-  }
-  .main-row {
-    width: 80%;
+  .info-content-container {
+    width: 90%;
   }
 }
 /*# sourceMappingURL=styles.css.map */

@@ -26,7 +26,7 @@ SECRET_KEY = config['SECRET_KEY']#'django-insecure-^94*5)38$si$6()v4ow38*u43rr9u
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = config['DEBUG']#True
 
-ALLOWED_HOSTS = ['www.raman-dev.com','localhost']
+ALLOWED_HOSTS = ['www.raman-dev.com','localhost','172.18.226.209']
 
 
 # Application definition
