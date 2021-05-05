@@ -1,4 +1,3 @@
 db.sqlite3
 *.sh
-*.scss
 add_project.py
