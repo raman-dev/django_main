@@ -1,449 +1,91 @@
 <html>
 
 <head>
-    <!-- Required meta tags -->
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-eOJMYsd53ii+scO/bJGFsiCZc+5NDVN2yr8+0RDqr0Ql0h+rP48ckxlpbzKgwra6" crossorigin="anonymous">
     {% load static %}
-    <link href="{% static 'css/styles.css' %}" type="text/css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-wEmeIV1mKuiNpC+IOBjI7aAzPcEZeedi5yW5f2yOq55WWLwNGmvvx4Um1vskeMj0" crossorigin="anonymous">
+    <link href="{% static 'css/styles.css' %}" rel="stylesheet">
+
     <title>
-        Hello World!
+        raman-dev
     </title>
+
 </head>
 
 <body>
-    <nav class="material-shadow-1 navbar navbar-expand-md navbar-light">
-        <div class="nav-container container-fluid">
-            <a class="mr-4 px-2 navbar-brand pt-0" style="transform: scale(1.25);">raman-dev</a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarMain"
-                aria-controls="navbarMain" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
+    <div class="d-flex container-fluid h-100">
 
-            <div class="collapse navbar-collapse" id="navbarMain">
-                <ul class="navbar-nav">
-                    <li class="nav-item">
-                        <a id="snap-link" class="nav-link active">
-                            snapchat clone
-                            <div class="underline-effect" style="width: 100%;"></div>
-                        </a>
-                    </li>
-                    <li class="nav-item">
-                        <a id="netflix-link" class="nav-link">netflix clone
-                            <div class="underline-effect"></div>
-                        </a>
-                    </li>
-                    <li class="nav-item">
-                        <a id="canny-link" class="nav-link">
-                            canny edge detector
-                            <div class="underline-effect"></div>
-                        </a>
-                    </li>
-                </ul>
-            </div>
-
-        </div>
-    </nav>
-
-    <div class="material-shadow-3 mx-0 px-0 main-container container-fluid h-100">
-        <div class="main-row d-flex flex-nowrap">
-            <div data-index="0" data-top="True" class="project-container" style="z-index: 102;">
-                <div class="snap-container container-fluid h-100">
-                    <div class="row h-100">
-                        <div class="snap-card-container">
-                             <div class="p-0 snap-card card camera-card material-shadow-2" style="left: 15%; ">
-                                <img class="rounded-2 img-fluid" src="{% static 'screenshots/snapchat_clone/camera.png' %}">
-                            </div>
-                            
-                            <div class="p-0 snap-card card search-card material-shadow-2" style="left: 20%; ">
-                                <img class="rounded-2 img-fluid" src="{% static 'screenshots/snapchat_clone/search.png' %}">
-                            </div>
-        
-                            <div class="p-0 snap-card card chat-card material-shadow-2" style="left: 25%; ">
-                                <img class="rounded-2 img-fluid" src="{% static 'screenshots/snapchat_clone/chat.png' %}">
-                            </div>
-        
-                            <div class="p-0 snap-card card signup-card material-shadow-2" style="left: 30%; ">
-                                <img class="rounded-2 img-fluid" src="{% static 'screenshots/snapchat_clone/signup.png' %}">
-                            </div>
-        
-                            <div class="p-0 snap-card card snap-login-card material-shadow-2" style="left: 35%; ">
-                                <img class="rounded-2 img-fluid" src="{% static 'screenshots/snapchat_clone/login.png' %}">
-                            </div> 
-
-                            <div class="snap-title-container">
-                                <div class="text-end" style="z-index: 4000;">
-                                    <h1 class="display-3 mr-0">snapchat clone</h1>
-                                    <p class="lead " style="color: white;">Emulate basic snapchat functionality. Implements
-                                        login,
-                                        signup, messaging and image capture and sending.</p>
-                                </div>
-                            </div>
-                           
-                        </div>
-                    </div>
-
-
-                </div>
-            </div>
-
-            <div data-index="1" data-top="False" class="project-container " style="visibility: hidden; z-index: 100;">
-                <div class="netflix-container d-flex flex-column">
-
-                    <div class="netflix-row">
-
-                        <div class="m-2 p-0 card index-card netflix-card material-shadow-2"
-                            style="left: 15%; top: 20%;z-index: 2;">
-                            <img class="rounded-2 img-fluid"
-                                src="{% static 'screenshots/netflix_clone/screenshot_1.png' %}">
-                        </div>
-                        <div class="m-2 p-0 card player-card netflix-card material-shadow-2"
-                            style="left: 25%; top: 10%; z-index:1 ;">
-                            <img class="rounded-2 img-fluid"
-                                src="{% static 'screenshots/netflix_clone/screenshot_2.png' %}">
-                        </div>
-                        <div class="m-2 p-0 card netflix-login-card netflix-card material-shadow-2"
-                            style="left: 40%; z-index: 0;">
-                            <img class="rounded-2 img-fluid"
-                                src="{% static 'screenshots/netflix_clone/screenshot_0.png' %}">
-                        </div>
-
-                    </div>
-
-
-                    <div class="carousel-caption text-end" style="z-index: 4000;">
-                        <h1 class="display-4">netflix clone</h1>
-                        <p class="lead">Some representative placeholder content for the second slide of the carousel.
-                        </p>
-                        <p><a class="btn btn-lg btn-primary" href="#">Visit</a></p>
-                    </div>
-
-                </div>
-
-            </div>
-            <div data-index="2" data-top="False" class="project-container" style="visibility: hidden; z-index: 100;">
-                <div class="canny-container">
-                    <div class="carousel-caption text-start">
-                        <h1 class="display-3">canny edge detector</h1>
-                        <p class="lead">Some representative placeholder content for the third slide of this carousel.
-                        </p>
-                        <p><a class=""
-                                href="https://play.google.com/store/apps/details?id=com.ramandeep.cannyedgedetector"
-                                style="color: white;">download here.</a></p>
-                    </div>
-                </div>
-            </div> 
-        </div>
         <!--
-            need to fade out last row and then fade back in
+                create a list of links to the websites
         -->
-        {% include "main_app/info_row.html" %}
-        
-    </div>
 
+        <div class="project-link-container container-fluid d-flex justify-content-center">
+
+            <div class="project-links d-flex flex-column">
+                <h2 class="display-4" style="width: fit-content; text-decoration: underline; margin-bottom: 32px;">
+                    sample projects
+                </h2>
+                <a href="#" class="link-highlight">
+                    <p class="fs-2 p-0 m-0">./netflix_clone</p>
+                </a>
+                <a href="#" class="link-highlight">
+                    <p class="fs-2 p-0 m-0">./canny_edge_detector</p>
+                </a>
+                <a href="#" class="link-highlight">
+                    <p class="fs-2 p-0 m-0">./snapchat_clone</p>
+                </a>
+            </div>
+            <h1 class="display-5 mt-auto" style="margin-left: auto; margin-right: 32px; margin-bottom: 32px;">
+                raman-dev
+            </h1>
+        </div>
+
+
+
+
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-p34f1UUtsS3wqzfto5wAAmdvj+osOnFyQFpp4Ua3gs/ZVWx6oOypYoCJhGGScy+8"
+        crossorigin="anonymous"></script>
     <script src="https://code.jquery.com/jquery-3.6.0.js"
         integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-JEW9xMcG8R+pH31jmWH6WWP0WintQrMb4s7ZOdauHnUtxwoG2vI5DkLtS3qm9Ekf"
-        crossorigin="anonymous"></script>
+
     <script>
-        //
-        const BOTTOM_Z_INDEX = 100;
-        const MID_Z_INDEX = 101;
-        const STACK_TOP_Z_INDEX = 102;
-        var PROJECT_SLIDE_DURATION = 0.6;
+        var mobileMediaQuery = window.matchMedia("(max-width: 992px)");
+        var mobileMediaFunction = (event) => {
+            if(event.matches) {
+                let h2 = $('h2');
+                h2.removeClass('display-4');
+                h2.addClass('display-1');
 
-        var isTransitioning = false;
-        var startProjectContentTransition = false;
-        var previousContainerWidth = null;
-
-        const SLIDE_IN_HORIZONTAL = 1;
-        const SLIDE_IN_VERTICAL = 2;
-
-        const LEFT = -1;
-        const RIGHT = 1;
-        const TOP = 2;
-        const BOTTOM = -2;
-
-        var snapLoginSlide = null;
-        var cameraCardSlide = null;
-        var searchCardSlide = null;
-        var chatCardSlide = null;
-        var signupSlide = null;
-
-        var indexSlide = null;
-        var playerSlide = null;
-        var netflixLoginSlide = null;
-
-        var background_color = 'lightseagreen';
-
-        function slideToProject(event, id, linkIndex) {
-            //prevent another transition while transitioning
-            if (isTransitioning) {
-                return;
+                let p = $('p');
+                p.removeClass('fs-2');
+                p.addClass('fs-1');
             }
-            //check if currently active also current link
-            if ($('a.active').attr('id') == $(event.currentTarget).attr('id')) {
-                return;
+        };
+        var notMobileMediaQuery = window.matchMedia("(min-width: 769px)");
+        var notMobileMediaFunction = (event) => {
+
+            if(event.matches){
+                let h2 = $('h2');
+                h2.removeClass('display-1');
+                h2.addClass('display-4');
+
+                let p = $('p');
+                p.removeClass('fs-1');
+                p.addClass('fs-2');
             }
+            
+        };
+        mobileMediaQuery.addEventListener('change', mobileMediaFunction);
+        notMobileMediaQuery.addEventListener('change',notMobileMediaFunction);
 
-            $('.main-container').css({'background-color':background_color});
-            $('.info-row').css({'background-color':background_color});
-            $('.info-content-container').css({'background-color':background_color});
-
-            isTransitioning = true;
-            startProjectContentTransition = true;
-
-
-            let oldActive = $('a.active');
-            oldActive.removeClass('active');
-            oldActive.children('.underline-effect').css({ 'width': '0%' });
-
-            let newActive = $(event.currentTarget);
-            newActive.addClass('active');
-            //collapse navbar if open
-            let oldTopContainer = $('.project-container[data-top="True"]');
-            oldTopContainer.css({
-                'z-index': MID_Z_INDEX
-            });
-            oldTopContainer.attr('data-top', "False");
-
-            prepareContainerContentSlideTransitions(linkIndex);
-            //then prepare the new container
-            //
-            let newTopContainer = $('.project-container[data-index="' + linkIndex + '"');
-            //  
-            newTopContainer.attr('data-top', "True");
-            newTopContainer.css({
-                'transition-duration': PROJECT_SLIDE_DURATION + 's',
-                'z-index': STACK_TOP_Z_INDEX,
-                'visibility': 'visible',
-                'transform': 'translateX(0px)',
-            });
-            //i can set each project container to initially be -width
-            let listElement = $('a.list-group-item[data-index="' + linkIndex + '"]')[0];
-            let tab = new bootstrap.Tab(listElement);
-            tab.show();
-        }
-
-        $(document).ready(() => {
-            cameraCardSlide = new SlideInAnimation('.camera-card','.snap-card-container',BOTTOM);
-            searchCardSlide = new SlideInAnimation('.search-card','.snap-card-container',TOP);
-            chatCardSlide = new SlideInAnimation('.chat-card','.snap-card-container',BOTTOM);
-            signupSlide = new SlideInAnimation('.signup-card','.snap-card-container',TOP);
-            snapLoginSlide = new SlideInAnimation('.snap-login-card','.snap-card-container',LEFT);
-
-            indexSlide = new SlideInAnimation('.index-card','.netflix-container',LEFT);
-            playerSlide = new SlideInAnimation('.player-card','.netflix-container',BOTTOM);
-            netflixLoginSlide = new SlideInAnimation('.netflix-login-card','.netflix-container',RIGHT);
-
-            $('#snap-link').on('click', (event) => {
-                //console.log('scroll snap-project into view');
-                background_color = 'lightseagreen';
-                slideToProject(event, '.snap-project', 0);
-            });
-            $('#netflix-link').on('click', (event) => {
-                background_color = 'lightsalmon';
-                //console.log('scroll netflix-project into view');
-                slideToProject(event, '.netflix-project', 1);
-            });
-            $('#canny-link').on('click', (event) => {
-                background_color = 'lightslategray';
-                //console.log('scroll canny-project into view');
-                slideToProject(event, '.canny-project', 2);
-            });
-            //make left position a function of the percentage of visibility
-            //of the cards not on the top of the stack
-            //move containers left that are not on top
-            $('.project-container[data-top="False"]').each((index, element) => {
-                let container = $(element);
-                container.css({
-                    'transform': 'translateX(' + (-container.outerWidth()) + 'px)',
-                });
-            });
-
-            $('.project-container').on('transitionstart', (event) => {
-                if ($(event.currentTarget).attr('data-top') == "True" && startProjectContentTransition) {
-                    //this gets called once per child transition?
-                    let index = parseInt($(event.currentTarget).attr('data-index'));
-                    if (index == 0) {
-                        triggerSnapContentTransitions();
-                    } else if (index == 1) {
-                        triggerNetflixContentTransitions();
-                    }
-                    startProjectContentTransition = false;
-                }
-            });
-
-            $('.project-container').on('transitionend', (event) => {
-                //all other containers that are not stack top need to be set to invisible
-                //all but current container needs ot now be invisble and have a lower stack indexs
-                //set all but stack top to invisible
-                ///ignore the transition trigger by changing the invisible container
-                if ($(event.currentTarget).attr('data-top') == "True" && isTransitioning) {
-                    //transition cards back into container if 
-                    //when new top is done slideing over then set both cards to invisible
-                    //and left shifted so they are ready to be slid over
-                    $('.project-container[data-top="False"]').each((index, element) => {
-                        var width = $(element).outerWidth();
-                        $(element).css({
-                            'transition-duration': '0s',
-                            'visibility': 'hidden',
-                            'transform': 'translateX(' + (-width) + 'px)',
-                            'z-index': 100,
-                        });
-                    });
-                    isTransitioning = false;
-                    previousContainerWidth = $(event.currentTarget).outerWidth();
-                }
-            });
+        $(document).ready(()=>{
+            mobileMediaFunction(mobileMediaQuery);
+            notMobileMediaFunction(notMobileMediaQuery);
         });
         
-        class SlideInAnimation {
-            //direction to slide in from
-            constructor(selector, parentSelector,direction) {
-                this.parentSelector = parentSelector;
-                this.selector = selector;
-                this.direction = direction;
-                if(this.direction == LEFT || this.direction == RIGHT){
-                    this.orientation = SLIDE_IN_HORIZONTAL;
-                }else{
-                    this.orientation = SLIDE_IN_VERTICAL;
-                }
-                this.isRunning = false;
-                this.isPreparation = false;
-                //add a transition start and end handler
-                this.transitionStartHandler = (event)=>{
-                    if(this.isRunning){
-                        //
-                        if(!this.isPreparation){
-                            //console.log(this.selector+' slide transitionstart');
-                        }
-                    }
-                };
-                this.transitionEndHandler = (event)=>{
-                    if(this.isRunning){
-                        if(!this.isPreparation){
-                           // console.log(this.selector+' slide transitionend');
-                        }
-                        this.isRunning = false;
-                    }
-                };
-
-                $(this.selector).on('transitionstart',this.transitionStartHandler);
-                $(this.selector).on('transitionend',this.transitionEndHandler);
-            }
-
-            prepareAnimation(opacity) {
-                //if slide in from left or right 
-                //
-                //depending on the direction 
-                //and orientation 
-                let translation = 'px)';
-                if(this.direction == LEFT){
-                    //needs to be offscreen on the left side of parent
-                    //to slide in from left
-                    translation = 'translateX(' + (-$(this.selector).outerWidth()) + translation;
-                }else if(this.direction == RIGHT){
-                    //grab the 
-                    translation = 'translateX(' + $(this.parentSelector).outerWidth() + translation;
-                }else if(this.direction == TOP){
-                    translation = 'translateY(' + (-$(this.selector).outerHeight()) + translation;
-                }else{
-                    translation = 'translateY(' + $(this.parentSelector).outerHeight() + translation;
-                }
-                
-                this.isRunning = true;
-                this.isPreparation = true;
-                let base_opacity = 0;
-                if(opacity != null){
-                    base_opacity = opacity;
-                }
-                $(this.selector).css({
-                    'transition-delay': '0s',
-                    'transition-duration':'0s',
-                    'transform': translation,
-                    'opacity': base_opacity,
-                });
-            }
-
-            //includes opacity 100
-            triggerSlideIn(delay, duration) {
-                this.isRunning = true;
-                this.isPreparation = false;
-                let translation = 'translateY(0px)';//default up or down
-                if (this.orientation == SLIDE_IN_HORIZONTAL) {
-                    translation = 'translateX(0px)';
-                }
-                $(this.selector).css({
-                    'transition-delay': delay,
-                    'transition-duration': duration,
-                    'transform': translation,
-                    'opacity': 100
-                });
-            }
-        }
-
-        function prepareContainerContentSlideTransitions(linkIndex) {
-            if (linkIndex == 0) {
-                //for every visible card
-                //animate card entrance into container
-                //animate means set the card to the correct top and left values so that
-                //the transition property will animate the cards into their respective positions
-                //now this animation should only ever happen when switching to the snap container
-                //not away 
-                //when snap link is clicked we need to know our final positions so we can set them
-                //as soon as we want to trigger the animation
-                //i can prepare the animation here and trigger the animation 
-                //in the transitionend state 
-                //so move all visible cards offscreen
-                //since cards are in unique positions 
-                //it is better to query
-                //cards are identical
-                //call on their own instead of loop for granularity and clarity
-                let base_opacity = 5;
-                cameraCardSlide.prepareAnimation(base_opacity);
-                searchCardSlide.prepareAnimation(base_opacity);
-                chatCardSlide.prepareAnimation(base_opacity);
-                signupSlide.prepareAnimation(base_opacity);
-                snapLoginSlide.prepareAnimation(base_opacity);
-            }
-            else if (linkIndex == 1) {
-                //prepare netflixcontainertransition
-                //move shit off screen
-
-                indexSlide.prepareAnimation();
-                playerSlide.prepareAnimation();
-                netflixLoginSlide.prepareAnimation();
-            }
-        }   
-
-        function triggerNetflixContentTransitions() {
-            let netflixCardTransitionDuration = '0.6s';
-
-            indexSlide.triggerSlideIn('0s',netflixCardTransitionDuration);
-            playerSlide.triggerSlideIn('0s',netflixCardTransitionDuration);
-            netflixLoginSlide.triggerSlideIn('0.2s',netflixCardTransitionDuration);
-        }
-
-        function triggerSnapContentTransitions() {
-            let snapCardTransitionDuration = '0.6s';
-
-            snapLoginSlide.triggerSlideIn('0.1s',snapCardTransitionDuration);
-            signupSlide.triggerSlideIn('0.1s', snapCardTransitionDuration);
-            searchCardSlide.triggerSlideIn('0.2s', snapCardTransitionDuration);
-            chatCardSlide.triggerSlideIn('0.2s', snapCardTransitionDuration);
-            cameraCardSlide.triggerSlideIn('0.3s', snapCardTransitionDuration);
-
-        }
-
-
-
     </script>
-    <script src="{% static 'js/underline_effect.js' %}"></script>
 
 </body>
 
