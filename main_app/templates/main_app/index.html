@@ -1,9 +1,10 @@
 <!doctype html>
-<html>
+<html lang="en">
+
 <head>
-<!-- Required meta tags -->
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
 
 
     {% load static %}
@@ -27,26 +28,60 @@
         <div class="project-link-container container-fluid d-flex justify-content-center">
 
             <div class="project-links d-flex flex-column">
-                <h2 class="mx-auto" style="width: fit-content; text-decoration: underline; margin-bottom: 32px;">
+                <h2 class="display-5 mx-auto" style="width: fit-content; text-decoration: underline; margin-bottom: 16px;">
                     sample projects
                 </h2>
-                <a href="#" class="link-highlight">
-                    <p class="fs-2 p-0 m-0">./netflix_clone</p>
+                <a href="/notflix" class="link-highlight">
+                    <p class="fs-3 p-0 m-0">./netflix_clone</p>
                 </a>
-                <a href="#" class="link-highlight">
-                    <p class="fs-2 p-0 m-0">./canny_edge_detector</p>
+                <div class="divider">
+                </div>
+                <!--
+                    https://play.google.com/store/apps/details?id=com.ramandeep.cannyedgedetector
+                -->
+                <a class="btn link-highlight" data-bs-toggle="collapse" href="#collapseExample" role="button"
+                aria-expanded="false" aria-controls="collapseExample">
+                    <p class="fs-3 p-0 m-0">./canny_edge_detector</p>
                 </a>
+                <div class="collapse" id="collapseExample">
+                    <div class="card">
+                        <a class="demo-link btn" data-bs-toggle="collapse" href="#canny_demo_collapse" role="button" aria-expanded="false" aria-controls="canny_demo_collapse">
+                            <p class="sub-link fs-5">demo video</p>
+                        </a>
+                        <div class="collapse" id="canny_demo_collapse">
+                            <div class="video-card" style="background-color: transparent;">
+                                <p>Note: edge detection quality is degraded because due to non-native resolution.</p>
+                                <video autoplay loop muted preload="true" class="container-fluid mw-100 mh-100">
+                                    <source src="{% static 'demos/canny_edge_detector_demo.mp4' %}">
+                                </video> 
+                            </div>
+                        </div>
+                        <a class="demo-link" href="https://play.google.com/store/apps/details?id=com.ramandeep.cannyedgedetector">
+                            <p class="sub-link fs-5 m-0 p-0">download link</p>
+                        </a>
+                        
+                    </div>
+                </div>
+
+                <div class="divider">
+                </div>
+                
                 <a href="#" class="link-highlight">
-                    <p class="fs-2 p-0 m-0">./snapchat_clone</p>
+                    <p class="fs-3 p-0 m-0">./snapchat_clone</p>
                 </a>
+
+                <!-- <p>
+                    <a class="btn btn-primary" data-bs-toggle="collapse" href="#collapseExample" role="button"
+                        aria-expanded="false" aria-controls="collapseExample">
+                        Link with href
+                    </a>
+                </p> -->
             </div>
-            <h3 class="display-5 mt-auto" style="margin-left: auto; margin-right: 16px; margin-bottom: 32px;">
+
+            <h3 class="display-6" style="margin-right: auto;">
                 raman-dev
             </h3>
         </div>
-
-
-
 
     </div>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"
@@ -58,38 +93,51 @@
     <script>
         var mobileMediaQuery = window.matchMedia("(max-width: 992px)");
         var mobileMediaFunction = (event) => {
-            if(event.matches) {
+            if (event.matches) {
                 let h2 = $('h2');
-                h2.removeClass('display-4');
-                h2.addClass('display-3');
+                h2.removeClass('display-5');
+                h2.addClass('display-4');
 
                 let p = $('p');
-                p.removeClass('fs-2');
-                p.addClass('fs-1');
+                p.removeClass('fs-3');
+                p.addClass('fs-2');
+
+                let sub_link = $('.sub-link');
+                sub_link.removeClass('fs-5');
+                sub_link.addClass('fs-4');
             }
         };
         var notMobileMediaQuery = window.matchMedia("(min-width: 769px)");
         var notMobileMediaFunction = (event) => {
 
-            if(event.matches){
+            if (event.matches) {
                 let h2 = $('h2');
-                h2.removeClass('display-3');
-                h2.addClass('display-4');
+                h2.removeClass('display-4');
+                h2.addClass('display-5');
 
                 let p = $('p');
-                p.removeClass('fs-1');
-                p.addClass('fs-2');
-            }
-            
-        };
-         mobileMediaQuery.addEventListener('change', mobileMediaFunction);
-         notMobileMediaQuery.addEventListener('change',notMobileMediaFunction);
+                p.removeClass('fs-2');
+                p.addClass('fs-3');
 
-        $(document).ready(()=>{
-             mobileMediaFunction(mobileMediaQuery);
-             notMobileMediaFunction(notMobileMediaQuery);
+                let sub_link = $('.sub-link');
+                sub_link.removeClass('fs-4');
+                sub_link.addClass('fs-5');
+                
+            }
+
+        };
+        mobileMediaQuery.addEventListener('change', mobileMediaFunction);
+        notMobileMediaQuery.addEventListener('change', notMobileMediaFunction);
+
+        //demo-video .on collapsed set play to stop
+        //on expand play
+
+
+        $(document).ready(() => {
+            mobileMediaFunction(mobileMediaQuery);
+            notMobileMediaFunction(notMobileMediaQuery);
         });
-        
+
     </script>
 
 </body>

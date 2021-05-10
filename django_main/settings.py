@@ -26,13 +26,14 @@ SECRET_KEY = config['SECRET_KEY']#'django-insecure-^94*5)38$si$6()v4ow38*u43rr9u
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = config['DEBUG']#True
 
-ALLOWED_HOSTS = ['www.raman-dev.com','localhost','172.18.226.209']
+ALLOWED_HOSTS = ['www.raman-dev.com','localhost']
 
 
 # Application definition
 
 INSTALLED_APPS = [
     'main_app.apps.MainAppConfig',
+    'notflix.apps.NotflixConfig',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -118,7 +119,7 @@ USE_TZ = True
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/3.2/howto/static-files/
-
+STATIC_ROOT='static'
 STATIC_URL = '/static/'
 
 # Default primary key field type

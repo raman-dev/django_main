@@ -1,0 +1,89 @@
+.modal-custom {
+  z-index: 10000;
+  position: absolute;
+  visibility: hidden;
+  -webkit-transition: -webkit-transform 0.3s, -webkit-box-shadow 0.3s;
+  transition: -webkit-transform 0.3s, -webkit-box-shadow 0.3s;
+  transition: transform 0.3s, box-shadow 0.3s;
+  transition: transform 0.3s, box-shadow 0.3s, -webkit-transform 0.3s, -webkit-box-shadow 0.3s;
+  background-color: transparent;
+  border-radius: 8px 8px 8px 8px;
+}
+
+.modal-custom .modal-video-container {
+  z-index: 10002;
+  max-width: 304px;
+  max-height: 171px;
+  border-radius: 8px 8px 0px 0px;
+}
+
+.modal-custom .modal-video-container .modal-poster {
+  position: absolute;
+  -webkit-transition: opacity 0.3s;
+  transition: opacity 0.3s;
+  border-radius: 8px 8px 0px 0px;
+}
+
+.modal-custom .modal-video-container .modal-video {
+  border-radius: 8px 8px 0px 0px;
+}
+
+.modal-custom .modal-custom-footer {
+  margin-top: -2px;
+  -webkit-transition: opacity 0.2s;
+  transition: opacity 0.2s;
+  background-color: #222222;
+  border-color: #222222;
+  border-radius: 0px 0px 8px 8px;
+  z-index: 10001;
+}
+
+.modal-scale-down {
+  -webkit-transition: -webkit-transform 0.2s;
+  transition: -webkit-transform 0.2s;
+  transition: transform 0.2s;
+  transition: transform 0.2s, -webkit-transform 0.2s;
+}
+
+.modal-button {
+  width: 36px;
+  height: 36px;
+}
+
+.modal-play-button svg {
+  -webkit-transform: scale(0.4);
+          transform: scale(0.4);
+}
+
+.modal-upvote-button {
+  border-width: 2px;
+  border-color: #777777;
+}
+
+.modal-downvote-button {
+  border-width: 2px;
+  border-color: #777777;
+}
+
+.modal-upvote-button svg {
+  -webkit-transform: scale(0.6);
+          transform: scale(0.6);
+}
+
+.modal-upvote-button:hover {
+  border-color: white;
+}
+
+.modal-downvote-button svg {
+  -webkit-transform: scale(0.6);
+          transform: scale(0.6);
+}
+
+.modal-downvote-button:hover {
+  border-color: white;
+}
+
+.custom-card {
+  cursor: pointer;
+}
+/*# sourceMappingURL=modal.css.map */

@@ -1,0 +1,45 @@
+$modal-container-height: 480px;
+$modal-container-width: 320px;
+html, body {
+  height: 100%;
+  background-color: rgb(70, 70, 70);
+}
+
+label {
+  color: white;
+}
+
+@mixin modal-theme {
+  background-color: #323232;
+  min-height: $modal-container-height;
+  min-width: $modal-container-width;
+  max-width: $modal-container-width;
+  margin:auto;
+}
+
+.login-container {
+  @include modal-theme;
+
+    .signup-link:hover {
+      cursor: pointer;
+      text-decoration-color: white;
+      transform: scale(1.05);
+    }
+  
+}
+
+.signup-container {
+  @include modal-theme;
+
+  .login-return-link{
+    color: white;
+  }
+  .login-return-link:hover {
+    cursor: pointer;
+    text-decoration-color: white;
+    transform: scale(1.05);
+
+  }
+}
+
+

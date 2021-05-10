@@ -1,0 +1,79 @@
+$modalBackgroundColor: #222222;
+
+.modal-custom {
+  z-index: 10000;
+  position: absolute;
+  visibility: hidden;
+  transition: transform 0.3s, box-shadow 0.3s; //, opacity 0s;
+  background-color: transparent;
+  border-radius: 8px 8px 8px 8px;
+
+  .modal-video-container {
+    z-index: 10002;
+    max-width: 304px;
+    max-height: 171px;
+    border-radius: 8px 8px 0px 0px;
+    
+    .modal-poster {
+      position: absolute;
+      transition: opacity 0.3s;
+      border-radius: 8px 8px 0px 0px;
+    }
+
+    .modal-video {
+      border-radius: 8px 8px 0px 0px;
+    }
+  }
+
+  .modal-custom-footer {
+    margin-top: -2px;
+    transition: opacity 0.2s;
+    background-color: $modalBackgroundColor;
+    border-color: $modalBackgroundColor;
+    border-radius: 0px 0px 8px 8px;
+    z-index: 10001;
+  }
+}
+
+.modal-scale-down {
+  transition: transform 0.2s;
+}
+
+.modal-button {
+  width: 36px;
+  height: 36px;
+}
+
+.modal-play-button svg {
+  transform: scale(0.4);
+}
+
+.modal-upvote-button {
+  border-width: 2px;
+  border-color: #777777;
+}
+
+.modal-downvote-button {
+  border-width: 2px;
+  border-color: #777777;
+}
+
+.modal-upvote-button svg {
+  transform: scale(0.6);
+}
+
+.modal-upvote-button:hover {
+  border-color: white;
+}
+
+.modal-downvote-button svg {
+  transform: scale(0.6);
+}
+
+.modal-downvote-button:hover {
+  border-color: white;
+}
+
+.custom-card {
+  cursor: pointer;
+}

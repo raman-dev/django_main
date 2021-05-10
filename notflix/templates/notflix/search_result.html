@@ -1,0 +1,46 @@
+{% extends "notflix/base.html" %}
+{% block content %}
+{% load static %}
+{% load custom_tags %}
+<div class="search-result-container container-fluid ">
+    <div class="row search-result-message">
+        <div class="col-12">
+            <h2>
+                Search results for '{{ query_string }}'
+            </h2>
+            <div class="srm-underline w-100">
+            </div>
+        </div>
+
+    </div>
+
+    <!--
+        list of matches 
+    -->
+    {% for watchable in watchables %}
+    <div class="result-row d-flex flex-row my-2" style="color:white;">
+        <img class="rounded result-thumbnail" src="{% static  watchable.thumbnail_url %}" />
+        <div class="pl-2 d-flex flex-column">
+            <a class="result-title" href="/watch/{{ watchable.type }}/{{ watchable.pk }}">
+                <h4>
+                    {{ watchable.title }}
+                </h4>
+            </a>
+
+            <p class="align-self-bottom">
+                Release: {{ watchable.year }}<br />
+                Genre: {{ watchable.genre }}<br />
+                {% if watchable.type == 'movie' %}
+                Runtime {{ watchable.runtime|readable_runtime}}s
+                {% else %}
+                Seasons 1
+                {% endif %}
+            </p>
+        </div>
+    </div>
+    <div class="row-underline">
+
+    </div>
+    {% endfor %}
+</div>
+{% endblock %}

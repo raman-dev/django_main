@@ -1,0 +1,45 @@
+html, body {
+  height: 100%;
+  background-color: #464646;
+}
+
+label {
+  color: white;
+}
+
+.login-container {
+  background-color: #323232;
+  min-height: 480px;
+  min-width: 320px;
+  max-width: 320px;
+  margin: auto;
+}
+
+.login-container .signup-link:hover {
+  cursor: pointer;
+  -webkit-text-decoration-color: white;
+          text-decoration-color: white;
+  -webkit-transform: scale(1.05);
+          transform: scale(1.05);
+}
+
+.signup-container {
+  background-color: #323232;
+  min-height: 480px;
+  min-width: 320px;
+  max-width: 320px;
+  margin: auto;
+}
+
+.signup-container .login-return-link {
+  color: white;
+}
+
+.signup-container .login-return-link:hover {
+  cursor: pointer;
+  -webkit-text-decoration-color: white;
+          text-decoration-color: white;
+  -webkit-transform: scale(1.05);
+          transform: scale(1.05);
+}
+/*# sourceMappingURL=auth.css.map */

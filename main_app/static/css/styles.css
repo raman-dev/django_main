@@ -21,14 +21,18 @@ body {
   background-color: rgba(0, 0, 0, 0.9);
 }
 
+.demo-link:hover {
+  text-decoration: underline;
+}
+
 .link-highlight {
   position: relative;
   text-decoration: none;
   display: inline-block;
   color: black;
   padding: 0 1px;
-  -webkit-transition: color ease 0.3s;
-  transition: color ease 0.3s;
+  -webkit-transition: color ease 0.1s;
+  transition: color ease 0.1s;
 }
 
 .link-highlight::after {
@@ -66,7 +70,7 @@ body {
   height: -webkit-fit-content;
   height: -moz-fit-content;
   height: fit-content;
-  top: 25%;
+  top: 20%;
 }
 
 .project-links a {
@@ -76,5 +80,57 @@ body {
   margin-top: 8px;
   margin-bottom: 8px;
   color: black;
+}
+
+.divider {
+  height: 2px;
+  width: 100%;
+  margin-left: 4px;
+  margin-right: 4px;
+  margin-top: 4px;
+  margin-bottom: 4px;
+  background-color: lightgrey;
+}
+
+@media (max-width: 576px) {
+  .project-links {
+    width: 92%;
+  }
+}
+
+@media (min-width: 576px) {
+  .project-links {
+    width: 74.5%;
+  }
+}
+
+@media (min-width: 768px) {
+  .project-links {
+    width: 55%;
+  }
+}
+
+@media (min-width: 992px) {
+  .project-links {
+    width: 50%;
+  }
+}
+
+@media (min-width: 1200px) {
+  .project-links {
+    width: 37.5%;
+  }
+}
+
+@media (min-width: 1400px) {
+  .project-links {
+    width: 32.5%;
+  }
+}
+
+@media (min-width: 1752px) {
+  .project-links {
+    width: 24.5%;
+  }
 }
 /*# sourceMappingURL=styles.css.map */

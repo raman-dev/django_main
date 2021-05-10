@@ -44,13 +44,17 @@ body{
     background-color: rgba(0, 0, 0, 0.9);
 }
 
+.demo-link:hover{
+    text-decoration: underline;
+}
+
 .link-highlight {
     position: relative;
     text-decoration: none;
     display: inline-block;
     color: black;
     padding: 0 1px;
-    transition: color ease 0.3s;
+    transition: color ease 0.1s;
     
     &::after {
       content: '';
@@ -83,7 +87,7 @@ body{
 .project-links {
     position: absolute;
     @include wrap-content();
-    top: 25%;
+    top: 20%;
     a {
         @include mx-auto();
         text-decoration: none;
@@ -93,7 +97,59 @@ body{
     }
 }
 
+.divider{
+    height: 2px;
+    width: 100%;
+    margin-left: 4px;
+    margin-right: 4px;
+    margin-top: 4px;
+    margin-bottom: 4px;
+    background-color: lightgrey;
+}
 
-// @media (max-width: 768px) {
-//     //need to increase the size of stuff everything looks really small
-// }
+@media (max-width: 576px){
+    .project-links{
+        width:92%;
+    }
+}
+
+@media(min-width: 576px){
+    .project-links{
+        width: 74.5%;
+    }
+}
+
+@media (min-width: 768px){
+    .project-links{
+        width: 55%;
+    }
+}
+
+
+@media (min-width: 992px){
+    .project-links{
+        width: 50%;
+    }
+}
+
+@media (min-width: 1200px){
+    .project-links{
+        width: 37.5%;
+    }
+}
+
+@media (min-width: 1400px){
+    .project-links{
+        width: 32.5%;
+    }
+}
+//atleast 1752 px
+@media(min-width: 1752px){
+    .project-links{
+        width: 24.5%;
+    }
+}
+
+
+
+

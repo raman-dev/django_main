@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <!-- Bootstrap CSS -->
+    {% load static %}
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@500&display=swap" rel="stylesheet">
+
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+        integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+    <link rel="stylesheet" href="{% static 'notflix/css/styles.css' %}" />
+    <link rel="stylesheet" href="{% static 'notflix/css/modal.css' %}" />
+    <link rel="stylesheet" href="{% static 'notflix/css/search_result.css' %}" />
+    <title>Notflix</title>
+</head>
+
+<body>
+    <!--img src="http://127.0.0.1:5820/thumbnails/avengers_2012.jpg" style="max-width:320px;max-height:240px;"/-->
+    {% load static %}
+    <nav class="navbar sticky-top fixed-top navbar-expand-lg navbar-dark border-0" style="background-color: #141414;">
+        <a class="navbar-brand" href="">
+            <img src="{% static 'notflix/notflix_brand_img.png' %}" />
+        </a>
+
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item active" id="home_link">
+                    <a class="nav-link" href="/">Home</a>
+                </li>
+                <li class="nav-item" id="tv_shows_link">
+                    <a class="nav-link" href="#">TV Shows</a>
+                </li>
+                <li class="nav-item" id="movies_link">
+                    <a class="nav-link" href="#">Movies</a>
+                </li>
+
+            </ul>
+            <div class="d-flex flex-row flex-nowrap align-items-center mr-2 logout-link-container">
+                <a class="logout-link" href="/notflix/logout" style="color:white; text-decoration: none;">
+                    Logout
+                </a>
+                <div class="ml-2 seperator">
+                </div>
+            </div>
+            
+            <form action="/search/" class="form-inline my-2 my-lg-0" method="get">
+                {% csrf_token %}
+                {{ search_form }}
+                <button class="search-button btn my-2 my-sm-0" type="submit">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="white" width="32px" height="32px">
+                        <path d="M0 0h24v24H0z" fill="none" />
+                        <path
+                            d="M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z" />
+                    </svg>
+                </button>
+            </form>
+        </div>
+    </nav>
+
+    <div class="main-container container-fluid ">
+        {% block content %}
+        {% endblock %}
+    </div>
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.5.1.js"
+        integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"
+        integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"
+        integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV"
+        crossorigin="anonymous"></script>
+    <script type="module" src="{% static "js/modal_manager.js" %}"></script>
+    <script type="module" src="{% static "js/nav.js" %}"></script>
+    <script src="{% static "js/scroll_row.js" %}"></script>
+    <script>
+        function setSeperatorHeight(media_query){
+            console.log('running query listener!');
+            if (!media_query.matches){
+                console.log('screen smaller than 992px')
+                $('.seperator').css({
+                    'opacity':0
+                });
+                //scss defined media query should handle this
+            }else{
+                console.log('screen larger than 992px');
+                var seperator_height = $('.logout-link').height() + 4 ;
+                $('.seperator').css({
+                    'height':seperator_height + "px",
+                    'opacity':100,
+                });
+            }
+        } 
+        //window smaller than 992 px our breakpoint
+        var windowSmaller_mediaQuery = window.matchMedia('(min-width: 992px)');
+        $(document).ready(()=>{
+            //set height of seperator
+            //to container height
+            //
+            setSeperatorHeight(windowSmaller_mediaQuery);//can be 0
+            windowSmaller_mediaQuery.addListener(setSeperatorHeight);
+        }); 
+    </script>
+</body>
+
+</html>

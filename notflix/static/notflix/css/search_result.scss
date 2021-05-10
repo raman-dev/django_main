@@ -1,0 +1,31 @@
+.search-result-message{
+    h2{
+        color: white;
+    }
+
+    .srm-underline{
+        background-color: #777777;
+        height: 1px;
+    }
+}
+
+.result-thumbnail{
+    max-width: 304px;
+    max-height: 171px;
+}
+
+.result-title{
+    color:white;
+    transition: transform 0.3s;
+}
+
+.result-title:hover{
+    color: whitesmoke;
+    text-decoration-color: white;
+}
+
+.row-underline{
+    background-color: #777777;
+    height: 1px;
+    width: 100%;
+}
