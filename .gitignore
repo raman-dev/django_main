@@ -2,3 +2,4 @@ db.sqlite3
 *.sh
 add_project.py
 *.mp4
+media

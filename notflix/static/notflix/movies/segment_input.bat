@@ -1,4 +1,0 @@
-ffmpeg -i  %1 -s 640x360 -c:v libx264 -b:v 560k -r 24 -x264opts keyint=48:min-keyint=48:no-scenecut -profile:v main -preset fast -movflags +faststart  -c:a aac -b:a 128k -ac 2 -max_muxing_queue_size 1024 %~n1-low.mp4 
-rem ffmpeg -i  %1 -s 960x540 -c:v libx264 -b:v 1260k -r 24 -x264opts keyint=48:min-keyint=48:no-scenecut -profile:v main -preset fast -movflags +faststart -max_muxing_queue_size 2048 -c:a aac -b:a 128k -ac 2 %~n1-med.mp4 
-rem ffmpeg -i  %1 -s 1280x720 -c:v libx264 -b:v 2240k -r 24 -x264opts keyint=48:min-keyint=48:no-scenecut -profile:v main -preset fast -movflags +faststart -max_muxing_queue_size 2048 -c:a aac -b:a 128k -ac 2 %~n1-high.mp4 
-rem ffmpeg -i  %1 -s 1920x1080 -c:v libx264 -b:v 5050k -r 24 -x264opts keyint=48:min-keyint=48:no-scenecut -profile:v main -preset fast -movflags +faststart -max_muxing_queue_size 2048 -c:a aac -b:a 128k -ac 2 %~n1-max.mp4 
