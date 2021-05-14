@@ -28,15 +28,24 @@
                 </h1>
                 <form  method="POST" action="/notflix/auth/signup">
                     {% csrf_token %}
-                    {% for field in signup_form %}
-                    <label class="mt-2 signup-form-label form-label" for="{{ field.auto_id }}">{{ field.label }}</label>
-                    {{ field }}
-                    {% endfor %}
-                    <div class="mt-4 d-flex flex-row justify-content-between align-items-center">
-                        <a href="/login" style="color:white; text-decoration-color: white;">
+                    <div class="d-flex flex-column email-container">
+                        <label class="{{ email_form.email.auto_id }} signup-form-label form-label" for="{{ email_form.email.auto_id }}">{{ email_form.email.label }}</label>
+                        {{ email_form.email }}
+                        <label class="{{ email_form.confirm_email.auto_id }} signup-form-label form-label" for="{{ email_form.confirm_email.auto_id }}">{{ email_form.confirm_email.label }}</label>
+                        {{ email_form.confirm_email }}
+                    </div>
+                    
+                    <div class="d-flex flex-column password-container">
+                        <label class="{{ password_form.password.auto_id }} signup-form-label form-label" for="{{ password_form.password.auto_id }}">{{ password_form.password.label }}</label>
+                        {{ password_form.password }}
+                        <label class="{{ password_form.confirm_password.auto_id }} signup-form-label form-label" for="{{ password_form.confirm_password.auto_id }}">{{ password_form.confirm_password.label }}</label>
+                        {{ password_form.confirm_password }}
+                    </div>
+                    <div class="mt-4 mb-4 d-flex flex-row justify-content-between align-items-center">
+                        <!-- <a href="/notflix/login" style="color:white; text-decoration-color: white;">
                             Login
-                        </a>
-                        <input type="Submit" value="Sign Up" class="btn btn-primary justify-self-end"></input>
+                        </a> -->
+                        <input type="Submit" value="Sign Up" class="w-100 btn btn-primary justify-self-end"></input>
                     </div>
                 </form>
             </div>

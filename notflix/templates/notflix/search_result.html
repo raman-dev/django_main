@@ -3,43 +3,64 @@
 {% load static %}
 {% load custom_tags %}
 <div class="search-result-container container-fluid ">
-    <div class="row search-result-message">
-        <div class="col-12">
+    <div class="row justify-content-center search-result-message">
+        <div class="d-flex justify-content-start col-sm-12 col-md-10 col-lg-8 col-xl-8">
             <h2>
                 Search results for '{{ query_string }}'
             </h2>
-            <div class="srm-underline w-100">
-            </div>
         </div>
-
     </div>
 
     <!--
         list of matches 
     -->
-    {% for watchable in watchables %}
-    <div class="result-row d-flex flex-row my-2" style="color:white;">
-        <img class="rounded result-thumbnail" src="{% static  watchable.thumbnail_url %}" />
-        <div class="pl-2 d-flex flex-column">
-            <a class="result-title" href="/watch/{{ watchable.type }}/{{ watchable.pk }}">
-                <h4>
-                    {{ watchable.title }}
-                </h4>
-            </a>
-
-            <p class="align-self-bottom">
-                Release: {{ watchable.year }}<br />
-                Genre: {{ watchable.genre }}<br />
-                {% if watchable.type == 'movie' %}
-                Runtime {{ watchable.runtime|readable_runtime}}s
-                {% else %}
-                Seasons 1
-                {% endif %}
-            </p>
-        </div>
+    <div class="srm-underline w-100">
     </div>
-    <div class="row-underline">
+    {% for movie in movies %}
+    <div class="result-row d-flex flex-row my-2 justify-content-center" style="color:white;">
+        <div class="ml-0 pl-0 pb-1 result-col d-flex col col-sm-12 col-md-10 col-lg-8 col-xl-8" >
+             
+            <img class="rounded result-thumbnail" src="{% static  movie.thumbnail_url %}" />
+            
+            <div class="pl-2 d-flex flex-column">
+                <a class="result-title" href="/watch/movies/{{ movie.pk }}">
+                    <h4>
+                        {{ movie.title }}
+                    </h4>
+                </a>
 
+                <p class="align-self-bottom">
+                    Release: {{ movie.year }}<br />
+                    Genre: {{ movie.genre }}<br />
+                    Runtime {{ movie.runtime|readable_runtime}}s
+                </p>
+            </div>
+            
+        </div>
+        
+    </div>
+    
+    {% endfor %}
+
+    {% for tv_show in tv_shows %}
+    <div class="result-row d-flex flex-row my-2 justify-content-center" style="color:white;">
+        <div class="ml-0 pl-0 pb-1 result-col d-flex col col-sm-12 col-md-10 col-lg-8 col-xl-8">
+            <img class="rounded result-thumbnail" src="{% static  tv_show.thumbnail_url %}" />
+            <div class="pl-2 d-flex flex-column">
+                <a class="result-title" href="/watch/tvshows/{{ tv_show.pk }}">
+                    <h4>
+                        {{ tv_show.title }}
+                    </h4>
+                </a>
+    
+                <p class="align-self-bottom">
+                    Release: {{ tv_show.year }}<br />
+                    Genre: {{ tv_show.genre }}<br />
+                    Seasons 1
+                </p>
+            </div>
+        </div>
+        
     </div>
     {% endfor %}
 </div>

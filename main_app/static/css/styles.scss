@@ -28,10 +28,14 @@ html, body{
 @font-face {
     font-family: 'Cascadia-Code';
     src: url("fonts/cascadia_code/woff2/CascadiaMono.woff2") format("woff2");
+
+    font-family: 'Avant-Garde-Gothic-Medium';
+    src: url("fonts/avant_garde_bold/itc-avant-garde-gothic-medium.woff") format("woff");
 }
 
 body{
-    font-family: 'Cascadia-Code','Courier New';
+    font-family: 'Avant-Garde-Gothic-Medium';
+    //font-family: 'Cascadia-Code','Courier New';
 }
 
 
@@ -86,6 +90,8 @@ body{
 
 .project-links {
     position: absolute;
+    opacity: 0;
+    transition: opacity 1s ease-in-out;
     @include wrap-content();
     top: 20%;
     a {

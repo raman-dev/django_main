@@ -16,6 +16,7 @@
     <link rel="stylesheet" href="{% static 'notflix/css/styles.css' %}" />
     <link rel="stylesheet" href="{% static 'notflix/css/modal.css' %}" />
     <link rel="stylesheet" href="{% static 'notflix/css/search_result.css' %}" />
+
     <title>Notflix</title>
 </head>
 
@@ -35,13 +36,13 @@
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav mr-auto">
                 <li class="nav-item active" id="home_link">
-                    <a class="nav-link" href="/">Home</a>
+                    <a class="nav-link" href="/notflix">Home</a>
                 </li>
                 <li class="nav-item" id="tv_shows_link">
-                    <a class="nav-link" href="#">TV Shows</a>
+                    <a class="nav-link" href="/notflix/tvshows">TV Shows</a>
                 </li>
                 <li class="nav-item" id="movies_link">
-                    <a class="nav-link" href="#">Movies</a>
+                    <a class="nav-link" href="/notflix/movies">Movies</a>
                 </li>
 
             </ul>
@@ -53,7 +54,7 @@
                 </div>
             </div>
             
-            <form action="/search/" class="form-inline my-2 my-lg-0" method="get">
+            <form action="/notflix/search/" class="form-inline my-2 my-lg-0" method="get">
                 {% csrf_token %}
                 {{ search_form }}
                 <button class="search-button btn my-2 my-sm-0" type="submit">
@@ -82,9 +83,8 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"
         integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV"
         crossorigin="anonymous"></script>
-    <script type="module" src="{% static "js/modal_manager.js" %}"></script>
-    <script type="module" src="{% static "js/nav.js" %}"></script>
-    <script src="{% static "js/scroll_row.js" %}"></script>
+    <script type="module" src="{% static 'notflix/js/modal_manager.js' %}"></script>
+    <script src="{% static 'notflix/js/scroll_row.js' %}"></script>
     <script>
         function setSeperatorHeight(media_query){
             console.log('running query listener!');
@@ -111,6 +111,17 @@
             //
             setSeperatorHeight(windowSmaller_mediaQuery);//can be 0
             windowSmaller_mediaQuery.addListener(setSeperatorHeight);
+            //check the current url 
+            let current_path = window.location.pathname;
+            $('li.active').removeClass('active');
+            //console.log(current_path);
+            if(current_path == '/notflix/'){
+                $('#home_link').addClass('active');
+            }else if(current_path == '/notflix/movies/'){
+                $('#movies_link').addClass('active');
+            }else{
+                $('#tv_shows_link').addClass('active');
+            }
         }); 
     </script>
 </body>

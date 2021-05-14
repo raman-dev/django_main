@@ -129,14 +129,14 @@ function showModal(event) {
         'height': cardHeight,
     });
 
-    var type = card.attr('data-watchable-type');
+    var type = card.attr('data-type');
     var id = card.attr('data-watchable-id');
     var runtime = parseInt(card.attr('data-runtime'));
     var genre = card.attr('data-genre');
 
     setFooterScaleReposition();
     setVideoElementAttrs(video, cardWidth, cardHeight, cardPreviewUrl);
-    $('.modal-watchable-link').attr('href', '/watch/' + type + '/' + id);
+    $('.modal-watchable-link').attr('href', 'watch/' + type + '/' + id);
 
     //if type == movie
     if(type == "movie"){

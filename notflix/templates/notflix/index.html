@@ -23,13 +23,21 @@
             -->
             {% for watchable_item in row.list %}
             <div id="card-{{ forloop.counter0 }}" class="card-container p-1 col-6 col-sm-4 col-md-3 col-lg-3 col-xl-2">
-                <div class="custom-card" 
-                    data-preview-url="{{ watchable_item.preview_url }}"
+                {% if forloop.parentloop.counter0|divisibleby:2 %}
+                <div class="custom-card" data-preview-url="{{ watchable_item.preview_url }}"
                     data-watchable-id="{{ watchable_item.id }}" 
-                    data-watchable-type="{{ watchable_item.type }}"
                     data-runtime="{{ watchable_item.runtime }}"
-                    data-genre="{{ watchable_item.genre }}">
-                    <img class="card-img-top rounded" src="{% static watchable_item.thumbnail_url%}" />
+                    data-genre="{{ watchable_item.genre }}"
+                    data-type="movie">
+                {% else %}
+                <div class="custom-card" data-preview-url="{{ watchable_item.preview_url }}"
+                    data-watchable-id="{{ watchable_item.id }}" 
+                    data-runtime="{{ watchable_item.runtime }}"
+                    data-genre="{{ watchable_item.genre }}"
+                    data-type="tvshow"
+                    >
+                {% endif %}
+                    <img class="card-img-top rounded" src="{% static watchable_item.thumbnail_url %}" />
                 </div>
             </div>
             {% endfor %}

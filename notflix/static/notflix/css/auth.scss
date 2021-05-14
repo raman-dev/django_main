@@ -1,6 +1,11 @@
 $modal-container-height: 480px;
 $modal-container-width: 320px;
-html, body {
+
+$signup-container-height: 480px;
+$signup-container-width: 320px;
+
+html,
+body {
   height: 100%;
   background-color: rgb(70, 70, 70);
 }
@@ -14,32 +19,96 @@ label {
   min-height: $modal-container-height;
   min-width: $modal-container-width;
   max-width: $modal-container-width;
-  margin:auto;
+  margin: auto;
+}
+
+@mixin text-input-style {
+  input, select, textarea {
+    color: white;
+  }
+
+  input {
+    border: none;
+    outline: none;
+    background-color: transparent !important;
+    border-bottom: 1px solid lightgray;
+    //margin-top: 4px;
+    margin-bottom: 16px;
+  }
+
+  input::placeholder {
+    color: lightgray;
+  }
 }
 
 .login-container {
   @include modal-theme;
+  label {
+    color: lightgray;
+  }
 
-    .signup-link:hover {
-      cursor: pointer;
-      text-decoration-color: white;
-      transform: scale(1.05);
-    }
-  
+  .login-button {
+    margin-top: 10%;
+  }
+  .form-container {
+    margin-top: 18%;
+    @include text-input-style();
+  }
+
+  .signup-link{
+    text-decoration: underline;
+    text-decoration-color: white;
+  }
+  .signup-link:hover {
+    cursor: pointer;
+  }
 }
 
 .signup-container {
   @include modal-theme;
 
-  .login-return-link{
+  background-color: #323232;
+  min-height: $signup-container-height;
+  min-width: $signup-container-width;
+  margin: auto;
+
+  label {
+    margin-bottom: 0px;
+    color: lightgray;
+  }
+  .email-container {
+    margin-top: 5%;
+    @include text-input-style();
+  }
+  .password-container {
+    margin-top: 15%;
+    @include text-input-style();
+  }
+
+  .login-return-link {
     color: white;
   }
+
   .login-return-link:hover {
     cursor: pointer;
     text-decoration-color: white;
     transform: scale(1.05);
-
   }
 }
 
+@media (max-width: 768px) {
+  .signup-container {
+    min-height: $signup-container-height;
+    min-width: $signup-container-width;
+  }
+}
 
+@media (min-width: 1400px) {
+  .signup-container {
+    .password-container{
+      margin-top:5%;
+    }
+    min-height: 480px;
+    min-width: 560px;
+  }
+}

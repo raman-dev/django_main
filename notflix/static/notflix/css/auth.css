@@ -1,4 +1,5 @@
-html, body {
+html,
+body {
   height: 100%;
   background-color: #464646;
 }
@@ -15,12 +16,54 @@ label {
   margin: auto;
 }
 
-.login-container .signup-link:hover {
-  cursor: pointer;
+.login-container label {
+  color: lightgray;
+}
+
+.login-container .login-button {
+  margin-top: 10%;
+}
+
+.login-container .form-container {
+  margin-top: 18%;
+}
+
+.login-container .form-container input, .login-container .form-container select, .login-container .form-container textarea {
+  color: white;
+}
+
+.login-container .form-container input {
+  border: none;
+  outline: none;
+  background-color: transparent !important;
+  border-bottom: 1px solid lightgray;
+  margin-bottom: 16px;
+}
+
+.login-container .form-container input::-webkit-input-placeholder {
+  color: lightgray;
+}
+
+.login-container .form-container input:-ms-input-placeholder {
+  color: lightgray;
+}
+
+.login-container .form-container input::-ms-input-placeholder {
+  color: lightgray;
+}
+
+.login-container .form-container input::placeholder {
+  color: lightgray;
+}
+
+.login-container .signup-link {
+  text-decoration: underline;
   -webkit-text-decoration-color: white;
           text-decoration-color: white;
-  -webkit-transform: scale(1.05);
-          transform: scale(1.05);
+}
+
+.login-container .signup-link:hover {
+  cursor: pointer;
 }
 
 .signup-container {
@@ -29,6 +72,79 @@ label {
   min-width: 320px;
   max-width: 320px;
   margin: auto;
+  background-color: #323232;
+  min-height: 480px;
+  min-width: 320px;
+  margin: auto;
+}
+
+.signup-container label {
+  margin-bottom: 0px;
+  color: lightgray;
+}
+
+.signup-container .email-container {
+  margin-top: 5%;
+}
+
+.signup-container .email-container input, .signup-container .email-container select, .signup-container .email-container textarea {
+  color: white;
+}
+
+.signup-container .email-container input {
+  border: none;
+  outline: none;
+  background-color: transparent !important;
+  border-bottom: 1px solid lightgray;
+  margin-bottom: 16px;
+}
+
+.signup-container .email-container input::-webkit-input-placeholder {
+  color: lightgray;
+}
+
+.signup-container .email-container input:-ms-input-placeholder {
+  color: lightgray;
+}
+
+.signup-container .email-container input::-ms-input-placeholder {
+  color: lightgray;
+}
+
+.signup-container .email-container input::placeholder {
+  color: lightgray;
+}
+
+.signup-container .password-container {
+  margin-top: 15%;
+}
+
+.signup-container .password-container input, .signup-container .password-container select, .signup-container .password-container textarea {
+  color: white;
+}
+
+.signup-container .password-container input {
+  border: none;
+  outline: none;
+  background-color: transparent !important;
+  border-bottom: 1px solid lightgray;
+  margin-bottom: 16px;
+}
+
+.signup-container .password-container input::-webkit-input-placeholder {
+  color: lightgray;
+}
+
+.signup-container .password-container input:-ms-input-placeholder {
+  color: lightgray;
+}
+
+.signup-container .password-container input::-ms-input-placeholder {
+  color: lightgray;
+}
+
+.signup-container .password-container input::placeholder {
+  color: lightgray;
 }
 
 .signup-container .login-return-link {
@@ -41,5 +157,22 @@ label {
           text-decoration-color: white;
   -webkit-transform: scale(1.05);
           transform: scale(1.05);
+}
+
+@media (max-width: 768px) {
+  .signup-container {
+    min-height: 480px;
+    min-width: 320px;
+  }
+}
+
+@media (min-width: 1400px) {
+  .signup-container {
+    min-height: 480px;
+    min-width: 560px;
+  }
+  .signup-container .password-container {
+    margin-top: 5%;
+  }
 }
 /*# sourceMappingURL=auth.css.map */

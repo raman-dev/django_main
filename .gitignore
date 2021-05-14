@@ -1,5 +1,8 @@
 db.sqlite3
 *.sh
 add_project.py
+create_movies.py
+create_tvshows.py
+movies.csv
 *.mp4
 media

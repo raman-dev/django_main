@@ -26,49 +26,58 @@
         -->
 
         <div class="project-link-container container-fluid d-flex justify-content-center">
-
             <div class="project-links d-flex flex-column">
-                <h2 class="display-5 mx-auto" style="width: fit-content; text-decoration: underline; margin-bottom: 16px;">
-                    sample projects
+                <h2 class="display-5 mx-auto"
+                    style="width: fit-content; text-decoration: underline; margin-bottom: 16px;">
+                    SAMPLE PROJECTS
                 </h2>
                 <a href="/notflix" class="link-highlight">
-                    <p class="fs-3 p-0 m-0">./netflix_clone</p>
+                    <p class="fs-3 p-0 m-0">NETFLIX CLONE</p>
                 </a>
                 <div class="divider">
                 </div>
-                <!--
-                    https://play.google.com/store/apps/details?id=com.ramandeep.cannyedgedetector
-                -->
                 <a class="btn link-highlight" data-bs-toggle="collapse" href="#collapseExample" role="button"
-                aria-expanded="false" aria-controls="collapseExample">
-                    <p class="fs-3 p-0 m-0">./canny_edge_detector</p>
+                    aria-expanded="false" aria-controls="collapseExample">
+                    <p class="fs-3 p-0 m-0">CANNY EDGE DETECTOR</p>
                 </a>
                 <div class="collapse" id="collapseExample">
                     <div class="card">
-                        <a class="demo-link btn" data-bs-toggle="collapse" href="#canny_demo_collapse" role="button" aria-expanded="false" aria-controls="canny_demo_collapse">
+                        <a class="demo-link btn" data-bs-toggle="collapse" href="#canny_demo_collapse" role="button"
+                            aria-expanded="false" aria-controls="canny_demo_collapse">
                             <p class="sub-link fs-5">demo video</p>
                         </a>
                         <div class="collapse" id="canny_demo_collapse">
                             <div class="video-card" style="background-color: transparent;">
-                                <p>Note: edge detection quality is degraded because due to non-native resolution.</p>
+                                <p>Note: edge detection quality is degraded because of non-native resolution.
+                                </p>
                                 <video autoplay loop muted preload="true" class="container-fluid mw-100 mh-100">
                                     <source src="{% static 'media/demos/canny_edge_detector_demo.mp4' %}">
-                                </video> 
+                                </video>
                             </div>
                         </div>
-                        <a class="demo-link" href="https://play.google.com/store/apps/details?id=com.ramandeep.cannyedgedetector">
+                        <a class="demo-link"
+                            href="https://play.google.com/store/apps/details?id=com.ramandeep.cannyedgedetector">
                             <p class="sub-link fs-5 m-0 p-0">download link</p>
                         </a>
-                        
+
                     </div>
                 </div>
 
                 <div class="divider">
                 </div>
-                
+
                 <a href="#" class="link-highlight">
-                    <p class="fs-3 p-0 m-0">./snapchat_clone</p>
+                    <p class="fs-3 p-0 m-0">SNAPCHAT CLONE</p>
                 </a>
+
+
+
+                <!--
+                    https://play.google.com/store/apps/details?id=com.ramandeep.cannyedgedetector
+                -->
+
+
+
 
                 <!-- <p>
                     <a class="btn btn-primary" data-bs-toggle="collapse" href="#collapseExample" role="button"
@@ -122,7 +131,7 @@
                 let sub_link = $('.sub-link');
                 sub_link.removeClass('fs-4');
                 sub_link.addClass('fs-5');
-                
+
             }
 
         };
@@ -136,6 +145,10 @@
         $(document).ready(() => {
             mobileMediaFunction(mobileMediaQuery);
             notMobileMediaFunction(notMobileMediaQuery);
+            //grab the height 
+            //then transition
+
+            $('.project-links').css({ 'opacity': 100 });
         });
 
     </script>

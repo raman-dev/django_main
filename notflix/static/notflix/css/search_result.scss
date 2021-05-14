@@ -1,4 +1,6 @@
 .search-result-message{
+
+    border-bottom: 1px solid white;
     h2{
         color: white;
     }
@@ -7,6 +9,7 @@
         background-color: #777777;
         height: 1px;
     }
+
 }
 
 .result-thumbnail{
@@ -28,4 +31,20 @@
     background-color: #777777;
     height: 1px;
     width: 100%;
+}
+
+.result-col{
+    border-bottom: 1px solid #777777;
+}
+
+@media (max-width:992px){
+    .result-col{
+        flex-direction: column;
+    }
+}
+
+@media (min-width: 992px){
+    .result-col{
+        flex-direction: row;
+    }
 }

@@ -12,19 +12,22 @@ class Watchable(models.Model):
         MYSTERY = 'Mystery'
         HORROR = 'Horror'
         FANTASY = 'Fantasy'
-    class WatchableType(models.TextChoices):
-        TV_SHOW = 'tvshow'
-        MOVIE = 'movie'
+
     title = models.CharField(max_length=100)
     genre = models.CharField(max_length=10,default=Genre.ACTION,choices=Genre.choices)
-    # = models.ManyToManyField(Genre, help_text="Select a genre for this item")
     year = models.IntegerField(default=2000, verbose_name='Release Year')
     source_url = models.CharField(max_length=256, default='#')
+    #runtime in seconds
     runtime = models.IntegerField(default=3600, verbose_name="Runtime")
-    thumbnail_url = models.CharField(max_length=256, default='thumbnails/placeholder_thumbnail_movie.jpg')
-    preview_url = models.CharField(max_length=256, default='#')
-    type = models.CharField(max_length=6, default=WatchableType.MOVIE, choices=WatchableType.choices)
-    # for tv shows or only
+
+
+class TvShow(Watchable):
     season = models.PositiveIntegerField(default=1)
-    # need to change this to a map of season num to list of nums
     episode = models.PositiveIntegerField(default=1)
+    thumbnail_url = models.CharField(max_length=256, default='notflix/media/thumbnails/placeholder_thumbnail_tv.jpg')
+    preview_url = models.CharField(max_length=256, default='notflix/media/previews/placeholder_preview_tv.mp4')
+
+#pretty much thats it no season
+class Movie(Watchable):
+    thumbnail_url = models.CharField(max_length=256, default='notflix/media/thumbnails/placeholder_thumbnail_movie.jpg')
+    preview_url = models.CharField(max_length=256, default='notflix/media/previews/placeholder_preview_movie.mp4')

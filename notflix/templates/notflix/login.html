@@ -1,4 +1,3 @@
-<!DOCTYPE html>
 <html lang="en">
 
 <head>
@@ -22,26 +21,34 @@
     <div class="d-flex align-items-center container h-100 w-100">
         <div class="d-flex container p-4 login-container material-shadow-2">
             <div class="d-flex flex-column pt-4 w-100">
-                
-                <h1 class="mb-4">
+                <h1 class="mb-4 mx-auto">
                     Login
                 </h1>
                 
-                <form method="POST" action="/notflix/auth/login">
+                <form method="POST" action="/notflix/auth/login" autocomplete="off">
                     {% csrf_token %}
-                    {% for field in login_form %}
-                    <label class="login-form-label form-label" for="{{ field.auto_id }}">{{ field.label }}</label>
-                    {{ field }}
-                    {% endfor %}
-                    <input type="Submit" value="Login" class="mt-4 btn btn-primary"></input>
+                    <div class="d-flex flex-column form-container">
+                        <label class="login-form-label form-label" for="{{ email_form.email.auto_id }}">{{ email_form.email.label }}</label>
+                        {{ email_form.email }}
+    
+                        <label class="login-form-label form-label" for="{{ password_form.password.auto_id }}">{{ password_form.password.label }}</label>
+                        {{ password_form.password }}
+                        
+                    </div>
+
+                    <div class="d-flex flex-column login-button-container">
+                        <input type="Submit" value="Login" class="login-button w-100 btn btn-primary"></input>
+                        <a href="/notflix/signup" class="mx-auto mt-2 signup-link">
+                            <div class="" style="color: white;">
+                                Create Account
+                            </div>
+                        </a> 
+                    </div>
+                    
                 </form>
                 
                 
-                <a href="/notflix/signup" class="mt-auto ml-auto signup-link">
-                    <div class="" style="color: white;">
-                        Sign Up
-                    </div>
-                </a>
+                <!-- -->
             </div>
         </div>
     </div>

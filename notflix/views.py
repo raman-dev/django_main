@@ -1,7 +1,7 @@
 from django.shortcuts import render,redirect
 from django.http import HttpResponseRedirect, JsonResponse
-from .models import Watchable
-from .forms import SearchForm,LoginForm,SignupForm
+from .models import Watchable,Movie,TvShow
+from .forms import SearchForm,LoginForm,SignupForm,EmailForm, PasswordForm
 from django.core import serializers
 from django.db.models import Q
 from django.contrib.auth import authenticate,login,logout
@@ -13,6 +13,11 @@ from django.contrib.auth.decorators import login_required
 def login_user(request):
     if request.method == 'POST':
         login_form = LoginForm(request.POST)
+        #this still works with the login form
+        # print('logging in')
+        # email_form = EmailForm(request.POST)
+        # password_form = PasswordForm(request.POST)
+        #print(email_form)
         if login_form.is_valid() :
             #authenticate
             user = authenticate(
@@ -31,20 +36,29 @@ def login_user(request):
 
 def show_login(request):
     #show login screen
+    email_form = EmailForm()
+    email_form.include_confirm = False
+
+    password_form = PasswordForm()
+    password_form.include_confirm = False
     context = {
-        'login_form':LoginForm()
+        'email_form':email_form,
+        'password_form':password_form,
     }
     return render(request,'notflix/login.html',context)
 
 def show_signup(request):
     context=  {
-        'signup_form': SignupForm()        
+        'signup_form': SignupForm(),
+        'email_form': EmailForm(),
+        'password_form':PasswordForm(),        
     }
     return render(request,'notflix/signup.html',context)
 
 def signup_user(request):
     #if successful redirect to login
     if request.method == 'POST':
+        #this should still work aswell
         signup_form = SignupForm(request.POST)
         if signup_form.is_valid():
             #create user
@@ -55,9 +69,12 @@ def signup_user(request):
             user = User.objects.create_user(email,email,password)
             user.save()
             
-            login_form = LoginForm(initial={'email':email})
+            #login_form = LoginForm(initial={'email':email})
+            email_form = EmailForm(initial={'email':email})
             context = {
-                'login_form':login_form
+                #'login_form':login_form
+                'email_form':email_form,
+                'password_form':PasswordForm(),
             }
             return render(request,'notflix/login.html',context)
         else:
@@ -82,15 +99,15 @@ def index(request):
         watchable_items = []
         if i % 2 == 0:
             # grab movie list
-            watchable_items = Watchable.objects.filter(genre=genre, type=Watchable.WatchableType.MOVIE)
+            watchable_items = Movie.objects.filter(genre=genre)
             if watchable_items != None and watchable_items.count() == 0:
-                watchable_items = Watchable.objects.filter(genre=genre, type=Watchable.WatchableType.TV_SHOW)
+                watchable_items = TvShow.objects.filter(genre=genre)
 
         else:
             # grab tv show_list
-            watchable_items = Watchable.objects.filter(genre=genre, type=Watchable.WatchableType.TV_SHOW)
+            watchable_items = TvShow.objects.filter(genre=genre)
             if watchable_items != None and watchable_items.count() == 0:
-                watchable_items = Watchable.objects.filter(genre=genre, type=Watchable.WatchableType.MOVIE)
+                watchable_items = Movie.objects.filter(genre=genre)
         
         watchable_rows.append({
             'genre': genre,
@@ -104,10 +121,62 @@ def index(request):
     }
     return render(request, 'notflix/index.html', context)
 
+@login_required(login_url='/notflix/login')
+def tvshows(request):
+    # now we need to query movies and tv shows by genre
+    # for every genre get movie list for every other genre get tv show list
+    watchable_rows = []
+    #
+    # what do i want to do
+    # for each genre
+    i = 0
+    for genre in Watchable.Genre:
+        watchable_items = []
+        watchable_items = TvShow.objects.filter(genre=genre)
+        
+        watchable_rows.append({
+            'genre': genre,
+            'list': watchable_items,
+            'max_cards': len(watchable_items)
+        })
+        i += 1
+    context = {
+        'watchable_rows': watchable_rows,
+        'search_form': SearchForm()
+    }
+    return render(request, 'notflix/index.html', context)
+
+@login_required(login_url='/notflix/login')
+def movies(request):
+    # now we need to query movies and tv shows by genre
+    # for every genre get movie list for every other genre get tv show list
+    watchable_rows = []
+    #
+    # what do i want to do
+    # for each genre
+    i = 0
+    for genre in Watchable.Genre:
+        watchable_items = []
+        watchable_items = Movie.objects.filter(genre=genre)
+        
+        watchable_rows.append({
+            'genre': genre,
+            'list': watchable_items,
+            'max_cards': len(watchable_items)
+        })
+        i += 1
+    context = {
+        'watchable_rows': watchable_rows,
+        'search_form': SearchForm()
+    }
+    return render(request, 'notflix/index.html', context)
+
+
+
 @login_required
 def show_movie(request, id):
     # grab file name by movie name
-    movie = Watchable.objects.get(pk=id)
+    movie = Movie.objects.get(pk=id)
     context = {'watchable': movie}
     return render(request, 'notflix/player.html', context)
 
@@ -115,7 +184,7 @@ def show_movie(request, id):
 @login_required
 def show_tvshow(request, id):
     # grab file name using TV_SHOWname season and episode
-    TV_SHOW = Watchable.objects.get(pk=id)
+    TV_SHOW = TvShow.objects.get(pk=id)
     context = {'watchable': TV_SHOW}
     return render(request, 'notflix/player.html', context)
 
@@ -148,7 +217,7 @@ def get_movies(request):
     for genre in Watchable.Genre:
             watchable_rows.append({
                 'genre': genre,
-                'list': serializers.serialize('json', Watchable.objects.filter(genre=genre,type=Watchable.WatchableType.MOVIE))
+                'list': serializers.serialize('json', Movie.objects.filter(genre=genre))
             })
     return JsonResponse({'watchableRowList': watchable_rows, 'status': 'ok'})
 
@@ -158,7 +227,7 @@ def get_tvshows(request):
     for genre in Watchable.Genre:
             watchable_rows.append({
                 'genre': genre,
-                'list': serializers.serialize('json', Watchable.objects.filter(genre=genre,type=Watchable.WatchableType.TV_SHOW))
+                'list': serializers.serialize('json', TvShow.objects.filter(genre=genre))
             })
     return JsonResponse({'watchableRowList': watchable_rows, 'status': 'ok'})
 
@@ -173,10 +242,15 @@ def search_watchables(request):
     # also years and genre
     # i think also year and genre
     # need to search movie and tv for all
-    watchables = Watchable.objects.filter(Q(title__contains=query_string) | Q(year__contains=query_string) | Q(genre__contains=query_string))
+    #watchables = []
+    movies = Movie.objects.filter(Q(title__contains=query_string) | Q(year__contains=query_string) | Q(genre__contains=query_string))
+    tv_shows = TvShow.objects.filter(Q(title__contains=query_string) | Q(year__contains=query_string) | Q(genre__contains=query_string))
+    #interleave or what?
+    #should be ranked by significance but its fine
     context = {
         'search_form': search_form,
         'query_string': query_string,
-        'watchables': watchables  # title_matches + genre_matches + year_matches
+        'movies': movies,
+        'tv_shows':tv_shows  # title_matches + genre_matches + year_matches
     }
     return render(request, 'notflix/search_result.html', context)
