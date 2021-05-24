@@ -21,26 +21,52 @@
             <!--
                 this is a row of cards
             -->
-            {% for watchable_item in row.list %}
-            <div id="card-{{ forloop.counter0 }}" class="card-container p-1 col-6 col-sm-4 col-md-3 col-lg-3 col-xl-2">
-                {% if forloop.parentloop.counter0|divisibleby:2 %}
-                <div class="custom-card" data-preview-url="{{ watchable_item.preview_url }}"
-                    data-watchable-id="{{ watchable_item.id }}" 
-                    data-runtime="{{ watchable_item.runtime }}"
-                    data-genre="{{ watchable_item.genre }}"
-                    data-type="movie">
-                {% else %}
-                <div class="custom-card" data-preview-url="{{ watchable_item.preview_url }}"
-                    data-watchable-id="{{ watchable_item.id }}" 
-                    data-runtime="{{ watchable_item.runtime }}"
-                    data-genre="{{ watchable_item.genre }}"
-                    data-type="tvshow"
-                    >
-                {% endif %}
-                    <img class="card-img-top rounded" src="{% static watchable_item.thumbnail_url %}" />
+            {% if type == 0 %}
+                {% for watchable_item in row.list %}
+                <div id="card-{{ forloop.counter0 }}" class="card-container p-1 col-6 col-sm-4 col-md-3 col-lg-3 col-xl-2">
+                    <div class="custom-card" data-preview-url="{{ watchable_item.preview_url }}"
+                        data-watchable-id="{{ watchable_item.id }}" 
+                        data-runtime="{{ watchable_item.runtime }}"
+                        data-genre="{{ watchable_item.genre }}"
+                        data-type="movie">
+                        <img class="card-img-top rounded" src="{% static watchable_item.thumbnail_url %}" />
+                    </div>
                 </div>
-            </div>
-            {% endfor %}
+                {% endfor %}
+            {% elif type == 1 %}
+                {% for watchable_item in row.list %}
+                <div id="card-{{ forloop.counter0 }}" class="card-container p-1 col-6 col-sm-4 col-md-3 col-lg-3 col-xl-2">                
+                    <div class="custom-card" data-preview-url="{{ watchable_item.preview_url }}"
+                        data-watchable-id="{{ watchable_item.id }}" 
+                        data-runtime="{{ watchable_item.runtime }}"
+                        data-genre="{{ watchable_item.genre }}"
+                        data-type="tvshow">
+                        <img class="card-img-top rounded" src="{% static watchable_item.thumbnail_url %}" />
+                    </div>
+                </div>
+                {% endfor %}
+            {% else %}
+                {% for watchable_item in row.list %}
+                <div id="card-{{ forloop.counter0 }}" class="card-container p-1 col-6 col-sm-4 col-md-3 col-lg-3 col-xl-2">
+                    {% if forloop.parentloop.counter0|divisibleby:2 %}
+                    <div class="custom-card" data-preview-url="{{ watchable_item.preview_url }}"
+                        data-watchable-id="{{ watchable_item.id }}" 
+                        data-runtime="{{ watchable_item.runtime }}"
+                        data-genre="{{ watchable_item.genre }}"
+                        data-type="movie">
+                    {% else %}
+                    <div class="custom-card" data-preview-url="{{ watchable_item.preview_url }}"
+                        data-watchable-id="{{ watchable_item.id }}" 
+                        data-runtime="{{ watchable_item.runtime }}"
+                        data-genre="{{ watchable_item.genre }}"
+                        data-type="tvshow">
+                    {% endif %}
+                        <img class="card-img-top rounded" src="{% static watchable_item.thumbnail_url %}" />
+                    </div>
+                </div>
+                {% endfor %}
+            {% endif %}
+            
         </div>
         <div class="d-flex prev h-100 btn align-items-center">
             <a href=""></a>
@@ -69,10 +95,8 @@
     <div id="modal_footer" class="modal-custom-footer d-flex flex-column p-0">
         <div class="modal-scale-down footer-container" style="height: fit-content;">
             <div class="modal-controls p-1 d-flex d-inline">
-                <!-- 
-            row of controls
-            play button ---space-- upvote downvote
-          -->
+                <!-- row of controls
+            play button ---space-- upvote downvote-->
                 <div class="modal-button modal-play-button btn btn-light p-0 rounded-circle">
                     <a class="modal-watchable-link" href="#"></a>
                     <svg viewBox="0 0 24 24">

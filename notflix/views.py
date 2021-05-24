@@ -116,6 +116,7 @@ def index(request):
         })
         i += 1
     context = {
+        'type':2,
         'watchable_rows': watchable_rows,
         'search_form': SearchForm()
     }
@@ -141,6 +142,7 @@ def tvshows(request):
         })
         i += 1
     context = {
+        'type':1,
         'watchable_rows': watchable_rows,
         'search_form': SearchForm()
     }
@@ -166,6 +168,7 @@ def movies(request):
         })
         i += 1
     context = {
+        'type':0,
         'watchable_rows': watchable_rows,
         'search_form': SearchForm()
     }

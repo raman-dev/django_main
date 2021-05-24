@@ -13,6 +13,10 @@ body {
   font-family: 'Avant-Garde-Gothic-Medium';
 }
 
+.accordion-button::after {
+  display: none;
+}
+
 .underline-effect {
   height: 1px;
   width: 0%;

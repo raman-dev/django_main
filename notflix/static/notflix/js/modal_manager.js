@@ -6,10 +6,32 @@ var timer = null;
 const MODAL_SHOW_DELAY = 500;
 const FADE_OUT = 0;
 const FADE_IN = 1;
+
 var isOpen = false;
 var isOpening = false;
 var isClosing = false;
 var isClosed = true;
+
+$('body')[0].addEventListener('touchstart',(event)=>{
+    console.log('body touchstart');
+    if(isOpen || isOpening){
+        //check target instead
+        //no matter what i need to check if the touch event was inside of the modal
+        //
+        //modal open -> ontouch non modal  -> close modal 
+        //modal close -> ontouch non modal -> do nothing
+        if(!$('#modal_container')[0].contains(event.target)){
+            console.log('close modal!');
+            closeModal();
+        }
+        
+    }
+});
+
+$('#modal_container').on('touchstart',(event)=>{
+    //do nothing other elements handle this
+    //
+});
 
 
 export function setCardListeners() {
@@ -32,10 +54,7 @@ export function removeCardListeners(){
 
 setCardListeners();
 
-
-$('.modal-custom').mouseleave((event) => {
-    //close or cancel modal transition
-    //if we leave before shits open then its canceld
+function closeModal(){
     if (isOpen || isOpening) {
         isClosing = true;
         isOpen = false;
@@ -49,6 +68,12 @@ $('.modal-custom').mouseleave((event) => {
         //fade poster back in on close
         fade('.modal-poster', FADE_IN);
     }
+}
+
+$('.modal-custom').mouseleave((event) => {
+    //close or cancel modal transition
+    //if we leave before shits open then its canceld
+    closeModal();
 });
 
 function fade(selector, opacity) {
@@ -102,18 +127,18 @@ function showModal(event) {
     isOpening = true;
     isClosed = false;
     //set top and left
-    var card = $(event.currentTarget);
-    var cardWidth = card.width();
-    var cardHeight = card.height();
-    var cardThumbnailUrl = card.children('img').attr('src');
-    var cardPreviewUrl = card.attr('data-preview-url');
+    let card = $(event.currentTarget);
+    let cardWidth = card.width();
+    let cardHeight = card.height();
+    let cardThumbnailUrl = card.children('img').attr('src');
+    let cardPreviewUrl = card.attr('data-preview-url');
 
-    var modal = $('.modal-custom');
-    var poster = $('.modal-poster');
-    var video = $('.modal-video');
+    let modal = $('.modal-custom');
+    let poster = $('.modal-poster');
+    let video = $('.modal-video');
 
     //
-    var offset_x = getHorizontalBoundsOffset(1.3, card.offset().left, cardWidth, $('.content-container').offset().left, $('.content-container').width());
+    let offset_x = getHorizontalBoundsOffset(1.3, card.offset().left, cardWidth, $('.content-container').offset().left, $('.content-container').width());
     modal.css({
         'visibility': 'visible',
         'left': card.offset().left,
@@ -129,27 +154,27 @@ function showModal(event) {
         'height': cardHeight,
     });
 
-    var type = card.attr('data-type');
-    var id = card.attr('data-watchable-id');
-    var runtime = parseInt(card.attr('data-runtime'));
-    var genre = card.attr('data-genre');
+    let type = card.attr('data-type');
+    let id = card.attr('data-watchable-id');
+    let runtime = parseInt(card.attr('data-runtime'));
+    let genre = card.attr('data-genre');
 
     setFooterScaleReposition();
     setVideoElementAttrs(video, cardWidth, cardHeight, cardPreviewUrl);
-    $('.modal-watchable-link').attr('href', 'watch/' + type + '/' + id);
+    $('.modal-watchable-link').attr('href', '/notflix/watch/' + type + '/' + id);
 
     //if type == movie
     if(type == "movie"){
         //grab runtime
         //
         //seconds to hours
-        var HOUR_SECONDS = 3600;
-        var MINUTE_SECONDS = 60;
+        let HOUR_SECONDS = 3600;
+        let MINUTE_SECONDS = 60;
         //convert seconds to minutes and hours
         //first seconds remaining = seconds/hours_seconds
-        var hours = Math.floor(runtime / HOUR_SECONDS);
-        var remaining = (runtime/HOUR_SECONDS) - hours;//in minutes
-        var minutes = Math.floor(remaining * 60);
+        let hours = Math.floor(runtime / HOUR_SECONDS);
+        let remaining = (runtime/HOUR_SECONDS) - hours;//in minutes
+        let minutes = Math.floor(remaining * 60);
         //so now what
         $('.modal-runtime').text('Runtime '+hours + 'h ' +  minutes+'m');
     }else{
@@ -160,18 +185,18 @@ function showModal(event) {
 }
 
 function setFooterScaleReposition() {
-    var modalFooter = $('.modal-custom-footer');
-    var modalFooterParent = $('.modal-scale-down');
-    var modalFooterParentPosition = modalFooterParent.position();
+    let modalFooter = $('.modal-custom-footer');
+    let modalFooterParent = $('.modal-scale-down');
+    let modalFooterParentPosition = modalFooterParent.position();
     //height and width will be scaled by 70%
     //so reposition relative to parent 
-    var cx = modalFooterParentPosition.left + modalFooterParent.width() / 2;
-    var cy = modalFooterParentPosition.top + modalFooterParent.height() / 2;
-    var new_left = cx - (0.7 * modalFooterParent.width()) / 2;
-    var new_top = cy - (0.7 * modalFooterParent.height()) / 2;
+    let cx = modalFooterParentPosition.left + modalFooterParent.width() / 2;
+    let cy = modalFooterParentPosition.top + modalFooterParent.height() / 2;
+    let new_left = cx - (0.7 * modalFooterParent.width()) / 2;
+    let new_top = cy - (0.7 * modalFooterParent.height()) / 2;
 
-    var deltaX = modalFooterParentPosition.left - new_left;
-    var deltaY = modalFooterParentPosition.top - new_top;
+    let deltaX = modalFooterParentPosition.left - new_left;
+    let deltaY = modalFooterParentPosition.top - new_top;
     modalFooterParent.css({
         'transform': 'scale(0.7) translateX(' + deltaX + 'px) translateY(' + deltaY + 'px)',
     });
@@ -185,12 +210,12 @@ function setFooterScaleReposition() {
 //translate left if offscreen from the right
 //translate right if offscreen from the left
 function getHorizontalBoundsOffset(scale, left, width, parentLeft, parentWidth) {
-    var offset = 0;
-    var cx = left + width / 2;
-    var parentRight = parentLeft + parentWidth;
-    var newWidth = width * scale;
-    var newLeft = cx - (newWidth / 2);
-    var newRight = cx + (newWidth / 2);
+    let offset = 0;
+    let cx = left + width / 2;
+    let parentRight = parentLeft + parentWidth;
+    let newWidth = width * scale;
+    let newLeft = cx - (newWidth / 2);
+    let newRight = cx + (newWidth / 2);
 
     if (newLeft < parentLeft) {
         offset = (parentLeft - newLeft) - 8;//translate right as many units

@@ -2,6 +2,7 @@ $linkMargin: 8px;
 $underlineColor: lightslategray;
 $underlineHeight: 5%;
 
+
 @mixin mx-auto {
     margin-left: auto;
     margin-right: auto;
@@ -36,6 +37,10 @@ html, body{
 body{
     font-family: 'Avant-Garde-Gothic-Medium';
     //font-family: 'Cascadia-Code','Courier New';
+}
+
+.accordion-button::after{
+    display:none;
 }
 
 
@@ -102,6 +107,7 @@ body{
         color: black;
     }
 }
+
 
 .divider{
     height: 2px;
