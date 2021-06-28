@@ -25,107 +25,118 @@
         -->
 
         <div class="project-link-container container-fluid d-flex justify-content-center">
+
             <div class="project-links d-flex flex-column">
                 <h2 class="display-5 mx-auto"
                     style="width: fit-content; text-decoration: underline; margin-bottom: 16px;">
                     SAMPLE PROJECTS
                 </h2>
-                <a href="/notflix" class="link-highlight">
-                    <p class="title-text fs-3 p-0 m-0">NETFLIX CLONE</p>
-                </a>
-                <div class="divider">
-                </div>
-                <a id="canny-project" class="project-link btn link-highlight" data-bs-toggle="collapse"
-                    href="#collapseCanny" role="button" aria-expanded="false" aria-controls="collapseCanny">
-                    <p class="title-text fs-3 p-0 m-0">CANNY EDGE DETECTOR</p>
-                </a>
-                <div class="collapse" id="collapseCanny">
-                    <div class="card">
-                        <a class="demo-link btn" data-bs-toggle="collapse" href="#canny_demo_collapse" role="button"
-                            aria-expanded="false" aria-controls="canny_demo_collapse">
-                            <p class="sub-link fs-5">demo video</p>
-                        </a>
-                        <div class="collapse" id="canny_demo_collapse">
-                            <div class="video-card" style="background-color: transparent;">
-                                <p >Note: edge detection quality is degraded because of non-native resolution.
-                                </p>
-                                <video loop muted preload="true"
-                                    class="canny-project-video container-fluid mw-100 mh-100">
-                                    <source src="{% static 'media/demos/canny_edge_detector_demo.mp4' %}">
-                                </video>
-                            </div>
-                        </div>
-                        <a class="demo-link"
-                            href="https://play.google.com/store/apps/details?id=com.ramandeep.cannyedgedetector">
-                            <p class="sub-link fs-5 m-0 p-0">download link</p>
-                        </a>
 
-                    </div>
-                </div>
-
-                <div class="divider">
-                </div>
-
-                <a id="snap-project" class="project-link btn link-highlight" data-bs-toggle="collapse"
-                    href="#collapseSnap" role="button" aria-expanded="false" aria-controls="collapseSnap">
-                    <p class="title-text fs-3 p-0 m-0">SNAPCHAT CLONE</p>
-                </a>
-                <div class="collapse" id="collapseSnap">
-                    <div class="card">
-                        <a class="demo-link btn" data-bs-toggle="collapse" href="#snap_demo_collapse" role="button"
-                            aria-expanded="false" aria-controls="snap_demo_collapse">
-                            <p class="sub-link fs-5">demo video</p>
-                        </a>
-                        <p>
-                            Note: not available for download since AWS will charge me money, especially for using
-                            S3Storage. Download link available through
-                            gmail only.
-                        </p>
-                        <div class="collapse" id="snap_demo_collapse">
-                            <div class="video-card" style="background-color: transparent;">
-                                <video loop muted preload="true"
-                                    class="snap-project-video container-fluid mw-100 mh-100">
-                                    <source src="{% static 'media/demos/snapchat_clone_demo.mp4' %}">
-                                </video>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="divider">
-                </div>
-
-
-
-                <a id="focus-timer-project" class="project-link btn link-highlight" data-bs-toggle="collapse"
-                    href="#collapseFocusTimer" role="button" aria-expanded="false" aria-controls="collapseFocusTimer">
-                    <p class="title-text fs-3 p-0 m-0">FOCUS TIMER</p>
-                </a>
-                <div class="collapse" id="collapseFocusTimer">
-                    <div class="card">
-                        <a class="demo-link btn" data-bs-toggle="collapse" href="#focus_timer_collapse" role="button"
-                            aria-expanded="false" aria-controls="focus_timer_collapse">
-                            <p class="sub-link fs-5">demo video</p>
-                        </a>
-
-                        <div class="collapse" id="focus_timer_collapse">
-                            <div class="video-card" style="background-color: transparent;">
-                                <video loop muted preload="true"
-                                    class="focus-timer-project-video container-fluid mw-100 mh-100">
-                                    <source src="{% static 'media/demos/snapchat_clone_demo.mp4' %}">
-                                </video>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-
-                <!-- <p>
-                    <a class="btn btn-primary" data-bs-toggle="collapse" href="#collapseExample" role="button"
-                        aria-expanded="false" aria-controls="collapseExample">
-                        Link with href
+                <div class="links-container d-flex flex-column">
+                    <!--
+                    netflix clone project 
+                    -->
+                    <a href="/notflix" class="link-highlight">
+                        <p class="title-text fs-3 p-0 m-0">NETFLIX CLONE</p>
                     </a>
-                </p> -->
+                    <div class="divider">
+                    </div>
+
+                    <!--
+                    canny edge detector 
+                    -->
+                    <a id="canny-project" class="project-link btn link-highlight" data-bs-toggle="collapse"
+                        href="#collapseCanny" role="button" aria-expanded="false" aria-controls="collapseCanny">
+                        <p class="title-text fs-3 p-0 m-0">CANNY EDGE DETECTOR</p>
+                    </a>
+                    <div class="collapse" id="collapseCanny" data-bs-parent=".links-container">
+                        <div class="card">
+                            <a class="demo-link btn" data-bs-toggle="collapse" href="#canny_demo_collapse" role="button"
+                                aria-expanded="false" aria-controls="canny_demo_collapse">
+                                <p class="sub-link fs-5">demo video</p>
+                            </a>
+                            <div class="collapse" id="canny_demo_collapse">
+                                <div class="video-card" style="background-color: transparent;">
+                                    <p>Note: edge detection quality is degraded because of non-native resolution.
+                                    </p>
+                                    <video loop muted preload="true"
+                                        class="canny-project-video container-fluid mw-100 mh-100">
+                                        <source src="{% static 'media/demos/canny_edge_detector_demo.mp4' %}">
+                                    </video>
+                                </div>
+                            </div>
+                            <a class="demo-link"
+                                href="https://play.google.com/store/apps/details?id=com.ramandeep.cannyedgedetector">
+                                <p class="sub-link fs-5 m-0 p-0">download link</p>
+                            </a>
+
+                        </div>
+                    </div>
+
+                    <div class="divider">
+                    </div>
+
+
+                    <!--
+                    snap chat project 
+                    -->
+
+                    <a id="snap-project" class="project-link btn link-highlight" data-bs-toggle="collapse"
+                        href="#collapseSnap" role="button" aria-expanded="false" aria-controls="collapseSnap">
+                        <p class="title-text fs-3 p-0 m-0">SNAPCHAT CLONE</p>
+                    </a>
+                    <div class="collapse" id="collapseSnap" data-bs-parent=".links-container">
+                        <div class="card">
+                            <a class="demo-link btn" data-bs-toggle="collapse" href="#snap_demo_collapse" role="button"
+                                aria-expanded="false" aria-controls="snap_demo_collapse">
+                                <p class="sub-link fs-5">demo video</p>
+                            </a>
+                            <p>
+                                Note: not available for download since AWS will charge me money, especially for using
+                                S3Storage. Download link available through
+                                gmail only.
+                            </p>
+                            <div class="collapse" id="snap_demo_collapse">
+                                <div class="video-card" style="background-color: transparent;">
+                                    <video loop muted preload="true"
+                                        class="snap-project-video container-fluid mw-100 mh-100">
+                                        <source src="{% static 'media/demos/snapchat_clone_demo.mp4' %}">
+                                    </video>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="divider">
+                    </div>
+
+                    <!--
+                    focus timer 
+                    -->
+                    <a id="focus-timer-project" class="project-link btn link-highlight" data-bs-toggle="collapse"
+                        href="#collapseFocusTimer" role="button" aria-expanded="false"
+                        aria-controls="collapseFocusTimer">
+                        <p class="title-text fs-3 p-0 m-0">FOCUS TIMER</p>
+                    </a>
+
+                    <div class="collapse" id="collapseFocusTimer" data-bs-parent=".links-container">
+                        <div class="card">
+                            <a class="demo-link btn" data-bs-toggle="collapse" href="#focus_timer_collapse"
+                                role="button" aria-expanded="false" aria-controls="focus_timer_collapse">
+                                <p class="sub-link fs-5">demo video</p>
+                            </a>
+
+                            <div class="collapse" id="focus_timer_collapse">
+                                <div class="video-card" style="background-color: transparent;">
+                                    <video loop muted preload="true"
+                                        class="focus-timer-project-video container-fluid mw-100 mh-100">
+                                        <source src="{% static 'media/demos/snapchat_clone_demo.mp4' %}">
+                                    </video>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
 
 
@@ -182,27 +193,7 @@
 
         //demo-video .on collapsed set play to stop
         //on expand play
-        
-        $('.project-link').on('click', (event) => {
-            //do what now
-            // 
-            //grab video element
-            let id = $(event.currentTarget).attr('id');
-            let video_element = $('.' + id + '-video')[0];
-            //should collapse the elements 
-            if (!video_element.paused && !video_element.ended) {
-                console.log('pausing nested video!');
-                //turn off video element if playing and clicking project link instead of demo link
-                //or what i could do is nested collapse
-                video_element.pause();
-            } else {
-                //when opening
-                //if it is paused check if my child demo video element is open
-                //if that is open then play the video
-            }
-        });
         $('.demo-link').on('click', (event) => {
-            //do what?
             //need to know if it is currently playing
             let video_element = $(event.currentTarget).parent().find('video')[0];
             if (video_element.paused == true) {
@@ -211,8 +202,6 @@
                 //need to pause even if parent collapses
                 video_element.pause();
             }
-            //now do what?
-            //
         });
 
         $(document).ready(() => {
