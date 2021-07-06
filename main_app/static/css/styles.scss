@@ -108,12 +108,17 @@ body{
     }
 }
 
+.links-container{
+    padding-left: 5%;
+    padding-right:5%;
+}
+
 
 .divider{
     height: 2px;
-    width: 100%;
-    margin-left: 4px;
-    margin-right: 4px;
+    width: 90%;
+    margin-left: auto;
+    margin-right: auto;
     margin-top: 4px;
     margin-bottom: 4px;
     background-color: lightgrey;

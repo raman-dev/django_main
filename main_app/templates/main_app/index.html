@@ -50,7 +50,17 @@
                         <p class="title-text fs-3 p-0 m-0">CANNY EDGE DETECTOR</p>
                     </a>
                     <div class="collapse" id="collapseCanny" data-bs-parent=".links-container">
-                        <div class="card">
+                        <div class="card"> 
+
+                            <div class="d-flex flex-column px-4">
+                                <p class="fs-5 mx-auto" style="text-decoration: underline;">
+                                    about
+                                </p>
+                                <p class="text-center">
+                                    Display edges detected in images captured from the android device camera.
+                                </p>
+                            </div>
+                            
                             <a class="demo-link btn" data-bs-toggle="collapse" href="#canny_demo_collapse" role="button"
                                 aria-expanded="false" aria-controls="canny_demo_collapse">
                                 <p class="sub-link fs-5">demo video</p>
@@ -87,11 +97,19 @@
                     </a>
                     <div class="collapse" id="collapseSnap" data-bs-parent=".links-container">
                         <div class="card">
+                            <div class="d-flex flex-column px-4">
+                                <p class="fs-5 mx-auto" style="text-decoration: underline;">
+                                    about
+                                </p>
+                                <p class="text-center">
+                                    Emulate snap chat basic behaviour,adding friends text messaging and image capture and sending.
+                                </p>
+                            </div>
                             <a class="demo-link btn" data-bs-toggle="collapse" href="#snap_demo_collapse" role="button"
                                 aria-expanded="false" aria-controls="snap_demo_collapse">
                                 <p class="sub-link fs-5">demo video</p>
                             </a>
-                            <p>
+                            <p class="text-center">
                                 Note: not available for download since AWS will charge me money, especially for using
                                 S3Storage. Download link available through
                                 gmail only.
@@ -121,6 +139,14 @@
 
                     <div class="collapse" id="collapseFocusTimer" data-bs-parent=".links-container">
                         <div class="card">
+                            <div class="d-flex flex-column px-4">
+                                <p class="fs-5 mx-auto" style="text-decoration: underline;">
+                                    about
+                                </p>
+                                <p class="text-center">
+                                    Timer for focusing and taking breaks. A focus interval and then immediately followed by a cooldown interval. Repeats n times.
+                                </p>
+                            </div>
                             <a class="demo-link btn" data-bs-toggle="collapse" href="#focus_timer_collapse"
                                 role="button" aria-expanded="false" aria-controls="focus_timer_collapse">
                                 <p class="sub-link fs-5">demo video</p>
@@ -184,7 +210,6 @@
                 let sub_link = $('.sub-link');
                 sub_link.removeClass('fs-4');
                 sub_link.addClass('fs-5');
-
             }
 
         };
@@ -203,13 +228,31 @@
                 video_element.pause();
             }
         });
-
+            
+            
+        // });
+        $('.project-link').each((index,element) => {
+            let projectLinkCollapsableId = $(element).attr('href');
+            //remove '#' character
+            let projectLinkCollapse = $(projectLinkCollapsableId);
+            //now for each collapsable
+            projectLinkCollapse[0].addEventListener('hidden.bs.collapse',(event)=>{
+                //now check if the nested collapse element is showing
+                //if it is showing then collapse it 
+                //find the card.collapse shit from this 
+                let nestedCollapse = $($(event.currentTarget).children('.card').children('.collapse'));
+                if(nestedCollapse.hasClass('show')){
+                    nestedCollapse.removeClass('show');
+                    nestedCollapse.addClass('hide');
+                }
+            });
+            
+        });
         $(document).ready(() => {
             mobileMediaFunction(mobileMediaQuery);
             notMobileMediaFunction(notMobileMediaQuery);
             //grab the height 
             //then transition
-
             $('.project-links').css({ 'opacity': 100 });
         });
 
