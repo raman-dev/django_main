@@ -33,35 +33,23 @@ body {
 
 .link-highlight {
   position: relative;
-  text-decoration: none;
   display: inline-block;
-  color: black;
+  color: white !important;
+  text-decoration: none;
   padding: 0 1px;
-  -webkit-transition: color ease 0.1s;
-  transition: color ease 0.1s;
-}
-
-.link-highlight::after {
-  content: '';
-  position: absolute;
-  z-index: -1;
-  width: 100%;
-  visibility: hidden;
-  height: 5%;
-  left: 0;
-  bottom: 0;
-  background-color: lightslategray;
-  -webkit-transition: all ease 0.3s;
-  transition: all ease 0.3s;
 }
 
 .link-highlight:hover {
-  color: white;
+  text-decoration: underline !important;
 }
 
-.link-highlight:hover::after {
-  height: 100%;
-  visibility: visible;
+.download-link {
+  text-decoration: none;
+  color: black !important;
+}
+
+.download-link:hover {
+  text-decoration: underline;
 }
 
 .project-link-container {
@@ -85,10 +73,8 @@ body {
 .project-links a {
   margin-left: auto;
   margin-right: auto;
-  text-decoration: none;
   margin-top: 8px;
   margin-bottom: 8px;
-  color: black;
 }
 
 .links-container {
@@ -145,6 +131,37 @@ body {
 @media (min-width: 1752px) {
   .project-links {
     width: 24.5%;
+  }
+}
+
+.background-anim {
+  background: linear-gradient(182deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
+  background-size: 800% 800%;
+  -webkit-animation: background_anim 19s ease infinite;
+  animation: background_anim 19s ease infinite;
+}
+
+@-webkit-keyframes background_anim {
+  0% {
+    background-position: 51% 0%;
+  }
+  50% {
+    background-position: 50% 100%;
+  }
+  100% {
+    background-position: 51% 0%;
+  }
+}
+
+@keyframes background_anim {
+  0% {
+    background-position: 51% 0%;
+  }
+  50% {
+    background-position: 50% 100%;
+  }
+  100% {
+    background-position: 51% 0%;
   }
 }
 /*# sourceMappingURL=styles.css.map */

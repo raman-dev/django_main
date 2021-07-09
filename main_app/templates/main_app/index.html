@@ -17,7 +17,7 @@
 
 </head>
 
-<body>
+<body class="background-anim">
     <div class="d-flex container-fluid h-100">
 
         <!--
@@ -28,7 +28,7 @@
 
             <div class="project-links d-flex flex-column">
                 <h2 class="display-5 mx-auto"
-                    style="width: fit-content; text-decoration: underline; margin-bottom: 16px;">
+                    style="color:white; width: fit-content; text-decoration: underline; margin-bottom: 16px;">
                     SAMPLE PROJECTS
                 </h2>
 
@@ -75,7 +75,7 @@
                                     </video>
                                 </div>
                             </div>
-                            <a class="demo-link"
+                            <a class="download-link"
                                 href="https://play.google.com/store/apps/details?id=com.ramandeep.cannyedgedetector">
                                 <p class="sub-link fs-5 m-0 p-0">download link</p>
                             </a>
@@ -165,10 +165,10 @@
                 </div>
             </div>
 
-
             <h3 class="display-6" style="margin-right: auto;">
                 raman-dev
             </h3>
+
         </div>
 
     </div>
@@ -239,7 +239,7 @@
             projectLinkCollapse[0].addEventListener('hidden.bs.collapse',(event)=>{
                 //now check if the nested collapse element is showing
                 //if it is showing then collapse it 
-                //find the card.collapse shit from this 
+                //find the card.collapse from this 
                 let nestedCollapse = $($(event.currentTarget).children('.card').children('.collapse'));
                 if(nestedCollapse.hasClass('show')){
                     nestedCollapse.removeClass('show');
@@ -248,7 +248,7 @@
             });
             
         });
-        $(document).ready(() => {
+        $(document).ready(() => {   
             mobileMediaFunction(mobileMediaQuery);
             notMobileMediaFunction(notMobileMediaQuery);
             //grab the height 

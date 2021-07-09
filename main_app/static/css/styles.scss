@@ -59,35 +59,37 @@ body{
 
 .link-highlight {
     position: relative;
-    text-decoration: none;
     display: inline-block;
-    color: black;
+    color: white !important;
+    text-decoration: none;
     padding: 0 1px;
-    transition: color ease 0.1s;
+//    transition: color ease 0.1s;
     
-    &::after {
-      content: '';
-      position: absolute;
-      z-index: -1;
-      width: 100%;
-      visibility: hidden;
-      height: $underlineHeight;
-      left: 0;
-      bottom: 0;
-      background-color: $underlineColor;
-      transition: all ease 0.3s;
-    }
+    // &::after {
+    //   content: '';
+    //   position: absolute;
+    //   z-index: -1;
+    //   width: 100%;
+    //   visibility: hidden;
+    //   height: $underlineHeight;
+    //   left: 0;
+    //   bottom: 0;
+    //   background-color: $underlineColor;
+    //   transition: all ease 0.3s;
+    // }
     
-    &:hover {
-      color: white;
-      
-      &::after {
-        height: 100%;
-        visibility: visible;
-      }
-    }
+     &:hover {
+      text-decoration: underline !important;
+     }
   }
 
+.download-link{
+    text-decoration: none;
+    color:black !important;
+     &:hover{
+         text-decoration: underline;
+     }
+}
 
 .project-link-container{
     position:relative;
@@ -97,14 +99,14 @@ body{
     position: absolute;
     opacity: 0;
     transition: opacity 1s ease-in-out;
+    
     @include wrap-content();
+
     top: 20%;
     a {
         @include mx-auto();
-        text-decoration: none;
         margin-top: $linkMargin;
         margin-bottom: $linkMargin;
-        color: black;
     }
 }
 
@@ -165,6 +167,31 @@ body{
     .project-links{
         width: 24.5%;
     }
+}
+
+.background-anim {
+    background: linear-gradient(182deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
+    background-size: 800% 800%;
+
+    -webkit-animation: background_anim 19s ease infinite;
+    -moz-animation: background_anim 19s ease infinite;
+    animation: background_anim 19s ease infinite;
+}
+
+@-webkit-keyframes background_anim {
+    0%{background-position:51% 0%}
+    50%{background-position:50% 100%}
+    100%{background-position:51% 0%}
+}
+@-moz-keyframes background_anim {
+    0%{background-position:51% 0%}
+    50%{background-position:50% 100%}
+    100%{background-position:51% 0%}
+}
+@keyframes background_anim {
+    0%{background-position:51% 0%}
+    50%{background-position:50% 100%}
+    100%{background-position:51% 0%}
 }
 
 
