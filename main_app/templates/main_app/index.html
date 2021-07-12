@@ -156,7 +156,57 @@
                                 <div class="video-card" style="background-color: transparent;">
                                     <video loop muted preload="true"
                                         class="focus-timer-project-video container-fluid mw-100 mh-100">
-                                        <source src="{% static 'media/demos/snapchat_clone_demo.mp4' %}">
+                                        <source src="{% static 'media/demos/focus_timer_demo_video.mp4' %}">
+                                    </video>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="divider">
+                    </div>
+
+                    <!--
+                    conways game of life 
+                    -->
+                    <a id="conways-gol-project" class="project-link btn link-highlight" data-bs-toggle="collapse"
+                        href="#collapseConwayGol" role="button" aria-expanded="false"
+                        aria-controls="collapseConwayGol">
+                        <p class="title-text fs-3 p-0 m-0">CONWAY'S GAME OF LIFE</p>
+                    </a>
+
+                    <div class="collapse" id="collapseConwayGol" data-bs-parent=".links-container">
+                        <div class="card">
+                            <div class="d-flex flex-column px-4">
+                                <p class="fs-5 mx-auto" style="text-decoration: underline;">
+                                    about
+                                </p>
+                                <p class="text-center">
+                                    Simulation of a 2D universe where only cells exist, based on John Conway's rules of life.<br/>
+                                    Every cell interacts with its eight immediate neighbours, the next generation of cells is calculated by the following:
+                                    <ul>
+                                        <li>
+                                            Any live cell with two or three live neighbours survives.
+                                        </li>
+                                        <li>
+                                            Any dead cell with three live neighbours becomes a live cell.
+                                        </li>
+                                        <li>
+                                            All other live cells die in the next generation, all other dead cells stay dead.
+                                        </li>
+                                    </ul>
+                                </p>
+                            </div>
+                            <a class="demo-link btn" data-bs-toggle="collapse" href="#conway_gol_collapse"
+                                role="button" aria-expanded="false" aria-controls="conway_gol_collapse">
+                                <p class="sub-link fs-5">demo video</p>
+                            </a>
+
+                            <div class="collapse" id="conway_gol_collapse">
+                                <div class="video-card" style="background-color: transparent;">
+                                    <video loop muted preload="true"
+                                        class="conways-gol-project-video container-fluid mw-100 mh-100">
+                                        <source src="{% static 'media/demos/conways_gol_demo_video.mp4' %}">
                                     </video>
                                 </div>
                             </div>
@@ -165,7 +215,7 @@
                 </div>
             </div>
 
-            <h3 class="display-6" style="margin-right: auto;">
+            <h3 class="display-6" style="color:white; margin-right: auto;">
                 raman-dev
             </h3>
 

@@ -171,11 +171,11 @@ body{
 
 .background-anim {
     background: linear-gradient(182deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
-    background-size: 800% 800%;
+    background-size: 1000% 1000%;
 
-    -webkit-animation: background_anim 19s ease infinite;
-    -moz-animation: background_anim 19s ease infinite;
-    animation: background_anim 19s ease infinite;
+    -webkit-animation: background_anim 15s ease infinite;
+    -moz-animation: background_anim 15s ease infinite;
+    animation: background_anim 15s ease infinite;
 }
 
 @-webkit-keyframes background_anim {
