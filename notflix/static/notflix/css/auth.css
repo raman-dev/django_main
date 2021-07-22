@@ -151,6 +151,18 @@ label {
   color: white;
 }
 
+.signup-container .signup-back-button {
+  -webkit-transition: -webkit-transform 0.1s;
+  transition: -webkit-transform 0.1s;
+  transition: transform 0.1s;
+  transition: transform 0.1s, -webkit-transform 0.1s;
+}
+
+.signup-container .signup-back-button:hover {
+  -webkit-transform: scale(1.05);
+          transform: scale(1.05);
+}
+
 .signup-container .login-return-link:hover {
   cursor: pointer;
   -webkit-text-decoration-color: white;

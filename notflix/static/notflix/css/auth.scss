@@ -89,6 +89,14 @@ label {
     color: white;
   }
 
+  .signup-back-button{
+    transition: transform 0.1s;
+  }
+
+  .signup-back-button:hover{
+    transform: scale(1.05);
+  }
+
   .login-return-link:hover {
     cursor: pointer;
     text-decoration-color: white;
