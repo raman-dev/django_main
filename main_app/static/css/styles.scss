@@ -1,6 +1,7 @@
 $linkMargin: 8px;
 $underlineColor: lightslategray;
 $underlineHeight: 5%;
+$backgroundAnimDuration: 45s;
 
 
 @mixin mx-auto {
@@ -173,9 +174,9 @@ body{
     background: linear-gradient(182deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
     background-size: 1000% 1000%;
 
-    -webkit-animation: background_anim 15s ease infinite;
-    -moz-animation: background_anim 15s ease infinite;
-    animation: background_anim 15s ease infinite;
+    -webkit-animation: background_anim $backgroundAnimDuration ease infinite;
+    -moz-animation: background_anim $backgroundAnimDuration ease infinite;
+    animation: background_anim $backgroundAnimDuration ease infinite;
 }
 
 @-webkit-keyframes background_anim {
