@@ -11,6 +11,34 @@ html, body {
 
 body {
   font-family: 'Avant-Garde-Gothic-Medium';
+  background: linear-gradient(45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
+  background-size: 400% 400%;
+  -webkit-animation: gradient 15s ease infinite;
+          animation: gradient 15s ease infinite;
+}
+
+@-webkit-keyframes gradient {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+@keyframes gradient {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
 }
 
 .accordion-button::after {
@@ -137,8 +165,8 @@ body {
 .background-anim {
   background: linear-gradient(182deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
   background-size: 1000% 1000%;
-  -webkit-animation: background_anim 45s ease infinite;
-  animation: background_anim 45s ease infinite;
+  -webkit-animation: background_anim 25s ease infinite;
+  animation: background_anim 25s ease infinite;
 }
 
 @-webkit-keyframes background_anim {
