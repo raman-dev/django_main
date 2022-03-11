@@ -18,6 +18,7 @@ from django.urls import path,include
 
 urlpatterns = [
     #path('admin/', admin.site.urls),
+    path('alt/',include('main_app_alt.urls')),
     path('',include('main_app.urls')),
     path('notflix/',include('notflix.urls'))
 ]

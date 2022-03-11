@@ -1,5 +1,7 @@
 from django.db import models
+from django.contrib.auth import get_user_model
 import uuid
+from django.db.models.deletion import CASCADE, SET_NULL
 # Create your models here.
 # all things fall into a category
 
@@ -31,3 +33,13 @@ class TvShow(Watchable):
 class Movie(Watchable):
     thumbnail_url = models.CharField(max_length=256, default='notflix/media/thumbnails/placeholder_thumbnail_movie.jpg')
     preview_url = models.CharField(max_length=256, default='notflix/media/previews/placeholder_preview_movie.mp4')
+
+class Like(models.Model):
+    user = models.ForeignKey(get_user_model(),on_delete=CASCADE)
+    movies = models.ManyToManyField(Movie,default=None)
+    tvshows = models.ManyToManyField(TvShow,default=None)
+
+class DisLike(models.Model):
+    user = models.ForeignKey(get_user_model(),on_delete=CASCADE)
+    movies = models.ManyToManyField(Movie,default=None)
+    tvshows = models.ManyToManyField(TvShow,default=None)    

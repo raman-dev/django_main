@@ -12,5 +12,9 @@ urlpatterns = [
     re_path(r'^movies/',views.movies),
     re_path(r'^tvshows/',views.tvshows),
     re_path(r'^watch/movie/(?P<id>[0-9]+)',views.show_movie),
-    re_path(r'^watch/tvshow/(?P<id>[0-9]+)',views.show_tvshow)
+    re_path(r'^watch/tvshow/(?P<id>[0-9]+)',views.show_tvshow),
+    # re_path(r'^like/movie/(?P<id>[0-9]+)',views.get_movie_likes),
+    # re_path(r'^like/tvshow/(?P<id>[0-9]+)',views.get_tvshow_likes),
+    re_path(r'^(?P<preference>(like|dislike))/(?P<type>(movie|tvshow))/(?P<id>[0-9]+)',views.toggle_preference),
+    re_path(r'^status/preference/(?P<type>(movie|tvshow))/(?P<id>[0-9]+)',views.get_pref)
 ]

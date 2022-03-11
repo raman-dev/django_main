@@ -1,0 +1,9 @@
+{
+    "version": 3,
+    "mappings": "AAAA,sBAAsB",
+    "sources": [
+        "dimens.scss"
+    ],
+    "names": [],
+    "file": "dimens.css"
+}

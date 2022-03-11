@@ -1,15 +1,21 @@
+from dis import dis
+from this import d
 from django.shortcuts import render,redirect
 from django.http import HttpResponseRedirect, JsonResponse
-from .models import Watchable,Movie,TvShow
+from .models import Watchable,Movie,TvShow, Like, DisLike
 from .forms import SearchForm,LoginForm,SignupForm,EmailForm, PasswordForm
 from django.core import serializers
 from django.db.models import Q
 from django.contrib.auth import authenticate,login,logout
 from django.contrib.auth.models import User
 from django.contrib.auth.decorators import login_required
+from django.core.exceptions import ObjectDoesNotExist
 
 # Create your views here.
 # return homepage
+PREF_SET = 1
+PREF_UNSET = 0
+
 def login_user(request):
     if request.method == 'POST':
         login_form = LoginForm(request.POST)
@@ -213,6 +219,98 @@ def get_watchables(request):
         i+=1
 
     return JsonResponse({'watchableRowList': watchable_rows, 'status': 'ok'})
+
+def getDisLikeObject(user):
+    dislike = None
+    try:
+        dislike = DisLike.objects.get(user=user)
+        return dislike
+    except ObjectDoesNotExist:
+        dislike = DisLike(user=user)
+        dislike.save()#need to save since django requires an id field to be set before doing operations filtering for stuff
+        return dislike
+
+def getLikeObject(user):
+    like = None
+    try:
+        like = Like.objects.get(user=user)
+        return like
+    except ObjectDoesNotExist:
+        like = Like(user=user)
+        like.save()#need to save since django requires an id field to be set before doing operations filtering for stuff
+        return like
+
+@login_required
+def toggle_preference(request,preference,type,id):
+    # print((preference,type,id))
+    #set the like status if unset
+    #first check current like status so get the like
+    prefObject = None
+    prefOppositeObject = None
+    if preference == 'like':
+        prefObject = getLikeObject(request.user)
+        prefOppositeObject = getDisLikeObject(request.user)
+    else:
+        prefObject = getDisLikeObject(request.user)
+        prefOppositeObject = getLikeObject(request.user)
+    watchableManyToManyField = None
+    oppositeM2MField = None
+    watchable = None
+    if type == 'movie':
+        watchable = Movie.objects.get(pk=id)
+        watchableManyToManyField = prefObject.movies
+        oppositeM2MField = prefOppositeObject.movies
+        #maybe none
+    else:
+        watchable = TvShow.objects.get(pk=id)
+        watchableManyToManyField = prefObject.tvshows
+        oppositeM2MField = prefOppositeObject.tvshows
+    result = None
+    opposite = None
+    if watchableManyToManyField:
+        result = watchableManyToManyField.all().filter(pk=id)
+        # #if result is empty means we are going to like the object
+        # #if result is non empty means we are going to unlike the object
+    if oppositeM2MField:
+        opposite = oppositeM2MField.all().filter(pk=id)
+    if result:
+        like_status = 'unset'
+        #print('un '+preference+' '+type+' => '+ str(id))
+        watchableManyToManyField.remove(watchable)
+    else:
+        #print(preference+' '+type+' => '+ str(id))
+        watchableManyToManyField.add(watchable)
+        like_status = 'set'
+        #only need to unset if we are setting
+        if opposite:
+            oppositeM2MField.remove(watchable)
+    
+    prefOppositeObject.save()
+    prefObject.save()
+    return JsonResponse({'status':'ok','like_status':like_status})
+
+def isPrefSet(pref_obj,type,id):
+    prefM2M = None
+    if type == 'movie':
+        prefM2M = pref_obj.movies
+    else:
+        prefM2M = pref_obj.tvshows
+    if prefM2M:
+        if prefM2M.all().filter(pk=id):
+            return PREF_SET
+    return PREF_UNSET
+
+@login_required
+def get_pref(request,type,id):
+    #get like or dislike status or unset either 
+    #just need to know if there is a like object for current thing
+    like_status = 'unset'
+    if isPrefSet(getLikeObject(request.user),type,id) == PREF_SET:
+        like_status = 'like'
+    elif isPrefSet(getDisLikeObject(request.user),type,id) == PREF_SET:
+        like_status = 'dislike'
+    return JsonResponse({'status':'ok','like_status':like_status})
+    
 
 @login_required
 def get_movies(request):

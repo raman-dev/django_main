@@ -106,6 +106,8 @@ $('.modal-custom').on('transitionend', (event) => {
         if (isClosing) {
             isOpen = false;
             isClosed = true;
+            type = null;
+            id = null;
             $('.modal-custom').css({ 'visibility': 'hidden' });
             $('.modal-video').children('source').remove();
             $('.modal-poster').attr('src', '');
@@ -119,13 +121,15 @@ $('.modal-play-button').on('click', (event) => {
     $(event.currentTarget).children('a')[0].click();
 });
 
+let type = null;
+let id = null;
 function showModal(event) {
     //reset timer
     if(!isClosed){
         return;
     }
     isOpening = true;
-    isClosed = false;
+    isClosed = false; 
     //set top and left
     let card = $(event.currentTarget);
     let cardWidth = card.width();
@@ -154,8 +158,8 @@ function showModal(event) {
         'height': cardHeight,
     });
 
-    let type = card.attr('data-type');
-    let id = card.attr('data-watchable-id');
+    type = card.attr('data-type');
+    id = card.attr('data-watchable-id');
     let runtime = parseInt(card.attr('data-runtime'));
     let genre = card.attr('data-genre');
 

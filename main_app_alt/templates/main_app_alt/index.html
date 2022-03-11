@@ -1,0 +1,368 @@
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    {% load static %}
+    <!-- <link href="{% static 'main_app_alt/css/twoutput.css' %}" rel="stylesheet"> -->
+    <!-- <link href="{% static 'main_app_alt/css/reset.css' %}" rel="stylesheet"> -->
+    <!-- Required meta tags -->
+
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <link href="{% static 'main_app_alt/css/styles.css' %}" rel="stylesheet">
+    <title>raman.dev</title>
+</head>
+
+<body>
+    <!--
+            outline what do i want   
+            i want scrolling along all my projects
+            so i want a links on the left side
+            that can be clicked to scroll to the correct page i want
+            also i want as i scroll for the links to be highlighted
+
+        -->
+    <nav class="navbar navbar-expand-md navbar-light">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">raman.dev</a>
+            <!-- collapse nav toggle -->
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <!--links container-->
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a class="nav-link active active-underline" aria-current="page" href="#page-0">Netflix Clone
+                            <div class="link-underline"></div>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#page-1">Snapchat Clone<div class="link-underline"></div></a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#page-2">Focus Timer<div class="link-underline"></div>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <div class="content mx-auto border">
+        <!--
+            fixed height full width container?
+        -->
+        <div class="project-page page-0 flex" id="page-0">
+            <div class="background-graphic"></div>
+            <div class="info-column">
+                <div class="hidden-content-container">
+                    <h1 class="whitespace-nowrap hidden-bottom">
+                        Netflix Clone
+                    </h1>
+                </div>
+
+                <div class="info-container">
+                    <div class="p-2 summary-container">
+                        <div class="hidden-content-container">
+                            <h3 class="hidden-bottom">About</h3> 
+                        </div>
+                        
+                        <p class="ps-2 summary">
+                            consectetur adipiscing elit
+                            Nunc luctus diam id felis mollis pretium
+                            Fusce pretium luctus posuere. 
+                            In non consectetur dui, nec molestie nulla
+                        </p>
+                    </div>
+                    <div class="p-2 stack-container">
+                        <div class="hidden-content-container">
+                            <h3 class="hidden-bottom">Built With</h3>
+                        </div> 
+                        <ul class="stack-list">
+                            <li class="">django</li>
+                            <li class="">dashjs</li>
+                            <li class="">bootstrap 5</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="graphic-column">
+                <div class="row-container flex">
+                    <div class="img-col">
+                        <div class="img-card">
+                            <img class="page-0-img" data-src="{% static 'main_app_alt/images/netflix_clone/screenshot_2.png'  %}">
+                        </div>
+                    </div>
+                    <div class="img-col">
+                        <div class="img-card">
+                            <img class="page-0-img" data-src="{% static 'main_app_alt/images/netflix_clone/screenshot_1.png'  %}">
+                        </div>
+                    </div>
+                    <div class="img-col">
+                        <div class="img-card">
+                            <img class="page-0-img" data-src="{% static 'main_app_alt/images/netflix_clone/screenshot_3.png'  %}">
+                        </div>
+                    </div>
+                    
+                </div>
+            </div>
+        </div>
+
+        <div class="project-page page-1 container-fluid" id="page-1">
+            <div class="background-graphic">
+            </div> 
+            <div class="text-end info-column">
+                <div class="hidden-content-container">
+                    <h1 class="whitespace-nowrap hidden-bottom">Snapchat Clone</h1>
+                </div>
+                   <div class="info-container ">
+                    <div class="p-2 summary-container">
+                        <div class="hidden-content-container">
+                            <h3 class="hidden-bottom">About</h3>
+                        </div> 
+                        <p class="ps-2 summary">
+                            consectetur adipiscing elit
+                            Nunc luctus diam id felis mollis pretium
+                            Fusce pretium luctus posuere. 
+                            In non consectetur dui, nec molestie nulla
+                        </p>
+                    </div>
+                    <div class="p-2 stack-container">
+                        <div class="hidden-content-container">
+                            <h3 class="hidden-bottom">Built With</h3>
+                        </div> 
+                        <ul class="stack-list">
+                            <li class="">AWS Amplify<br>Cognito</li>
+                            <li class="">Android SDK</li>
+                            <li class="">GraphQL</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>  
+            <div class="graphic-column">
+                
+                <!-- <canvas></canvas> -->
+                <div class="row-container flex align-items-end">
+                    <div class="card-col">
+                        <div class="img-card mb-4">
+                            <img class=""  data-src="{% static 'main_app_alt/images/snapchat_clone/login.svg' %}">
+                        </div>
+                        <div class="img-card">
+                            <img class=""  data-src="{% static 'main_app_alt/images/snapchat_clone/chat.svg' %}">
+                        </div>
+                    </div>
+                    <div class="card-col">
+                        <div class="img-card mb-4">
+                            <img class="" data-src="{% static 'main_app_alt/images/snapchat_clone/signup.svg' %}">
+                        </div>
+                        <div class="img-card">
+                            <img class="" data-src="{% static 'main_app_alt/images/snapchat_clone/search.svg' %}">
+                        </div>
+                    </div>
+                    <div class="card-col">
+                        <div class="img-card">
+                            <img class="" data-src="{% static 'main_app_alt/images/snapchat_clone/profile.svg' %}">
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+            
+        </div> 
+
+        <div class="project-page page-2 container-fluid py-2" id="page-2">
+            <!-- <div class="background-graphic"></div> -->
+            <canvas class="back-canvas"></canvas>
+            <div class="info-column">
+                <div class="hidden-content-container">
+                    <h1 class="whitespace-nowrap hidden-bottom">Focus Timer</h1>
+                </div>
+                <div class="info-container ">
+                    <div class="p-2 summary-container">
+                        <div class="hidden-content-container">
+                            <h3 class="hidden-bottom">About</h3> 
+                        </div>
+                        <p class="ps-2 summary">
+                            consectetur adipiscing elit
+                            Nunc luctus diam id felis mollis pretium
+                            Fusce pretium luctus posuere. 
+                            In non consectetur dui, nec molestie nulla
+                        </p>
+                    </div>
+                    <div class="p-2 stack-container">
+                        <div class="hidden-content-container">
+                            <h3 class="hidden-bottom">Built With</h3> 
+                        </div>
+                        <ul class="stack-list">
+                            <li class="">Android SDK</li>
+                            <li class="">Kotlin</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="graphic-column">
+                <div class="img-card">
+                    <img data-src="{% static 'main_app_alt/images/focus_timer.svg' %}"/>
+                </div>
+            </div>
+        </div>
+
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjs/10.1.1/math.js" integrity="sha512-0MC8WeRWoyA1u5N3ssCsJDSbNfw3bjF65BIQ3UTPs9nwaV0fy+JN3FH9PQmYACZOEkQFhUvEP+jIqwOlBjEM9w==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js"
+        integrity="sha384-7+zCNj/IqJ95wo16oMtfsKbZ9ccEh31eOz1HGyDuCQ6wgnyJNSYdrPa03rtR1zdB"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js"
+        integrity="sha384-QJHtvGhmr9XOIpI6YVutG+2QOK9T+ZnN4kzFN1RtK3zEFEIsxhlmWl5/YESvpZ13"
+        crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.js"
+        integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
+    <script src="{% static 'main_app_alt/js/polygon.js' %}"></script>
+    <script>
+        //max width and height is parent
+        //should redraw on resize obviously
+        //
+        
+
+        function loadProjectImages(){
+            //load images for each project
+            //add load event listener then
+            //
+            $('img').each( (i,x) => {
+                //set src
+                x.addEventListener('load',(event) => {
+                    console.log('img loaded!');
+                    $(event.target.parentElement).css({
+                        'opacity':1
+                    });
+                });
+                x.setAttribute('src',x.dataset.src);
+                onCanvasResize();
+            });
+        }
+
+        function onTextVisible(entries,observer){
+            entries.forEach(entry => {
+                if(entry.isIntersecting){
+                    //console.log(entry.target);
+                    entry.target.children[0].classList.add("show");
+                }else{
+                    entry.target.children[0].classList.remove("show");
+                }
+            });
+        }
+
+        let options = {
+            root: null,
+            rootMargin: "0px",
+            threshold: 0.9
+        }
+
+        let textObserver = new IntersectionObserver(onTextVisible,options);
+
+        function setPageTopMargins(){
+            //set top margin of page 1
+            //get top position
+            let projectPages = $('.project-page');//
+            //
+            let prev = $(projectPages[0]);
+            let prevTop = prev.offset().top;
+            let prevScrollHeight = prev[0].scrollHeight;
+            let prevMarginTop = parseInt(prev.css('margin-top'));
+            let prevBottom = prevTop + prevScrollHeight;
+
+            let numPages = projectPages.length;
+            // console.log(`numPages => ${numPages}`);
+            let i = 1;
+            while(i < numPages){
+                let current = $(projectPages[i]);
+                let currentTop = current.offset().top;
+                let currentMarginTop = parseInt(current.css('margin-top'));
+                // let newMarginTop = currentMarginTop + (prevMarginTop + prevScrollHeight - currentTop + 108);
+                // console.log(`page[${i - 1}].bottom => ${prevScrollHeight + prevTop}`);
+                // console.log(`   before top[${i}] => ${currentTop}`);
+                if(currentTop < prevTop + prevScrollHeight){
+                    //
+                    //margin
+                    //  |
+                    //  |
+                    //top
+                    let newMarginTop = Math.min(256,currentMarginTop + (prevTop + prevScrollHeight) - currentTop + 108);
+                    current.css({
+                        'margin-top': newMarginTop+'px'
+                    });
+                }
+                // console.log(`   after top[${i}] => ${current.offset().top}`);
+                prev = current;
+                prevTop = current.offset().top;
+                prevScrollHeight = current[0].scrollHeight;
+                prevBottom = prevTop + prevScrollHeight;
+                // prevMarginTop = parseInt(current.css('margin-top'));
+
+                i+=1;
+            }
+        }
+        
+        
+        let heptagon = new Polygon(7,'#D3E4F5',1);
+        // let pentagon = new Polygon(5,'#8CCDFF',0.8);
+
+        
+        let polygons = [heptagon];
+        $(document).ready( () => {
+
+           $('.nav-item').on('click',(event)=>{
+                $('.active').removeClass('active');
+                $(event.currentTarget).children('.nav-link').addClass('active');
+           }); 
+
+           $('.nav-item').on('mouseenter',(event)=>{
+               //when any nav item is hovered remove the active underline from any current one
+               $('.active-underline').removeClass('active-underline');
+            //    console.log('enter nav-link');
+           });
+           $('.nav-item').on('mouseleave',(event)=>{
+               $('.nav-item .active').addClass('active-underline');
+            //    console.log('exit nav-link');
+           });
+
+           $('.hidden-content-container').each((i,x) => {
+               textObserver.observe(x);
+           });
+
+           loadProjectImages();
+           
+           //show page after content is loaded
+           setPageTopMargins();//call once
+           $(window).resize(setPageTopMargins);
+           //set size of the canvas
+           $(window).resize(onCanvasResize);
+        });
+
+        function onCanvasResize(){
+            // Array.from(document.querySelectorAll('canvas')).forEach((canvas,i) => {
+            let canvas = document.querySelector('canvas');
+            let context = canvas.getContext('2d');
+            let width = canvas.parentElement.clientWidth;
+            let height = canvas.parentElement.clientHeight * 0.8;
+            
+            canvas.width = width;
+            canvas.height = height;
+            
+            // console.log(`${width},${height}`);
+
+            heptagon.stopAnimation();
+            heptagon.setSize(width,height);
+            heptagon.startAnimation(context,width,height);
+            // });
+        }
+        
+    </script>
+</body>
+
+</html>
