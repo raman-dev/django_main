@@ -468,9 +468,6 @@ h3 {
 }
 
 @media (min-width: 576px) {
-  .content {
-    overflow-x: hidden;
-  }
   .page-2 .graphic-column .img-card {
     width: 45%;
   }
@@ -590,6 +587,12 @@ h3 {
   }
   .content {
     width: 100%;
+  }
+}
+
+@media (max-width: 576px) {
+  .content {
+    overflow-x: hidden;
   }
 }
 /*# sourceMappingURL=styles.css.map */
