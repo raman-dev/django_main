@@ -346,6 +346,9 @@ h3{
 
 // Small devices (landscape phones, 576px and up)
 @media (min-width: 576px) { 
+  .content{
+    overflow-x: hidden;
+  }
   .page-2{
     .graphic-column{
       .img-card{

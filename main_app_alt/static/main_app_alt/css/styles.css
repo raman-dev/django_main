@@ -468,6 +468,9 @@ h3 {
 }
 
 @media (min-width: 576px) {
+  .content {
+    overflow-x: hidden;
+  }
   .page-2 .graphic-column .img-card {
     width: 45%;
   }
