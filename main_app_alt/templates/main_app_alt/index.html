@@ -150,23 +150,23 @@
                 <div class="row-container flex align-items-end">
                     <div class="card-col">
                         <div class="img-card mb-4">
-                            <img class=""  data-src="{% static 'main_app_alt/images/snapchat_clone/login.svg' %}">
+                            <img class="page-1-img"  data-src="{% static 'main_app_alt/images/snapchat_clone/login.svg' %}">
                         </div>
                         <div class="img-card">
-                            <img class=""  data-src="{% static 'main_app_alt/images/snapchat_clone/chat.svg' %}">
+                            <img class="page-1-img"  data-src="{% static 'main_app_alt/images/snapchat_clone/chat.svg' %}">
                         </div>
                     </div>
                     <div class="card-col">
                         <div class="img-card mb-4">
-                            <img class="" data-src="{% static 'main_app_alt/images/snapchat_clone/signup.svg' %}">
+                            <img class="page-1-img" data-src="{% static 'main_app_alt/images/snapchat_clone/signup.svg' %}">
                         </div>
                         <div class="img-card">
-                            <img class="" data-src="{% static 'main_app_alt/images/snapchat_clone/search.svg' %}">
+                            <img class="page-1-img" data-src="{% static 'main_app_alt/images/snapchat_clone/search.svg' %}">
                         </div>
                     </div>
                     <div class="card-col">
                         <div class="img-card">
-                            <img class="" data-src="{% static 'main_app_alt/images/snapchat_clone/profile.svg' %}">
+                            <img class="page-1-img" data-src="{% static 'main_app_alt/images/snapchat_clone/profile.svg' %}">
                         </div>
                     </div>
 
@@ -207,7 +207,7 @@
             </div>
             <div class="graphic-column">
                 <div class="img-card">
-                    <img data-src="{% static 'main_app_alt/images/focus_timer.svg' %}"/>
+                    <img class="page-2-img" data-src="{% static 'main_app_alt/images/focus_timer.svg' %}"/>
                 </div>
             </div>
         </div>
@@ -229,6 +229,7 @@
         //
         
 
+        var projectImageMap = {'page-0-img':3,'page-1-img':5,'page-2-img':1};
         function loadProjectImages(){
             //load images for each project
             //add load event listener then
@@ -236,10 +237,19 @@
             $('img').each( (i,x) => {
                 //set src
                 x.addEventListener('load',(event) => {
-                    console.log('img loaded!');
-                    $(event.target.parentElement).css({
-                        'opacity':1
-                    });
+                    // console.log('img loaded!');
+                    // console.log(event.target);
+                    let page = event.target.classList[0];
+                    let count = projectImageMap[page] - 1;
+                    projectImageMap[page] = count;
+                    if(count == 0){
+                        //set opacity for all img for project
+                        $('.'+page).each( (i,x) => {
+                            $(x.parentElement).css({
+                                'opacity':1
+                            });
+                        });
+                    }
                 });
                 x.setAttribute('src',x.dataset.src);
                 onCanvasResize();
@@ -288,10 +298,6 @@
                 // console.log(`   before top[${i}] => ${currentTop}`);
                 if(currentTop < prevTop + prevScrollHeight){
                     //
-                    //margin
-                    //  |
-                    //  |
-                    //top
                     let newMarginTop = Math.min(256,currentMarginTop + (prevTop + prevScrollHeight) - currentTop + 108);
                     current.css({
                         'margin-top': newMarginTop+'px'
