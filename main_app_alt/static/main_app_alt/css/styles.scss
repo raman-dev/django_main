@@ -153,6 +153,28 @@ h3{
   min-height: 80%;
 }
 
+
+.project-link{
+  border: 2px solid black;
+  border-radius: 24px;
+  margin-left: 8px;
+  text-decoration: none;
+  color: black;
+  font-family: $h1Font;
+  font-size: 1.5rem;
+  transition: all 0.1s ease-out;
+}
+
+#page-2-source-link-container .project-link{
+  width: fit-content;
+}
+
+.project-link:hover{
+  text-decoration: underline;
+  color: white;
+  background-color: black;
+}
+
 .page-0{
   position: relative;
   // min-height: 80%;
@@ -377,6 +399,7 @@ h3{
       }
     }
   }
+  
 }
 
 // Medium devices (tablets, 768px and up)
@@ -530,6 +553,16 @@ h3{
   // html{
   //   font-size: 10px;
   // }
+  #page-0-source-link-container{
+    display: flex;
+    flex-direction: column;
+    .project-link{
+      width: fit-content;
+    }
+    .project-link:first-child{
+      margin-bottom: 4px;
+    }
+  }
   
  }
 
@@ -537,6 +570,16 @@ h3{
 @media (max-width: 576px) {
   .content{
     overflow-x: hidden;
+  }
+  #page-2-source-link-container{
+    display: flex;
+    flex-direction: column;
+    .project-link{
+      width: fit-content;
+    }
+    .project-link:first-child{
+      margin-bottom: 4px;
+    }
   }
 }
 
