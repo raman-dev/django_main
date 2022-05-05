@@ -18,16 +18,15 @@
 </head>
 
 <body>
-    <!--
+        <!--
             outline what do i want   
             i want scrolling along all my projects
             so i want a links on the left side
             that can be clicked to scroll to the correct page i want
             also i want as i scroll for the links to be highlighted
-
         -->
     <nav class="navbar navbar-expand-md navbar-light">
-        <div class="container-fluid">
+        <div class="container-fluid fixed-top">
             <a class="navbar-brand" href="#">raman.dev</a>
             <!-- collapse nav toggle -->
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
@@ -255,7 +254,6 @@
                 onCanvasResize();
             });
         }
-
         function onTextVisible(entries,observer){
             entries.forEach(entry => {
                 if(entry.isIntersecting){
@@ -272,6 +270,8 @@
             rootMargin: "0px",
             threshold: 0.9
         }
+
+        
 
         let textObserver = new IntersectionObserver(onTextVisible,options);
 
@@ -348,6 +348,18 @@
            $(window).resize(setPageTopMargins);
            //set size of the canvas
            $(window).resize(onCanvasResize);
+           $(document).on('scroll',(event) => {
+               let body = document.querySelector('body');
+            //    console.log(body.scrollTop);
+                if(body.scrollTop <= 0){
+                    $('.navbar .container-fluid').removeClass('navbar-shadow');
+                }else{
+                    let element = $('.navbar .container-fluid');
+                    if(!element.hasClass('navbar-shadow')){
+                        $('.navbar .container-fluid').addClass('navbar-shadow');
+                    }
+                }
+           });
         });
 
         function onCanvasResize(){
