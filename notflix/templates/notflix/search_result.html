@@ -23,7 +23,7 @@
             <img class="rounded result-thumbnail" src="{% static  movie.thumbnail_url %}" />
             
             <div class="pl-2 d-flex flex-column">
-                <a class="result-title" href="/watch/movies/{{ movie.pk }}">
+                <a class="result-title" href="/notflix/watch/movie/{{ movie.pk }}">
                     <h4>
                         {{ movie.title }}
                     </h4>
@@ -47,7 +47,7 @@
         <div class="ml-0 pl-0 pb-1 result-col d-flex col col-sm-12 col-md-10 col-lg-8 col-xl-8">
             <img class="rounded result-thumbnail" src="{% static  tv_show.thumbnail_url %}" />
             <div class="pl-2 d-flex flex-column">
-                <a class="result-title" href="/watch/tvshows/{{ tv_show.pk }}">
+                <a class="result-title" href="/notflix/watch/tvshow/{{ tv_show.pk }}">
                     <h4>
                         {{ tv_show.title }}
                     </h4>

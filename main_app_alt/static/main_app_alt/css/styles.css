@@ -634,6 +634,9 @@ h3 {
 }
 
 @media (max-width: 768px) {
+  .content {
+    margin-top: 38px !important;
+  }
   #page-0-source-link-container {
     display: -webkit-box;
     display: -ms-flexbox;
