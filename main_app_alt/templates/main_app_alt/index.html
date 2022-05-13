@@ -25,6 +25,16 @@
             that can be clicked to scroll to the correct page i want
             also i want as i scroll for the links to be highlighted
         -->
+    <!-- <div class="mdd-container">
+        <ul class="mdd-list">
+            <li class="mdd-item">
+                <a>canny edge detector</a>
+            </li>
+            <li class="mdd-item">
+                <a>conway's game of life</a>
+            </li>
+        </ul>
+    </div> -->
     <nav class="navbar navbar-expand-md navbar-light">
         <div class="container-fluid fixed-top">
             <a class="navbar-brand" href="#">raman.dev</a>
@@ -48,10 +58,37 @@
                         <a class="nav-link" href="#page-2">Focus Timer<div class="link-underline"></div>
                         </a>
                     </li>
+                    <!-- <li class="nav-item mdropdown">
+                        <a class="nav-link" href="#">
+                            more projects
+                            <div class="link-underline">
+                            </div>
+                            <div class="mdropdown-list">
+                                <div class="dropdown-link-container">
+                                    <div>
+                                        first item
+                                    </div>
+                                    <div>
+                                        second item
+                                    </div>
+                                </div>
+                            </div>
+                        </a>
+                    </li> -->
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDarkDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            more projects
+                        </a>
+                        <ul class="dropdown-menu dropdown-menu" aria-labelledby="navbarDarkDropdownMenuLink">
+                            <li><a class="dropdown-item" href="https://github.com/raman-dev/CannyEdgeDetector-Complete">canny edge detector</a></li>
+                            <li><a class="dropdown-item" href="https://github.com/raman-dev/conways-game-of-life">conway's game of life</a></li>
+                        </ul>
+                    </li>
                 </ul>
             </div>
         </div>
     </nav>
+    
     <div class="content mx-auto border">
         <!--
             fixed height full width container?
@@ -246,7 +283,6 @@
     <script>
         //max width and height is parent
         //should redraw on resize obviously
-        //
         
 
         var projectImageMap = {'page-0-img':3,'page-1-img':5,'page-2-img':1};
@@ -292,8 +328,6 @@
             threshold: 0.9
         }
 
-        
-
         let textObserver = new IntersectionObserver(onTextVisible,options);
 
         function setPageTopMargins(){
@@ -337,16 +371,50 @@
         
         
         let heptagon = new Polygon(7,'#D3E4F5',1);
-        // let pentagon = new Polygon(5,'#8CCDFF',0.8);
+        //let pentagon = new Polygon(5,'#8CCDFF',0.8);
 
+        function toggleDropDown(){
+            //do what 
+            let dropDownLinkContainer = $('.dropdown-link-container');
+            if(dropDownLinkContainer.hasClass('open')){
+                dropDownLinkContainer.css({
+                    height:'0px',
+                   'border-color': 'transparent',
+                });
+                dropDownLinkContainer.removeClass('open');
+            }else{
+                let totalDropDownHeight = 0;
+                dropDownLinkContainer.children().each( (i,x) => {
+                    totalDropDownHeight += x.clientHeight;
+                });
+                dropDownLinkContainer.css({
+                    height: totalDropDownHeight + 'px',
+                    'border-color': 'black',
+                });
+                dropDownLinkContainer.addClass('open');
+            }
+        }
         
         let polygons = [heptagon];
         $(document).ready( () => {
+
+            $('body').on('click',(event)=>{
+                if ($('.dropdown-link-container').hasClass('open')){
+                    // $('.dropdown-link-container').removeClass('open');
+                    toggleDropDown();
+                }
+            });
 
            $('.nav-item').on('click',(event)=>{
                 $('.active').removeClass('active');
                 $(event.currentTarget).children('.nav-link').addClass('active');
            }); 
+
+           $('.mdropdown').on('click',(event) => {
+               event.preventDefault();
+               toggleDropDown();
+               event.stopPropagation();
+           });
 
            $('.nav-item').on('mouseenter',(event)=>{
                //when any nav item is hovered remove the active underline from any current one
@@ -360,6 +428,10 @@
 
            $('.hidden-content-container').each((i,x) => {
                textObserver.observe(x);
+           });
+
+           $('.content').css({
+               'margin-top':$('nav div').innerHeight() + 'px'
            });
 
            loadProjectImages();

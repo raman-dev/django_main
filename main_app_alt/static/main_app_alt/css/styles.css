@@ -146,6 +146,20 @@ nav .container-fluid {
   padding-left: 15%;
 }
 
+.mdropdown-list {
+  height: 0px;
+}
+
+.mdropdown-list .dropdown-link-container {
+  border: 1px solid transparent;
+  border-top: none;
+  height: 0px;
+  overflow: hidden;
+  background-color: white;
+  -webkit-transition: height 0.2s ease-out, border-color 0.3s ease-out;
+  transition: height 0.2s ease-out, border-color 0.3s ease-out;
+}
+
 h1 {
   font-family: displayFont;
   font-size: 3rem;
@@ -211,7 +225,6 @@ h3 {
 
 .content {
   width: 70%;
-  margin-top: 48px;
 }
 
 .navbar-shadow {
@@ -634,9 +647,6 @@ h3 {
 }
 
 @media (max-width: 768px) {
-  .content {
-    margin-top: 38px !important;
-  }
   #page-0-source-link-container {
     display: -webkit-box;
     display: -ms-flexbox;
@@ -653,6 +663,12 @@ h3 {
   }
   #page-0-source-link-container .project-link:first-child {
     margin-bottom: 4px;
+  }
+  .nav-item {
+    width: -webkit-fit-content;
+    width: -moz-fit-content;
+    width: fit-content;
+    margin: auto;
   }
 }
 

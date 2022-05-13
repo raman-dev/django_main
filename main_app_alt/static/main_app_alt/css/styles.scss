@@ -66,6 +66,24 @@ nav{
   }
 }
 
+
+
+.mdropdown-list{
+  height: 0px ;
+  // overflow: visible;
+  .dropdown-link-container{
+    border: 1px solid transparent;
+    border-top: none;
+    
+    height: 0px;
+    overflow: hidden;
+  
+    background-color: white;
+    transition: height 0.2s ease-out, border-color 0.3s ease-out;
+   
+  }
+}
+
 h1{
   font-family: $h1Font; 
   font-size: 3rem;
@@ -130,7 +148,7 @@ h3{
 
 .content{
   width: 70%;
-  margin-top: 48px;
+  // margin-top: 48px;
 }
 
 // .card-1 {
@@ -554,7 +572,7 @@ h3{
   //   font-size: 10px;
   // }
   .content{
-    margin-top:38px !important;
+    // margin-top:38px !important;
   }
   #page-0-source-link-container{
     display: flex;
@@ -565,6 +583,11 @@ h3{
     .project-link:first-child{
       margin-bottom: 4px;
     }
+  }
+
+  .nav-item{
+    width: fit-content;
+    margin: auto;
   }
   
  }
