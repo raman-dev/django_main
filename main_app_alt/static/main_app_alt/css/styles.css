@@ -207,6 +207,10 @@ h3 {
   transition: width 0.2s ease-out;
 }
 
+.navbar {
+  padding-top: 0px !important;
+}
+
 .navbar .container-fluid {
   padding-top: 8px;
   padding-bottom: 8px;

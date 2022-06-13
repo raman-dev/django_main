@@ -18,25 +18,17 @@
 </head>
 
 <body>
-        <!--
-            outline what do i want   
-            i want scrolling along all my projects
-            so i want a links on the left side
-            that can be clicked to scroll to the correct page i want
-            also i want as i scroll for the links to be highlighted
-        -->
-    <!-- <div class="mdd-container">
-        <ul class="mdd-list">
-            <li class="mdd-item">
-                <a>canny edge detector</a>
-            </li>
-            <li class="mdd-item">
-                <a>conway's game of life</a>
-            </li>
-        </ul>
-    </div> -->
-    <nav class="navbar navbar-expand-md navbar-light">
-        <div class="container-fluid fixed-top">
+    <!--
+        outline what do i want   
+        i want scrolling along all my projects
+        so i want a links on the left side
+        that can be clicked to scroll to the correct page i want
+        also i want as i scroll for the links to be highlighted
+    -->
+    
+    <!-- navbar-->
+    <nav class="navbar fixed-top navbar-expand-md navbar-light">
+        <div class="container-fluid">
             <a class="navbar-brand" href="#">raman.dev</a>
             <!-- collapse nav toggle -->
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
@@ -58,23 +50,6 @@
                         <a class="nav-link" href="#page-2">Focus Timer<div class="link-underline"></div>
                         </a>
                     </li>
-                    <!-- <li class="nav-item mdropdown">
-                        <a class="nav-link" href="#">
-                            more projects
-                            <div class="link-underline">
-                            </div>
-                            <div class="mdropdown-list">
-                                <div class="dropdown-link-container">
-                                    <div>
-                                        first item
-                                    </div>
-                                    <div>
-                                        second item
-                                    </div>
-                                </div>
-                            </div>
-                        </a>
-                    </li> -->
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" href="#" id="navbarDarkDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                             more projects
@@ -89,188 +64,233 @@
             </div>
         </div>
     </nav>
+    <!-- content container-->
+    <div class="content-container">
+        <div class="content mx-auto border">
+            <!--
+                fixed height full width container?
+            -->
+            <div class="project-page page-0 flex" id="page-0">
+                <div class="background-graphic"></div>
+                <div class="info-column">
+                    <div class="hidden-content-container">
+                        <h1 class="whitespace-nowrap hidden-bottom">
+                            Netflix Clone
+                        </h1>
+                    </div>
     
-    <div class="content mx-auto border">
-        <!--
-            fixed height full width container?
-        -->
-        <div class="project-page page-0 flex" id="page-0">
-            <div class="background-graphic"></div>
-            <div class="info-column">
-                <div class="hidden-content-container">
-                    <h1 class="whitespace-nowrap hidden-bottom">
-                        Netflix Clone
-                    </h1>
+                    <div class="info-container">
+                        <div class="p-2 summary-container">
+                            <div class="hidden-content-container">
+                                <h3 class="hidden-bottom">About</h3> 
+                            </div>
+                            
+                            <p class="ps-2 summary">
+                                consectetur adipiscing elit
+                                Nunc luctus diam id felis mollis pretium
+                                Fusce pretium luctus posuere. 
+                                In non consectetur dui, nec molestie nulla
+                            </p>
+                        </div>
+                        <div class="p-2 stack-container">
+                            <div class="hidden-content-container">
+                                <h3 class="hidden-bottom">Built With</h3>
+                            </div> 
+                            <ul class="stack-list">
+                                <li class="">django</li>
+                                <li class="">dashjs</li>
+                                <li class="">bootstrap 5</li>
+                            </ul>
+                        </div>
+                        <div id="page-0-source-link-container" class="source-link-container ">
+                            <a class="p-1 px-4 project-link" href="/notflix/">
+                                visit
+                            </a>
+                            <a class="p-1 px-4 project-link" href="https://github.com/raman-dev/django_main/tree/master/notflix">
+                                source
+                            </a>
+                        </div>
+                    </div>
                 </div>
-
-                <div class="info-container">
-                    <div class="p-2 summary-container">
-                        <div class="hidden-content-container">
-                            <h3 class="hidden-bottom">About</h3> 
+                <div class="graphic-column">
+                    <div class="row-container flex">
+                        <div class="img-col">
+                            <div class="img-card">
+                                <img class="page-0-img" data-src="{% static 'main_app_alt/images/netflix_clone/screenshot_2.png'  %}">
+                            </div>
+                        </div>
+                        <div class="img-col">
+                            <div class="img-card">
+                                <img class="page-0-img" data-src="{% static 'main_app_alt/images/netflix_clone/screenshot_1.png'  %}">
+                            </div>
+                        </div>
+                        <div class="img-col">
+                            <div class="img-card">
+                                <img class="page-0-img" data-src="{% static 'main_app_alt/images/netflix_clone/screenshot_3.png'  %}">
+                            </div>
                         </div>
                         
-                        <p class="ps-2 summary">
-                            consectetur adipiscing elit
-                            Nunc luctus diam id felis mollis pretium
-                            Fusce pretium luctus posuere. 
-                            In non consectetur dui, nec molestie nulla
-                        </p>
-                    </div>
-                    <div class="p-2 stack-container">
-                        <div class="hidden-content-container">
-                            <h3 class="hidden-bottom">Built With</h3>
-                        </div> 
-                        <ul class="stack-list">
-                            <li class="">django</li>
-                            <li class="">dashjs</li>
-                            <li class="">bootstrap 5</li>
-                        </ul>
-                    </div>
-                    <div id="page-0-source-link-container" class="source-link-container ">
-                        <a class="p-1 px-4 project-link" href="/notflix/">
-                            visit
-                        </a>
-                        <a class="p-1 px-4 project-link" href="https://github.com/raman-dev/django_main/tree/master/notflix">
-                            source
-                        </a>
                     </div>
                 </div>
-            </div>
-            <div class="graphic-column">
-                <div class="row-container flex">
-                    <div class="img-col">
-                        <div class="img-card">
-                            <img class="page-0-img" data-src="{% static 'main_app_alt/images/netflix_clone/screenshot_2.png'  %}">
-                        </div>
-                    </div>
-                    <div class="img-col">
-                        <div class="img-card">
-                            <img class="page-0-img" data-src="{% static 'main_app_alt/images/netflix_clone/screenshot_1.png'  %}">
-                        </div>
-                    </div>
-                    <div class="img-col">
-                        <div class="img-card">
-                            <img class="page-0-img" data-src="{% static 'main_app_alt/images/netflix_clone/screenshot_3.png'  %}">
-                        </div>
-                    </div>
-                    
-                </div>
-            </div>
-            
-        </div>
-
-        <div class="project-page page-1 container-fluid" id="page-1">
-            <div class="background-graphic">
-            </div> 
-            <div class="text-end info-column">
-                <div class="hidden-content-container">
-                    <h1 class="whitespace-nowrap hidden-bottom">Snapchat Clone</h1>
-                </div>
-                   <div class="info-container ">
-                    <div class="p-2 summary-container">
-                        <div class="hidden-content-container">
-                            <h3 class="hidden-bottom">About</h3>
-                        </div> 
-                        <p class="ps-2 summary">
-                            consectetur adipiscing elit
-                            Nunc luctus diam id felis mollis pretium
-                            Fusce pretium luctus posuere. 
-                            In non consectetur dui, nec molestie nulla
-                        </p>
-                    </div>
-                    <div class="p-2 stack-container">
-                        <div class="hidden-content-container">
-                            <h3 class="hidden-bottom">Built With</h3>
-                        </div> 
-                        <ul class="stack-list">
-                            <li class="">AWS Amplify<br>Cognito</li>
-                            <li class="">Android SDK</li>
-                            <li class="">GraphQL</li>
-                        </ul>
-                    </div>
-                    <div id="page-1-src-link-container" class="source-link-container">
-                        <a class="p-1 px-4 project-link" href="https://github.com/raman-dev/SnapChatCloneX">
-                            source
-                        </a>
-                    </div>
-                </div>
-            </div>  
-            <div class="graphic-column">
                 
-                <!-- <canvas></canvas> -->
-                <div class="row-container flex align-items-end">
-                    <div class="card-col">
-                        <div class="img-card mb-4">
-                            <img class="page-1-img"  data-src="{% static 'main_app_alt/images/snapchat_clone/login.svg' %}">
+            </div>
+    
+            <div class="project-page page-1 container-fluid" id="page-1">
+                <div class="background-graphic">
+                </div> 
+                <div class="text-end info-column">
+                    <div class="hidden-content-container">
+                        <h1 class="whitespace-nowrap hidden-bottom">Snapchat Clone</h1>
+                    </div>
+                       <div class="info-container ">
+                        <div class="p-2 summary-container">
+                            <div class="hidden-content-container">
+                                <h3 class="hidden-bottom">About</h3>
+                            </div> 
+                            <p class="ps-2 summary">
+                                consectetur adipiscing elit
+                                Nunc luctus diam id felis mollis pretium
+                                Fusce pretium luctus posuere. 
+                                In non consectetur dui, nec molestie nulla
+                            </p>
                         </div>
-                        <div class="img-card">
-                            <img class="page-1-img"  data-src="{% static 'main_app_alt/images/snapchat_clone/chat.svg' %}">
+                        <div class="p-2 stack-container">
+                            <div class="hidden-content-container">
+                                <h3 class="hidden-bottom">Built With</h3>
+                            </div> 
+                            <ul class="stack-list">
+                                <li class="">AWS Amplify<br>Cognito</li>
+                                <li class="">Android SDK</li>
+                                <li class="">GraphQL</li>
+                            </ul>
+                        </div>
+                        <div id="page-1-src-link-container" class="source-link-container">
+                            <a class="p-1 px-4 project-link" href="https://github.com/raman-dev/SnapChatCloneX">
+                                source
+                            </a>
                         </div>
                     </div>
-                    <div class="card-col">
-                        <div class="img-card mb-4">
-                            <img class="page-1-img" data-src="{% static 'main_app_alt/images/snapchat_clone/signup.svg' %}">
+                </div>  
+                <div class="graphic-column">
+                    
+                    <!-- <canvas></canvas> -->
+                    <div class="row-container flex align-items-end">
+                        <div class="card-col">
+                            <div class="img-card mb-4">
+                                <img class="page-1-img"  data-src="{% static 'main_app_alt/images/snapchat_clone/login.svg' %}">
+                            </div>
+                            <div class="img-card">
+                                <img class="page-1-img"  data-src="{% static 'main_app_alt/images/snapchat_clone/chat.svg' %}">
+                            </div>
                         </div>
-                        <div class="img-card">
-                            <img class="page-1-img" data-src="{% static 'main_app_alt/images/snapchat_clone/search.svg' %}">
+                        <div class="card-col">
+                            <div class="img-card mb-4">
+                                <img class="page-1-img" data-src="{% static 'main_app_alt/images/snapchat_clone/signup.svg' %}">
+                            </div>
+                            <div class="img-card">
+                                <img class="page-1-img" data-src="{% static 'main_app_alt/images/snapchat_clone/search.svg' %}">
+                            </div>
+                        </div>
+                        <div class="card-col">
+                            <div class="img-card">
+                                <img class="page-1-img" data-src="{% static 'main_app_alt/images/snapchat_clone/profile.svg' %}">
+                            </div>
+                        </div>
+    
+                    </div>
+                </div>
+                
+            </div> 
+    
+            <div class="project-page page-2 container-fluid py-2" id="page-2">
+                <canvas class="back-canvas"></canvas>
+                <div class="info-column">
+                    <div class="hidden-content-container">
+                        <h1 class="whitespace-nowrap hidden-bottom">Focus Timer</h1>
+                    </div>
+                    <div class="info-container ">
+                        <div class="p-2 summary-container">
+                            <div class="hidden-content-container">
+                                <h3 class="hidden-bottom">About</h3> 
+                            </div>
+                            <p class="ps-2 summary">
+                                consectetur adipiscing elit
+                                Nunc luctus diam id felis mollis pretium
+                                Fusce pretium luctus posuere. 
+                                In non consectetur dui, nec molestie nulla
+                            </p>
+                        </div>
+                        <div class="p-2 stack-container">
+                            <div class="hidden-content-container">
+                                <h3 class="hidden-bottom">Built With</h3> 
+                            </div>
+                            <ul class="stack-list">
+                                <li class="">Android SDK</li>
+                                <li class="">Kotlin</li>
+                            </ul>
                         </div>
                     </div>
-                    <div class="card-col">
-                        <div class="img-card">
-                            <img class="page-1-img" data-src="{% static 'main_app_alt/images/snapchat_clone/profile.svg' %}">
-                        </div>
+                    <div id="page-2-source-link-container" class="source-link-container flex flex-inline">
+                        <a class="p-1 px-4 project-link" href="#">
+                            download
+                        </a>
+                        <a class="p-1 px-4 project-link" href="https://github.com/raman-dev/FocusTimerKT">
+                            source
+                        </a>
                     </div>
-
+                </div>
+                <div class="graphic-column">
+                    <div class="img-card">
+                        <img class="page-2-img" data-src="{% static 'main_app_alt/images/focus_timer.svg' %}"/>
+                    </div>
                 </div>
             </div>
-            
-        </div> 
+    
+        </div>
+    </div>
 
-        <div class="project-page page-2 container-fluid py-2" id="page-2">
-            <canvas class="back-canvas"></canvas>
-            <div class="info-column">
-                <div class="hidden-content-container">
-                    <h1 class="whitespace-nowrap hidden-bottom">Focus Timer</h1>
-                </div>
-                <div class="info-container ">
-                    <div class="p-2 summary-container">
-                        <div class="hidden-content-container">
-                            <h3 class="hidden-bottom">About</h3> 
-                        </div>
-                        <p class="ps-2 summary">
-                            consectetur adipiscing elit
-                            Nunc luctus diam id felis mollis pretium
-                            Fusce pretium luctus posuere. 
-                            In non consectetur dui, nec molestie nulla
-                        </p>
-                    </div>
-                    <div class="p-2 stack-container">
-                        <div class="hidden-content-container">
-                            <h3 class="hidden-bottom">Built With</h3> 
-                        </div>
-                        <ul class="stack-list">
-                            <li class="">Android SDK</li>
-                            <li class="">Kotlin</li>
+    <!-- <nav class="navbar navbar-expand-md navbar-light">
+        <div class="container-fluid fixed-top">
+            <a class="navbar-brand" href="#">raman.dev</a>
+            <!-- collapse nav toggle >
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <!--links container>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a class="nav-link active active-underline" aria-current="page" href="#page-0">Netflix Clone
+                            <div class="link-underline"></div>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#page-1">Snapchat Clone<div class="link-underline"></div></a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#page-2">Focus Timer<div class="link-underline"></div>
+                        </a>
+                    </li>
+
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDarkDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            more projects
+                        </a>
+                        <ul class="dropdown-menu dropdown-menu" aria-labelledby="navbarDarkDropdownMenuLink">
+                            <li><a class="dropdown-item" href="https://github.com/raman-dev/CannyEdgeDetector-Complete">canny edge detector</a></li>
+                            <li><hr class="dropdown-divider"></li>
+                            <li><a class="dropdown-item" href="https://github.com/raman-dev/conways-game-of-life">conway's game of life</a></li>
                         </ul>
-                    </div>
-                </div>
-                <div id="page-2-source-link-container" class="source-link-container flex flex-inline">
-                    <a class="p-1 px-4 project-link" href="#">
-                        download
-                    </a>
-                    <a class="p-1 px-4 project-link" href="https://github.com/raman-dev/FocusTimerKT">
-                        source
-                    </a>
-                </div>
-            </div>
-            <div class="graphic-column">
-                <div class="img-card">
-                    <img class="page-2-img" data-src="{% static 'main_app_alt/images/focus_timer.svg' %}"/>
-                </div>
+                    </li>
+                </ul>
             </div>
         </div>
+    </nav>
+     -->
 
-    </div>
+   
+
     <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjs/10.1.1/math.js" integrity="sha512-0MC8WeRWoyA1u5N3ssCsJDSbNfw3bjF65BIQ3UTPs9nwaV0fy+JN3FH9PQmYACZOEkQFhUvEP+jIqwOlBjEM9w==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js"
         integrity="sha384-7+zCNj/IqJ95wo16oMtfsKbZ9ccEh31eOz1HGyDuCQ6wgnyJNSYdrPa03rtR1zdB"
@@ -407,8 +427,20 @@
             });
 
            $('.nav-item').on('click',(event)=>{
+                let navItem = $(event.currentTarget);
+                if (navItem.hasClass('dropdown')){
+                    return;
+                }
+                event.preventDefault();
                 $('.active').removeClass('active');
-                $(event.currentTarget).children('.nav-link').addClass('active');
+                
+                navItem.children('.nav-link').addClass('active');
+
+                //scrollIntoView
+                let page = navItem.children('.nav-link').attr('href');
+                document.querySelector('body').scrollTo(0,
+                    document.querySelector(page).offsetTop - parseInt(document.querySelector('.content-container').style.marginTop) - 1
+                );
            }); 
 
            $('.mdropdown').on('click',(event) => {
@@ -431,7 +463,7 @@
                textObserver.observe(x);
            });
 
-           $('.content').css({
+           $('.content-container').css({
                'margin-top':$('nav div').innerHeight() + 'px'
            });
 
@@ -457,6 +489,9 @@
         });
 
         function onCanvasResize(){
+            $('.content-container').css({
+               'margin-top':($('nav div').innerHeight()+1) + 'px'
+            });
             // Array.from(document.querySelectorAll('canvas')).forEach((canvas,i) => {
             let canvas = document.querySelector('canvas');
             let context = canvas.getContext('2d');
