@@ -13,6 +13,11 @@
 }
 
 @font-face {
+  font-family: displayFontLite;
+  src: url("Poppins/poppins_regular.ttf");
+}
+
+@font-face {
   font-family: baseFontRegular;
   src: url("Poppins/poppins_regular.ttf");
 }
@@ -34,7 +39,7 @@
 
 
 $h1Font: displayFont;
-$h3Font: displayFont;
+$h3Font: displayFontLite;
 $bodyFont: manropeBaseFont;
 $navFont: baseFontMedium;
 
@@ -90,6 +95,8 @@ h1{
   letter-spacing: -1px; 
 }
 
+
+
 .hidden-bottom{
   opacity: 0;
   transform: translateY(20%);
@@ -108,11 +115,13 @@ h3{
   margin-bottom:0px;
   border-bottom: 1px solid #a7a7a7;
   padding-bottom: 8px;
+
+  text-transform: lowercase;
 }
 
 .img-card {
   opacity: 0;
-  transition: ease opacity 0.5s
+  transition: ease opacity 0.5s, box-shadow 0.2s ease, transform 0.1s ease;
 }
 
 .link-underline{
@@ -122,6 +131,24 @@ h3{
   margin-right: auto;
   background-color: black;
   transition: width 0.2s ease-out;
+}
+
+.elevate-box-shadow{
+  // background-color: red;
+  box-shadow: -8px 8px $light-primaryopacity-008;
+}
+
+.page-0 .img-card:hover{
+  box-shadow: -12px 12px $light-primaryopacity-008;
+  transform: scale(1.01,1.01);
+}
+
+.page-1 .img-card:hover{
+  // box-shadow: -12px 12px $light-primaryopacity-008;
+  img {
+    box-shadow: -14px 16px $light-primaryopacity-008;
+  }
+  transform: scale(1.01,1.01);
 }
 
 .navbar{
@@ -194,6 +221,7 @@ h3{
   background-color: black;
 }
 
+
 .page-0{
   position: relative;
   // min-height: 80%;
@@ -250,7 +278,9 @@ h3{
     } 
     
     .img-card{
-      box-shadow: -12px 12px $light-primaryopacity-008;
+      // transition: box-shadow 0.3s ease;
+
+      // box-shadow: -12px 12px $light-primaryopacity-008;
       width: 42rem; 
       margin-right: 24px;
       margin-bottom: 18px;
@@ -269,6 +299,7 @@ h3{
   position: relative;
   overflow: visible;
   padding: 0px;
+
   .background-graphic{
     z-index: 100;
     position: absolute;
@@ -328,8 +359,10 @@ h3{
     border: 1px solid $dark-on-primaryopacity-008;
     // background-color: $light-primaryopacity-008;
     width: 15rem;
+
     img {
-      box-shadow: -12px 14px $light-primaryopacity-008;
+      transition: box-shadow 0.2s ease;
+      box-shadow: -10px 11px $light-primaryopacity-008;
       border-radius: 8px;
       width: 100%;
     }

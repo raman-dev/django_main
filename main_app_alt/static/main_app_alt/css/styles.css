@@ -100,6 +100,11 @@
 }
 
 @font-face {
+  font-family: displayFontLite;
+  src: url("Poppins/poppins_regular.ttf");
+}
+
+@font-face {
   font-family: baseFontRegular;
   src: url("Poppins/poppins_regular.ttf");
 }
@@ -183,18 +188,21 @@ h1 {
 }
 
 h3 {
-  font-family: displayFont;
+  font-family: displayFontLite;
   font-size: 2rem;
   margin-top: 0px;
   margin-bottom: 0px;
   border-bottom: 1px solid #a7a7a7;
   padding-bottom: 8px;
+  text-transform: lowercase;
 }
 
 .img-card {
   opacity: 0;
-  -webkit-transition: ease opacity 0.5s;
-  transition: ease opacity 0.5s;
+  -webkit-transition: ease opacity 0.5s, -webkit-box-shadow 0.2s ease, -webkit-transform 0.1s ease;
+  transition: ease opacity 0.5s, -webkit-box-shadow 0.2s ease, -webkit-transform 0.1s ease;
+  transition: ease opacity 0.5s, box-shadow 0.2s ease, transform 0.1s ease;
+  transition: ease opacity 0.5s, box-shadow 0.2s ease, transform 0.1s ease, -webkit-box-shadow 0.2s ease, -webkit-transform 0.1s ease;
 }
 
 .link-underline {
@@ -205,6 +213,28 @@ h3 {
   background-color: black;
   -webkit-transition: width 0.2s ease-out;
   transition: width 0.2s ease-out;
+}
+
+.elevate-box-shadow {
+  -webkit-box-shadow: -8px 8px #006496;
+          box-shadow: -8px 8px #006496;
+}
+
+.page-0 .img-card:hover {
+  -webkit-box-shadow: -12px 12px #006496;
+          box-shadow: -12px 12px #006496;
+  -webkit-transform: scale(1.01, 1.01);
+          transform: scale(1.01, 1.01);
+}
+
+.page-1 .img-card:hover {
+  -webkit-transform: scale(1.01, 1.01);
+          transform: scale(1.01, 1.01);
+}
+
+.page-1 .img-card:hover img {
+  -webkit-box-shadow: -14px 16px #006496;
+          box-shadow: -14px 16px #006496;
 }
 
 .navbar {
@@ -345,8 +375,6 @@ h3 {
 }
 
 .page-0 .graphic-column .img-card {
-  -webkit-box-shadow: -12px 12px #006496;
-          box-shadow: -12px 12px #006496;
   width: 42rem;
   margin-right: 24px;
   margin-bottom: 18px;
@@ -441,8 +469,12 @@ h3 {
 }
 
 .page-1 .img-card img {
-  -webkit-box-shadow: -12px 14px #006496;
-          box-shadow: -12px 14px #006496;
+  -webkit-transition: -webkit-box-shadow 0.2s ease;
+  transition: -webkit-box-shadow 0.2s ease;
+  transition: box-shadow 0.2s ease;
+  transition: box-shadow 0.2s ease, -webkit-box-shadow 0.2s ease;
+  -webkit-box-shadow: -10px 11px #006496;
+          box-shadow: -10px 11px #006496;
   border-radius: 8px;
   width: 100%;
 }
