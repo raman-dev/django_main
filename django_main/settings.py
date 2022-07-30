@@ -32,6 +32,7 @@ ALLOWED_HOSTS = ['www.raman-dev.com','localhost']
 # Application definition
 
 INSTALLED_APPS = [
+    'wordle.apps.WordleConfig',
     'main_app_alt.apps.MainAppAltConfig',
     'main_app.apps.MainAppConfig',
     'notflix.apps.NotflixConfig',

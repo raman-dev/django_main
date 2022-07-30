@@ -21,5 +21,6 @@ urlpatterns = [
     # path('alt/',include('main_app_alt.urls')),
     path('',include('main_app_alt.urls')),
     # path('',include('main_app.urls')),
-    path('notflix/',include('notflix.urls'))
+    path('notflix/',include('notflix.urls')),
+    path('wordle/',include('wordle.urls'))
 ]

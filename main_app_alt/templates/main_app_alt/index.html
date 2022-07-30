@@ -57,6 +57,8 @@
                             more projects
                         </a>
                         <ul class="dropdown-menu dropdown-menu" aria-labelledby="navbarDarkDropdownMenuLink">
+                            <li><a class="dropdown-item" href="/wordle">react-wordle</a></li>
+                            <li><hr class="dropdown-divider"></li>
                             <li><a class="dropdown-item" href="https://github.com/raman-dev/CannyEdgeDetector-Complete">canny edge detector</a></li>
                             <li><hr class="dropdown-divider"></li>
                             <li><a class="dropdown-item" href="https://github.com/raman-dev/conways-game-of-life">conway's game of life</a></li>
@@ -252,7 +254,8 @@
     </div>
 
 
-    <script src="{% static 'main_app_alt/js/popper.min.js' %}"></script>
+    <!-- <script src="{% static 'main_app_alt/js/popper.min.js' %}"></script> -->
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.5/dist/umd/popper.min.js" integrity="sha384-Xe+8cL9oJa6tN/veChSP7q+mnSPaj5Bcu9mPX5F5xIGE0DVittaqT5lorf0EI7Vk" crossorigin="anonymous"></script>
     <script src="{% static 'main_app_alt/bootstrap/js/bootstrap.js' %}"></script>
     <script src="{% static 'main_app_alt/js/jquery-3.6.0.min.js' %}"></script>
     <script src="{% static 'main_app_alt/js/polygon.js' %}"></script>
@@ -414,6 +417,20 @@
                $('.nav-item .active').addClass('active-underline');
             //    console.log('exit nav-link');
            });
+           $('.navbar-toggler').on('click',(event)=>{
+                //add shadow if not already there
+                let navbarShadowElement = $('.navbar .container-fluid');
+                if($(event.currentTarget).attr('aria-expanded')=="true"){
+                    if (!navbarShadowElement.hasClass('navbar-shadow')){
+                        navbarShadowElement.addClass('navbar-shadow');
+                    }
+                }else{
+                    //check if we are scrolled all the way to the top
+                    if (document.querySelector('body').scrollTop <= 0){
+                        navbarShadowElement.removeClass('navbar-shadow');
+                    }
+                }
+           });
 
            $('.hidden-content-container').each((i,x) => {
                textObserver.observe(x);
@@ -434,7 +451,9 @@
                let body = document.querySelector('body');
             //    console.log(body.scrollTop);
                 if(body.scrollTop <= 0){
-                    $('.navbar .container-fluid').removeClass('navbar-shadow');
+                    if($('.navbar-toggler').attr('aria-expanded')=="false"){
+                        $('.navbar .container-fluid').removeClass('navbar-shadow');
+                    }
                 }else{
                     let element = $('.navbar .container-fluid');
                     if(!element.hasClass('navbar-shadow')){

@@ -1,0 +1,129 @@
+@font-face {
+  font-family: tileFont;
+  src: url('roboto_bold.75371f53f06181df75f1.ttf');
+}
+@font-face {
+  font-family: titleFont;
+  src: url('LibreBodoni-Regular.e501901314426426deb8.ttf');
+}
+body {
+  margin: 0;
+}
+h1 {
+  font-family: titleFont;
+}
+.incorrect {
+  background-color: #787c7e;
+  color: #fff;
+}
+.correct-wrong-pos {
+  background-color: #c9b458;
+  color: #fff;
+}
+.correct {
+  background-color: #6aaa64;
+  color: #fff;
+}
+@-webkit-keyframes expand {
+  0% {
+    -webkit-transform: scaleX(1) scaleY(1);
+    transform: scaleX(1) scaleY(1);
+  }
+  60% {
+    -webkit-transform: scaleX(1.1) scaleY(1.1);
+    transform: scaleX(1.1) scaleY(1.1);
+  }
+  to {
+    -webkit-transform: scaleX(1) scaleY(1);
+    transform: scaleX(1) scaleY(1);
+  }
+}
+@keyframes expand {
+  0% {
+    -webkit-transform: scaleX(1) scaleY(1);
+    transform: scaleX(1) scaleY(1);
+  }
+  60% {
+    -webkit-transform: scaleX(1.1) scaleY(1.1);
+    transform: scaleX(1.1) scaleY(1.1);
+  }
+  to {
+    -webkit-transform: scaleX(1) scaleY(1);
+    transform: scaleX(1) scaleY(1);
+  }
+}
+.expand-start {
+  -webkit-animation: expand 0.05s linear forwards;
+  animation: expand 0.05s linear forwards;
+}
+.border {
+  border-color: #000 !important;
+}
+.noborder {
+  border-color: transparent !important;
+}
+.border-gray {
+  border-color: #d3d3d3 !important;
+}
+.navbar {
+  border: 1px solid #e6e6fa;
+  display: flex;
+  font-family: tileFont;
+  justify-content: center;
+  padding: 8px;
+}
+.navbar h1 {
+  margin: 0;
+}
+.game .grid {
+  margin: 10% auto auto;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+}
+.game .answer-row {
+  margin-top: 36px;
+  transition: all 0.5s ease-out;
+}
+.invisible {
+  opacity: 0;
+}
+.visible {
+  opacity: 1;
+}
+.mx-auto {
+  margin-left: auto;
+  margin-right: auto;
+}
+.flex {
+  display: flex;
+}
+.j-center {
+  justify-content: center;
+}
+.row {
+  display: flex;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+}
+.row .tile {
+  align-items: center;
+  border: 2px solid transparent;
+  display: flex;
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
+  height: 4.7ch;
+  justify-content: center;
+  margin: 3px;
+  padding: 8px;
+  width: 4.5ch;
+}
+.row .tile p {
+  font-family: tileFont;
+  font-size: 1.8rem;
+  margin: 0;
+  text-transform: capitalize;
+}
+/*# sourceMappingURL=main.b31fe516.css.map*/
