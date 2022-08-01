@@ -66,6 +66,7 @@ h1 {
   border-color: #d3d3d3 !important;
 }
 .navbar {
+  align-items: center;
   border: 1px solid #e6e6fa;
   display: flex;
   font-family: tileFont;
@@ -74,6 +75,28 @@ h1 {
 }
 .navbar h1 {
   margin: 0;
+}
+.navbar .back-button {
+  align-items: center;
+  flex-direction: row-reverse;
+  left: 0;
+  margin-left: 1rem;
+  position: absolute;
+  transition: -webkit-transform 0.15s ease-out;
+  transition: transform 0.15s ease-out;
+  transition: transform 0.15s ease-out, -webkit-transform 0.15s ease-out;
+}
+.navbar .back-button a {
+  color: #000;
+  text-decoration: none;
+}
+.navbar .back-button svg {
+  max-height: 100%;
+}
+.navbar .back-button:hover {
+  cursor: pointer;
+  -webkit-transform: scale(1.1);
+  transform: scale(1.1);
 }
 .game .grid {
   margin: 10% auto auto;
@@ -126,4 +149,4 @@ h1 {
   margin: 0;
   text-transform: capitalize;
 }
-/*# sourceMappingURL=main.b31fe516.css.map*/
+/*# sourceMappingURL=main.065861d1.css.map*/
