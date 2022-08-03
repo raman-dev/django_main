@@ -98,14 +98,18 @@ h1 {
   -webkit-transform: scale(1.1);
   transform: scale(1.1);
 }
+.game {
+  margin-top: 5%;
+}
 .game .grid {
-  margin: 10% auto auto;
+  margin: auto;
   width: -webkit-fit-content;
   width: -moz-fit-content;
   width: fit-content;
 }
 .game .answer-row {
-  margin-top: 36px;
+  margin-bottom: 18px;
+  margin-top: 18px;
   transition: all 0.5s ease-out;
 }
 .invisible {
@@ -149,4 +153,43 @@ h1 {
   margin: 0;
   text-transform: capitalize;
 }
-/*# sourceMappingURL=main.065861d1.css.map*/
+.keyboard {
+  display: flex;
+  flex-direction: column;
+}
+[class|="keyboard-row"] {
+  display: flex;
+  flex-shrink: 1;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  justify-content: center;
+}
+[class|="keyboard-row"] .keyboard-key {
+  background-color: #d3d6da;
+  border-radius: 4px;
+  flex-shrink: 1;
+  margin: 2px;
+  padding: 6px 12px;
+  text-align: center;
+  text-transform: capitalize;
+  width: 2ch;
+}
+[class|="keyboard-row"] .keyboard-key:hover {
+  cursor: pointer;
+}
+[class|="keyboard-row"] .backspace-key,
+[class|="keyboard-row"] .enter-key {
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+}
+[class|="keyboard-row"] .backspace-key {
+  align-items: center;
+  display: flex;
+  padding-left: 16px;
+  padding-right: 16px;
+}
+.keyboard-row-1 {
+  margin-left: 4px;
+  margin-right: 4px;
+}
+/*# sourceMappingURL=main.02663fce.css.map*/
