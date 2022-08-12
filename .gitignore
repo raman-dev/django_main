@@ -6,4 +6,4 @@ create_tvshows.py
 movies.csv
 *.mp4
 media
-wordle/build
+wordle/react-wordle
