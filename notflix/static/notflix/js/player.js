@@ -17,44 +17,55 @@ var controls_overlay = $('.controls-overlay');
 
 var timeStampTimer = null;
 $('.play_button').on('click', (event) => {
-    //need to get state of button or what?
-    var play_button = $(event.currentTarget);
-    var state = play_button.attr('data-state');
-    console.log('state => ' + state);
-    if (state == "resumed") {
+    var state = $(event.currentTarget).attr('data-state');
+    onVideoStateChanged(state);
+});
+
+function onVideoStateChanged(state){
+    var play_button = $('.play_button');
+    if (state == resumed){
         $('video')[0].pause();
+        //video should now be paused
+        console.log('video paused!');
+        //stop time_stamp update function
+        clearInterval(timeStampTimer);
         //replace the child
         play_button.attr('data-state', paused);
         play_button.children().remove();
         play_button.append(play_svg);
-        console.log('video paused!');
-        //stop time_stamp update function
-        clearInterval(timeStampTimer);
-    } else {
+    }else{
         $('video')[0].play();
-        play_button.attr('data-state', resumed);
-        play_button.children().remove();
-        play_button.append(pause_svg);
+        //video shouod now be resumed
         console.log('video resumed!');
         //start time_stamp update function
         timeStampTimer = setInterval(updateControls, 1000);
+        play_button.attr('data-state', resumed);
+        play_button.children().remove();
+        play_button.append(pause_svg);
     }
-});
+}
 
 $(document).ready(() => {
     //set the progress bar cursor 
     //or every time window is resized
     updateControls();
+    setTimeout(() => {
+        onVideoStateChanged(paused);
+        document.querySelector('video').muted = false;
+    },300);
 });
 
 function updateControls() {
     var duration = $('video')[0].duration;
     var currentTime = $('video')[0].currentTime;
     var percent = 100 * (currentTime / duration);
+
+    // console.log(`currentTime => ${currentTime} \n duration => ${duration}`);
     updateProgressBar(percent);
     updateProgressBarCursor(percent);//move cursor
     updateTimeStamp(currentTime, duration);
 }
+
 var cursor = $('.video-progress-cursor');
 function updateProgressBarCursor(percent) {
     //now what?
@@ -81,6 +92,7 @@ function updateProgressBar(percent) {
     //now set the progress bar to the percentage of width
     $('.video-progress-bar').css({ 'width': percent + "%" });
 }
+
 function updateTimeStamp(time_elapsed, duration) {
     //need a function that updates the timestamp
     //by 1 second as soon as play is pressed 
